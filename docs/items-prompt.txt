@@ -1,0 +1,4302 @@
+There are 3 HTML tables listed below. They contain game items for The Long Dark divided up into 3 sections of the game. The game section is named in the table title, they are the base game, Tales and Broken silence from the DLC.
+
+Each table has 3 columns, Type, Item, Console Name. I want to build a JSON file out of these tables.
+
+The section titles are the title attributes of each table. 
+
+The category names are the values of the Type Column. If the category name contains a hyphen "-" that indicates a sub name. The part before the hyphen is the category name and the part after is the sub name.
+
+The item names are the values of the Item column.
+
+The item ids are the values of the Console Name column.
+
+Save the json output to /home/justin/projects/tld-notes/docs/items.json
+
+The Json should follow this format
+
+{
+	"sections": [
+		{
+		"title": "Game Section Title",
+		"categories": [
+			{
+			"title": "Category name",
+			"sub": Category sub name",
+			"items": [
+				{
+				"name": "item name",
+				"id": "item id"
+				}
+			]
+			}
+		]
+		}
+		
+	]
+}
+
+<table title="Base Game">
+
+<thead></thead><tbody><tr>
+<td>Type
+</td>
+<td>Item
+</td>
+<td>Console Name
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Ballistic Vest
+</td>
+<td>GEAR_BallisticVest
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Crampons
+</td>
+<td>GEAR_Crampons
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Foreman's Tool Belt
+</td>
+<td>GEAR_ToolBelt
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Improvised Crampons
+</td>
+<td>GEAR_ImprovisedCrampons
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Improvised Insulation
+</td>
+<td>GEAR_ImprovisedDownInsulation
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Moose-Hide Satchel
+</td>
+<td>GEAR_MooseHideBag
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Security Chief's Rifle Holster
+</td>
+<td>GEAR_RifleScabbardA
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Technical Backpack (upgrade)
+</td>
+<td>GEAR_TechnicalBackpack
+</td></tr>
+<tr>
+<td>Clothing - Accessories
+</td>
+<td>Wool Ear Wrap
+</td>
+<td>GEAR_EarMuffs
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Driving Gloves
+</td>
+<td>GEAR_BasicGloves
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Fleece Mittens
+</td>
+<td>GEAR_FleeceMittens
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Gauntlets
+</td>
+<td>GEAR_Gauntlets
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Improvised Hand Wraps
+</td>
+<td>GEAR_ImprovisedMittens
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Patterned Wool Mittens (Blue)
+</td>
+<td>GEAR_MittenBlueStripe
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Patterned Wool Mittens (Brown)
+</td>
+<td>GEAR_MittenBrownPattern
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Patterned Wool Mittens (Burgundy)
+</td>
+<td>GEAR_MittenBurgundyPattern
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Rabbitskin Mitts
+</td>
+<td>GEAR_RabbitSkinMittens
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Ski Gloves
+</td>
+<td>GEAR_SkiGloves
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Tactical Gloves
+</td>
+<td>GEAR_TacticalGloves
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Wool Mittens
+</td>
+<td>GEAR_Mittens
+</td></tr>
+<tr>
+<td>Clothing - Gloves
+</td>
+<td>Work Gloves
+</td>
+<td>GEAR_WorkGloves
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Aviator Cap
+</td>
+<td>GEAR_HatLeatherAviatorA
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Balaclava
+</td>
+<td>GEAR_Balaclava
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Baseball Cap
+</td>
+<td>GEAR_BaseballCap
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Cougar Hide Wrap
+</td>
+<td>GEAR_CougarWrap
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Cotton Scarf
+</td>
+<td>GEAR_CottonScarf
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Cotton Toque
+</td>
+<td>GEAR_BasicWoolHat
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Fleece Cowl
+</td>
+<td>GEAR_WoolWrapCap
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Hardhat
+</td>
+<td>GEAR_MinersHelmet
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Improvised Head Wrap
+</td>
+<td>GEAR_ImprovisedHat
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Long Wool Scarf
+</td>
+<td>GEAR_WoolWrap
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Rabbitskin Hat
+</td>
+<td>GEAR_RabbitskinHat
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Tachnical Balaclava
+</td>
+<td>GEAR_HatGatorBalaclavaA
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Tachnical Balaclava
+</td>
+<td>GEAR_HatGatorBalaclavaA
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Wolfskin Hat
+</td>
+<td>GEAR_WolfSkinHat
+</td></tr>
+<tr>
+<td>Clothing - Headgear
+</td>
+<td>Wool Toque
+</td>
+<td>GEAR_Toque
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Cargo Pants
+</td>
+<td>GEAR_CargoPants
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Combat Pants
+</td>
+<td>GEAR_CombatPants
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Deerskin Pants
+</td>
+<td>GEAR_DeerSkinPants
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Jeans
+</td>
+<td>GEAR_Jeans
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Miner's Pants
+</td>
+<td>GEAR_MinersPants
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Snow Pants
+</td>
+<td>GEAR_InsulatedPants
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Thermal Underwear
+</td>
+<td>GEAR_LongUnderwear
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Wolfskin Pants
+</td>
+<td>GEAR_WolfSkinPant
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Wool Longjohns
+</td>
+<td>GEAR_LongUnderwearWool
+</td></tr>
+<tr>
+<td>Clothing - Pants
+</td>
+<td>Work Pants
+</td>
+<td>GEAR_WorkPants
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Bearskin Coat
+</td>
+<td>GEAR_BearSkinCoat
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Cowichan Sweater
+</td>
+<td>GEAR_CowichanSweater
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Down Vest
+</td>
+<td>GEAR_DownVest
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Dress Shirt
+</td>
+<td>GEAR_CottonShirt
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Expedition Parka
+</td>
+<td>GEAR_PremiumWinterCoat
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Festive Sweater
+</td>
+<td>GEAR_SweaterChristmasA
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Fisherman's Sweater
+</td>
+<td>GEAR_FishermanSweater
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Flight Jacket
+</td>
+<td>GEAR_JacketLeatherFlightA
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Hockey Jersey
+</td>
+<td>GEAR_JerseyHockeyA
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Hoodie
+</td>
+<td>GEAR_CottonHoodie
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Light Shell
+</td>
+<td>GEAR_SkiJacket
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Mackinaw Jacket
+</td>
+<td>GEAR_MackinawJacket
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Mariner's Pea Coat
+</td>
+<td>GEAR_QualityWinterCoat
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Military Coat
+</td>
+<td>GEAR_MilitaryParka
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Miner's Jacket
+</td>
+<td>GEAR_MinersJacket
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Moose-Hide Cloak
+</td>
+<td>GEAR_MooseHideCloak
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Old Fashioned Parka
+</td>
+<td>GEAR_HeavyParka
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Plaid Shirt
+</td>
+<td>GEAR_PlaidShirt
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Simple Parka
+</td>
+<td>GEAR_LightParka
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Ski Jacket
+</td>
+<td>GEAR_DownSkiJacket
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Sport Vest
+</td>
+<td>GEAR_InsulatedVest
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Sweatshirt
+</td>
+<td>GEAR_FleeceSweater
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Tactical Jacket
+</td>
+<td>GEAR_TacticalJacket
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Thick Wool Sweater
+</td>
+<td>GEAR_HeavyWoolSweater
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Thin Wool Sweater
+</td>
+<td>GEAR_WoolSweater
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>T-Shirt
+</td>
+<td>GEAR_TeeShirt
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>T-Shirt (CM)
+</td>
+<td>GEAR_TShirtCM
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>T-Shirt (GBI)
+</td>
+<td>GEAR_TShirtGBI
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>T-Shirt (Snappy)
+</td>
+<td>GEAR_TShirtSnappy
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Urban Parka
+</td>
+<td>GEAR_DownParka
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Windbreaker
+</td>
+<td>GEAR_BasicWinterCoat
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Wolfskin Coat
+</td>
+<td>GEAR_WolfSkinCape
+</td></tr>
+<tr>
+<td>Clothing - Shirts
+</td>
+<td>Wool Shirt
+</td>
+<td>GEAR_WoolShirt
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Chemical Boots
+</td>
+<td>GEAR_MinersBoots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Climbing Socks
+</td>
+<td>GEAR_ClimbingSocks
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Combat Boots
+</td>
+<td>GEAR_CombatBoots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Deerskin Boots
+</td>
+<td>GEAR_DeerSkinBoots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Insulated Boots
+</td>
+<td>GEAR_InsulatedBoots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Leather Shoes
+</td>
+<td>GEAR_LeatherShoes
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Mukluks
+</td>
+<td>GEAR_MuklukBoots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Patterned Wool Socks (Dots)
+</td>
+<td>GEAR_SockDots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Patterned Wool Socks (Moose)
+</td>
+<td>GEAR_SockMoose
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Patterned Wool Socks (Plaid)
+</td>
+<td>GEAR_SockPlaid
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Running Shoes
+</td>
+<td>GEAR_BasicShoes
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Ski Boots
+</td>
+<td>GEAR_SkiBoots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Sports Socks
+</td>
+<td>GEAR_CottonSocks
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Trail Boots
+</td>
+<td>GEAR_BasicBoots
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Wool Socks
+</td>
+<td>GEAR_WoolSocks
+</td></tr>
+<tr>
+<td>Clothing - Shoes
+</td>
+<td>Work Boots
+</td>
+<td>GEAR_WorkBoots
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Blackrock - Memento Key
+</td>
+<td>GEAR_VisorNoteBlackrockKey3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Blackrock - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteBlackrock2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Blackrock - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteBlackrock3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Blackrock - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteBlackrock1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Bleak Inlet - Memento Key
+</td>
+<td>GEAR_BIKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Bleak Inlet - Memento Key
+</td>
+<td>GEAR_BIKey2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Bleak Inlet - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteBI1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Bleak Inlet - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteBI2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Bleak Inlet - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteBI3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Bolt Cutters
+</td>
+<td>GEAR_BoltCutters
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Broken Railroad - Memento Key
+</td>
+<td>GEAR_BRKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Broken Railroad - Memento Key
+</td>
+<td>GEAR_BRKey2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Broken Railroad - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteBR1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Broken Railroad - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteBR2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Broken Railroad - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteBR3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Coastal Highway - Memento Key
+</td>
+<td>GEAR_VisorNoteACKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Coastal Highway - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteAC1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Coastal Highway - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteCH1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Coastal Highway - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteCH2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Coastal Highway - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteAC2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Coastal Highway - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteAC3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Desolation Point - Memento Key
+</td>
+<td>GEAR_VisorNoteDPKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Desolation Point - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteDP1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Desolation Point - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteDP2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Desolation Point - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteDP3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Forlorn Muskeg - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteFM1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Forlorn Muskeg - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteFM2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Forlorn Muskeg - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteFM3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Hushed River Valley - Memento Key
+</td>
+<td>GEAR_VisorNoteHRVKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Hushed River Valley - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteHRV1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Hushed River Valley - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteHRV2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Hushed River Valley - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteHRV3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mountain Town - Memento Key
+</td>
+<td>GEAR_VisorNoteMTKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mountain Town - Paradise Meadows Farm Key
+</td>
+<td>GEAR_MountainTownFarmKey
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mountain Town - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteMT1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mountain Town - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteMT2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mountain Town - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteMT3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mystery Lake - Memento Key
+</td>
+<td>GEAR_VisorNoteMLKey2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mystery Lake - Memento Key
+</td>
+<td>GEAR_VisorNoteMLKey3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mystery Lake - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteML2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mystery Lake - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNoteML3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Mystery Lake - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteML1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Pleasant Valley - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNotePV1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Pleasant Valley - Scrawled Message (Memento Cache)
+</td>
+<td>GEAR_VisorNotePV2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Pleasant Valley - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNotePV3
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Timberwolf Mountain - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteTWM1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Timberwolf Mountain - Scrawled Message (Memento Hint)
+</td>
+<td>GEAR_VisorNoteTWM2
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Zone of Contamination - Mine Lockbox Key
+</td>
+<td>GEAR_LangstonMineLockboxKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Zone of Contamination - Mine Lockbox Key
+</td>
+<td>GEAR_Tale2_LockerKey
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Zone of Contamination - Mine Office Key
+</td>
+<td>GEAR_LangstonMineKey1
+</td></tr>
+<tr>
+<td>Collectibles - Memento
+</td>
+<td>Memento - Zone of Contamination - Mine Office Key
+</td>
+<td>GEAR_Tale2_CorpseKey
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note -&nbsp; - Langston Mine Memo
+</td>
+<td>GEAR_MineRegionPumphouseNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note -&nbsp; - Mining Newsletter
+</td>
+<td>GEAR_MineRegionBunkhouseNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Faded Paper
+</td>
+<td>GEAR_AirfieldGeologistNote1
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Journal Page
+</td>
+<td>GEAR_AirfieldJunkerNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Memo
+</td>
+<td>GEAR_AirfieldHangarNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Note
+</td>
+<td>GEAR_AirfieldControlNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Note (bugged)
+</td>
+<td>GEAR_AirfieldTowerNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Page
+</td>
+<td>GEAR_AirfieldCabinNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Paper
+</td>
+<td>GEAR_AirfieldCargomasterNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Airfield - Stained Paper
+</td>
+<td>GEAR_AirfieldSecChiefNote1
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Ash Canyon - Diary Page
+</td>
+<td>GEAR_CanyonFishingHutJournal
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Ash Canyon - Notebook Page
+</td>
+<td>GEAR_CanyonClimbersCaveNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Ash Canyon - Notebook Page
+</td>
+<td>GEAR_CanyonDeadClimberNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote1A
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote1B
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote1C
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote2A
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote2B
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote2C
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote3A
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote3B
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote3C
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote4A
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote4B
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Backer - A Note Left Behind
+</td>
+<td>GEAR_BackerNote4C
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Blackrock - Blackrock Memo (bugged)
+</td>
+<td>GEAR_BlackrockAmmoRoomNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Blackrock - Handwritten Note (bugged)
+</td>
+<td>GEAR_BlackrockCodeNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Blackrock - Note (bugged)
+</td>
+<td>GEAR_BlackrockSecurityNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Blackrock - Note (bugged)
+</td>
+<td>GEAR_BlackrockTowerNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Blackrock - Page (bugged)
+</td>
+<td>GEAR_BlackrockAdminNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Bleak Inlet - Communication Report (Contains workshop door key  code)
+</td>
+<td>GEAR_CanneryCodeNote
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary1
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary10
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary11
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary2
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary3
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary4
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary5
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary6
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary7
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary8
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - Diary Page
+</td>
+<td>GEAR_DarkwalkerDiary9
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Darkwalker - ID: Naomi Moore
+</td>
+<td>GEAR_DarkwalkerID
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Deadman - Memento Mori 1
+</td>
+<td>GEAR_DeadmanNote1
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Deadman - Memento Mori 2
+</td>
+<td>GEAR_DeadmanNote2
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Deadman - Memento Mori 3
+</td>
+<td>GEAR_DeadmanNote3
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Deadman - Memento Mori 4
+</td>
+<td>GEAR_DeadmanNote4
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Deadman - Memento Mori 5
+</td>
+<td>GEAR_DeadmanNote5
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - A Page From A Journal
+</td>
+<td>GEAR_Tale2GeologistNote1
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Interview Transcript 12
+</td>
+<td>GEAR_Tale1Transcript3
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Interview Transcript 14
+</td>
+<td>GEAR_Tale1Transcript1
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Interview Transcript 17
+</td>
+<td>GEAR_Tale1Transcript4
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Interview Transcript 4
+</td>
+<td>GEAR_Tale1Transcript2
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - My Testament
+</td>
+<td>GEAR_Tale2RudigerNote1
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 14
+</td>
+<td>GEAR_Logbook_A02
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 14
+</td>
+<td>GEAR_Tale1ChiefNote3
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 23
+</td>
+<td>GEAR_Logbook_A03
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 23
+</td>
+<td>GEAR_Tale1ChiefNote4
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 29
+</td>
+<td>GEAR_Logbook_A04
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 29
+</td>
+<td>GEAR_Tale1ChiefNote5
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 6
+</td>
+<td>GEAR_Logbook_A01
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - Security Chief's Log 6
+</td>
+<td>GEAR_Tale1ChiefNote2
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Tales - The Security Chief's Remains
+</td>
+<td>GEAR_Tale2SecurityChiefBones
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Timberwolf Mountain - Climber's Journal Page
+</td>
+<td>GEAR_ClimbersJournal
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Zone of Contamination - Foreman's Site Report, Day [Illegible]
+</td>
+<td>GEAR_ClipBoardTale2_D
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Zone of Contamination - Foreman's Site Report, Day 38
+</td>
+<td>GEAR_ClipBoardTale2_A
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Zone of Contamination - Foreman's Site Report, Day 45
+</td>
+<td>GEAR_ClipBoardTale2_B
+</td></tr>
+<tr>
+<td>Collectibles - Note
+</td>
+<td>Note - Zone of Contamination - Foreman's Site Report, Day 64
+</td>
+<td>GEAR_ClipBoardTale2_C
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Ash Canyon - High Meadow
+</td>
+<td>GEAR_PostCard_AC_CentralSpire
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Ash Canyon - Wolf's Jaw Overlook
+</td>
+<td>GEAR_PostCard_AC_TopShelf
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Blackrock - Fool's Corner
+</td>
+<td>GEAR_PostCard_BR_Canyon
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Blackrock - Prison
+</td>
+<td>GEAR_PostCard_BR_Prison
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Bleak Inlet - Echo One Radio Tower
+</td>
+<td>GEAR_PostCard_BI_EchoOne-RadioTower
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Coastal Highway - Abandoned Lookout
+</td>
+<td>GEAR_PostCard_CR_AbandonedLookout
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Forlorn Muskeg - Muskeg Overlook
+</td>
+<td>GEAR_PostCard_FM_MuskegOverlook
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Forlorn Muskeg - Shortwave Tower
+</td>
+<td>GEAR_PostCard_FM_ShortwaveTower
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Hushed River Valley&nbsp; -  Pensive Vista
+</td>
+<td>GEAR_PostCard_RV_Pensive
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Mountain Town - Radio Tower
+</td>
+<td>GEAR_PostCard_MT_RadioTower
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Mystery Lake - Forestry Lookout
+</td>
+<td>GEAR_PostCard_ML_ForestryLookout
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Mystery Lake - Lake Overlook
+</td>
+<td>GEAR_PostCard_ML_LakeOverlook
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Pleasant Valley - Pleasant Valley
+</td>
+<td>GEAR_PostCard_PV_SignalHill
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Tales - Faded Photograph
+</td>
+<td>GEAR_PostCard_Tale02
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Timberwolf  Mountain&nbsp; - Andre's Peak
+</td>
+<td>GEAR_PostCard_TM_AndresPeak
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Timberwolf  Mountain&nbsp; - Summit
+</td>
+<td>GEAR_PostCard_TM_TailSection
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Zone of Contamination - Cliff near Boss's Settlement
+</td>
+<td>GEAR_PostCard_MR_Settlement
+</td></tr>
+<tr>
+<td>Collectibles - Polaroid
+</td>
+<td>Polaroid - Zone of Contamination - Cliff near Welkin's Window
+</td>
+<td>GEAR_PostCard_MR_Window
+</td></tr>
+<tr>
+<td>Collectibles - Unique Recipes
+</td>
+<td>Unique Recipe - Camber Flight Porridge
+</td>
+<td>GEAR_RecipeCardPorridgeFruit
+</td></tr>
+<tr>
+<td>Collectibles - Unique Recipes
+</td>
+<td>Unique Recipe - Coastal Fishcakes
+</td>
+<td>GEAR_RecipeCardFishcakes
+</td></tr>
+<tr>
+<td>Collectibles - Unique Recipes
+</td>
+<td>Unique Recipe - Lily's Pancakes
+</td>
+<td>GEAR_RecipeCardMeat
+</td></tr>
+<tr>
+<td>Collectibles - Unique Recipes
+</td>
+<td>Unique Recipe - Lily's Pancakes
+</td>
+<td>GEAR_RecipeCardPancakePeach
+</td></tr>
+<tr>
+<td>Collectibles - Unique Recipes
+</td>
+<td>Unique Recipe - Ranger Stew
+</td>
+<td>GEAR_RecipeCardStewMeat
+</td></tr>
+<tr>
+<td>Fire Starting - Accelerant
+</td>
+<td>Accelerant
+</td>
+<td>GEAR_Accelerant
+</td></tr>
+<tr>
+<td>Fire Starting - Accelerant
+</td>
+<td>Accelerant
+</td>
+<td>GEAR_AccelerantKerosene
+</td></tr>
+<tr>
+<td>Fire Starting - Accelerant
+</td>
+<td>Accelerant
+</td>
+<td>GEAR_AccelerantMedium
+</td></tr>
+<tr>
+<td>Fire Starting - Accelerant
+</td>
+<td>Can of Gunpowder
+</td>
+<td>GEAR_GunpowderCan
+</td></tr>
+<tr>
+<td>Fire Starting - Accelerant
+</td>
+<td>Jerry Can
+</td>
+<td>GEAR_JerrycanRusty
+</td></tr>
+<tr>
+<td>Fire Starting - Accelerant
+</td>
+<td>Lantern Fuel (0.50 kg)
+</td>
+<td>GEAR_LampFuelFull
+</td></tr>
+<tr>
+<td>Fire Starting - Accelerant
+</td>
+<td>Lantern Fuel (Random amount)
+</td>
+<td>GEAR_LampFuel
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookA
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookB
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookBopen
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookC
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookD
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookE
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookEopen
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookF
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookFopen
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookG
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookH
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookHopen
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookI
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookLabE_01
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookLabE_02
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookLabE_03
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookLabE_Open_01
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Book
+</td>
+<td>GEAR_BookManual
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Cedar Firewood
+</td>
+<td>GEAR_Softwood
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Coal
+</td>
+<td>GEAR_Coal
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Fir Firewood
+</td>
+<td>GEAR_Hardwood
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Firelog
+</td>
+<td>GEAR_Firelog
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Reclaimed Wood
+</td>
+<td>GEAR_ReclaimedWoodB
+</td></tr>
+<tr>
+<td>Fire Starting - Fuel
+</td>
+<td>Stick
+</td>
+<td>GEAR_Stick
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>A Sewing Primer (Mending Skill Book - Beginner)
+</td>
+<td>GEAR_BookMending
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Advanced Guns Guns Guns! (Rifle Firearm Skill Book - Advanced)
+</td>
+<td>GEAR_BookRifleFirearmAdvanced
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Field Dressing Your Kill, Vol. 1 (Carcass Harvesting Skill Book -  Intermediate)
+</td>
+<td>GEAR_BookCarcassHarvesting
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Frontier Shooting Guide (Rifle Firearm Skill Book - Beginner)
+</td>
+<td>GEAR_BookRifleFirearm
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Practical Gunsmithing (Gunsmithing Skill Book - Beginner)
+</td>
+<td>GEAR_BookGunsmithing
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Small Arms Handbook (Revolver Firearm Skill Book - Beginner)
+</td>
+<td>GEAR_BookRevolverFirearm
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Stay on Target (Archery Skill Book - Beginner)
+</td>
+<td>GEAR_BookArchery
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Surviving The Outdoors! (Fire Starting Skill Book - Beginner)
+</td>
+<td>GEAR_BookFireStarting
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>The Frozen Angler (Ice Fishing Skill Book - Beginner)
+</td>
+<td>GEAR_BookIceFishing
+</td></tr>
+<tr>
+<td>Fire Starting - Skillbook
+</td>
+<td>Wilderness Kitchen (Cooking Skill Book - Beginner)
+</td>
+<td>GEAR_BookCooking
+</td></tr>
+<tr>
+<td>Fire Starting - Starters
+</td>
+<td>Cardboard Matches (20)
+</td>
+<td>GEAR_PackMatches
+</td></tr>
+<tr>
+<td>Fire Starting - Starters
+</td>
+<td>Firestriker
+</td>
+<td>GEAR_Firestriker
+</td></tr>
+<tr>
+<td>Fire Starting - Starters
+</td>
+<td>Flare
+</td>
+<td>GEAR_FlareA
+</td></tr>
+<tr>
+<td>Fire Starting - Starters
+</td>
+<td>Magnifying Lens
+</td>
+<td>GEAR_MagnifyingLens
+</td></tr>
+<tr>
+<td>Fire Starting - Starters
+</td>
+<td>Marine Flare
+</td>
+<td>GEAR_BlueFlare
+</td></tr>
+<tr>
+<td>Fire Starting - Starters
+</td>
+<td>Torch
+</td>
+<td>GEAR_Torch
+</td></tr>
+<tr>
+<td>Fire Starting - Starters
+</td>
+<td>Wood Matches (12)
+</td>
+<td>GEAR_WoodMatches
+</td></tr>
+<tr>
+<td>Fire Starting - Tinder
+</td>
+<td>Birch Bark
+</td>
+<td>GEAR_BarkTinder
+</td></tr>
+<tr>
+<td>Fire Starting - Tinder
+</td>
+<td>Cash
+</td>
+<td>GEAR_CashBundle
+</td></tr>
+<tr>
+<td>Fire Starting - Tinder
+</td>
+<td>Cat Tail Head
+</td>
+<td>GEAR_CattailTinder
+</td></tr>
+<tr>
+<td>Fire Starting - Tinder
+</td>
+<td>Newsprint
+</td>
+<td>GEAR_Newsprint
+</td></tr>
+<tr>
+<td>Fire Starting - Tinder
+</td>
+<td>Newsprint Roll
+</td>
+<td>GEAR_NewsprintRoll
+</td></tr>
+<tr>
+<td>Fire Starting - Tinder
+</td>
+<td>Stack of Papers
+</td>
+<td>GEAR_PaperStack
+</td></tr>
+<tr>
+<td>Fire Starting - Tinder
+</td>
+<td>Tinder Plug
+</td>
+<td>GEAR_Tinder
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Antibiotics (6)
+</td>
+<td>GEAR_BottleAntibiotics
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Antiseptic
+</td>
+<td>GEAR_BottleHydrogenPeroxide
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Bandage
+</td>
+<td>GEAR_HeavyBandage
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Canister
+</td>
+<td>GEAR_Canister
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Emergency Stim
+</td>
+<td>GEAR_EmergencyStim
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Go! Energy Drink
+</td>
+<td>GEAR_SodaEnergy
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Old Man's Beard Wound Dressing
+</td>
+<td>GEAR_OldMansBeardDressing
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Painkillers (6)
+</td>
+<td>GEAR_BottlePainKillers
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Prepared Birch Bark
+</td>
+<td>GEAR_BirchbarkPrepared
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Prepared Reishi Mushrooms
+</td>
+<td>GEAR_ReishiPrepared
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Prepared Rose Hips
+</td>
+<td>GEAR_RosehipsPrepared
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Respirator
+</td>
+<td>GEAR_Respirator
+</td></tr>
+<tr>
+<td>First Aid
+</td>
+<td>Water Purification Tablets (4)
+</td>
+<td>GEAR_WaterPurificationTablets
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Bear Quarter (0kg, fully harvestable)
+</td>
+<td>GEAR_BearQuarter
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Deer Quarter (0kg, fully harvestable)
+</td>
+<td>GEAR_StagQuarter
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Moose Quarter (0kg, fully harvestable)
+</td>
+<td>GEAR_MooseQuarter
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Ptarmigan Carcass
+</td>
+<td>GEAR_PtarmiganCarcass
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Rabbit Carcass
+</td>
+<td>GEAR_RabbitCarcass
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Wolf Carcass (0kg, fully harvestable)
+</td>
+<td>GEAR_WolfCarcass
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Wolf Quarter (0kg, fully harvestable)
+</td>
+<td>GEAR_TimberwolfQuarter
+</td></tr>
+<tr>
+<td>Food and Drink - Carcasses
+</td>
+<td>Wolf Quarter (0kg, fully harvestable)
+</td>
+<td>GEAR_WolfQuarter
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Birch Bark Tea
+</td>
+<td>GEAR_BirchbarkTea
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Burdock Tea
+</td>
+<td>GEAR_BurdockTea
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Cup of Acorn Coffee
+</td>
+<td>GEAR_AcornCoffeeCup
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Cup of Coffee
+</td>
+<td>GEAR_CoffeeCup
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Cup of Herbal Tea
+</td>
+<td>GEAR_GreenTeaCup
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Orange Soda
+</td>
+<td>GEAR_SodaOrange
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Reishi Tea
+</td>
+<td>GEAR_ReishiTea
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Rose Hip Tea
+</td>
+<td>GEAR_RoseHipTea
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Stacy's Grape Soda
+</td>
+<td>GEAR_SodaGrape
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Summit Soda
+</td>
+<td>GEAR_Soda
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Water (Potable) (0,5L)
+</td>
+<td>GEAR_Water500ml
+</td></tr>
+<tr>
+<td>Food and Drink - Drink
+</td>
+<td>Water (Potable) (1L)
+</td>
+<td>GEAR_Water1000ml
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Acorn Bannock (2)
+</td>
+<td>GEAR_CookedBannockAcorn
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Acorn Pancakes
+</td>
+<td>GEAR_CookedPancakeAcorn
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Airline Food - Chicken
+</td>
+<td>GEAR_AirlineFoodChick
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Airline Food - Vegetarian
+</td>
+<td>GEAR_AirlineFoodVeg
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Bannock (2)
+</td>
+<td>GEAR_CookedBannock
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Bear Meat
+</td>
+<td>GEAR_RawMeatBear
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Bear Meat (Cooked)
+</td>
+<td>GEAR_CookedMeatBear
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Beef Jerky
+</td>
+<td>GEAR_BeefJerky
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Breyerhouse Pie
+</td>
+<td>GEAR_CookedPieMeat
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Broth
+</td>
+<td>GEAR_Broth
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Burbot (Cooked)
+</td>
+<td>GEAR_CookedBurbot
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Burbot (Raw)
+</td>
+<td>GEAR_RawBurbot
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Canned Corn
+</td>
+<td>GEAR_CannedCorn
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Canned Ham
+</td>
+<td>GEAR_CannedHam
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Carrot
+</td>
+<td>GEAR_Carrot
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Cat Tail Head + Cat Tail Stalk
+</td>
+<td>GEAR_CattailPlant
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Cat Tail Stalk
+</td>
+<td>GEAR_CattailStalk
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Chocolate Bar
+</td>
+<td>GEAR_CandyBar
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Coastal Fishcakes (4)
+</td>
+<td>GEAR_CookedFishcakes
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Coho Salmon (Cooked)
+</td>
+<td>GEAR_CookedCohoSalmon
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Coho Salmon (Raw)
+</td>
+<td>GEAR_RawCohoSalmon
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Condensed Milk
+</td>
+<td>GEAR_CondensedMilk
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Cooked Potato
+</td>
+<td>GEAR_PotatoCooked
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Dockworker's Pie
+</td>
+<td>GEAR_CookedPieFishermans
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Dog Food
+</td>
+<td>GEAR_DogFood
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Energy Bar
+</td>
+<td>GEAR_EnergyBar
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Granola Bar
+</td>
+<td>GEAR_GranolaBar
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Ketchup Chips
+</td>
+<td>GEAR_KetchupChips
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Lake Whitefish (Cooked)
+</td>
+<td>GEAR_CookedLakeWhiteFish
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Lake Whitefish (Raw)
+</td>
+<td>GEAR_RawLakeWhiteFish
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Lily's Pancakes
+</td>
+<td>GEAR_CookedPancakePeach
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Maple Syrup
+</td>
+<td>GEAR_MapleSyrup
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Military-Grade MRE
+</td>
+<td>GEAR_MRE
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Moose Meat
+</td>
+<td>GEAR_RawMeatMoose
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Moose Meat (Cooked)
+</td>
+<td>GEAR_CookedMeatMoose
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Pancakes
+</td>
+<td>GEAR_CookedPancake
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Peach Pie (3)
+</td>
+<td>GEAR_CookedPiePeach
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Peanut Butter
+</td>
+<td>GEAR_PeanutButter
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Pinnacle Peaches
+</td>
+<td>GEAR_PinnacleCanPeaches
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Pork and Beans
+</td>
+<td>GEAR_CannedBeans
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Potato
+</td>
+<td>GEAR_Potato
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Prepared Burdock
+</td>
+<td>GEAR_BurdockPrepared
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Prepper's Pie
+</td>
+<td>GEAR_CookedPieForagers
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Ptarmigan (Cooked)
+</td>
+<td>GEAR_CookedMeatPtarmigan
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Ptarmigan (Raw)
+</td>
+<td>GEAR_RawMeatPtarmigan
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Ptarmigan Pie (3)
+</td>
+<td>GEAR_CookedPiePtarmigan
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Ptarmigan Stew
+</td>
+<td>GEAR_CookedStewPtarmigan
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rabbit (Cooked)
+</td>
+<td>GEAR_CookedMeatRabbit
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rabbit (Raw)
+</td>
+<td>GEAR_RawMeatRabbit
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rabbit Pie (3)
+</td>
+<td>GEAR_CookedPieRabbit
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rabbit Stew
+</td>
+<td>GEAR_CookedStewRabbit
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rainbow Trout (Cooked)
+</td>
+<td>GEAR_CookedRainbowTrout
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rainbow Trout (Raw)
+</td>
+<td>GEAR_RawRainbowTrout
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Ranger Stew
+</td>
+<td>GEAR_CookedStewMeat
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Red Irish Lord (Cooked)
+</td>
+<td>GEAR_CookedRedIrishLord
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Red Irish Lord (Raw)
+</td>
+<td>GEAR_RawRedIrishLord
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rockfish (Cooked)
+</td>
+<td>GEAR_CookedRockfish
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rockfish (Raw)
+</td>
+<td>GEAR_RawRockfish
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Rose Hip Pie (3)
+</td>
+<td>GEAR_CookedPieRoseHip
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Salty Crackers
+</td>
+<td>GEAR_Crackers
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Smallmouth Bass (Cooked)
+</td>
+<td>GEAR_CookedSmallMouthBass
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Smallmouth Bass (Raw)
+</td>
+<td>GEAR_RawSmallMouthBass
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Stalker's Pie
+</td>
+<td>GEAR_CookedPiePredator
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Thomson Family Stew
+</td>
+<td>GEAR_CookedStewVegetables
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Tin of Sardines
+</td>
+<td>GEAR_CannedSardines
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Tomato Soup
+</td>
+<td>GEAR_TomatoSoupCan
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Trout Stew
+</td>
+<td>GEAR_CookedStewTrout
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Venison
+</td>
+<td>GEAR_RawMeatDeer
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Venison (Cooked)
+</td>
+<td>GEAR_CookedMeatDeer
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Venison Pie (3)
+</td>
+<td>GEAR_CookedPieVenison
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Venison Stew
+</td>
+<td>GEAR_CookedStewVenison
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Wolf Meat (Cooked)
+</td>
+<td>GEAR_CookedMeatWolf
+</td></tr>
+<tr>
+<td>Food and Drink - Food
+</td>
+<td>Wolf Meat (Raw)
+</td>
+<td>GEAR_RawMeatWolf
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Acorns (Cooked - Large Portion)
+</td>
+<td>GEAR_AcornCookedBig
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Acorns (Cooked)
+</td>
+<td>GEAR_AcornCooked
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Cooking Oil
+</td>
+<td>GEAR_CookingOil
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Herbal Tea (5)
+</td>
+<td>GEAR_GreenTeaPackage
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Old Mill Flour
+</td>
+<td>GEAR_Flour
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Running River Oats
+</td>
+<td>GEAR_OatsTin
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Salt
+</td>
+<td>GEAR_Salt
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Salt Bag
+</td>
+<td>GEAR_SaltBag
+</td></tr>
+<tr>
+<td>Food and Drink - Ingredients
+</td>
+<td>Tin of Coffee
+</td>
+<td>GEAR_CoffeeTin
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Crow Feather
+</td>
+<td>GEAR_CrowFeather
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Ptarmigan Feather
+</td>
+<td>GEAR_PtarmiganFeathers
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Cured Black Bear Hide
+</td>
+<td>GEAR_BearHideDried
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Cured Deer Hide
+</td>
+<td>GEAR_LeatherHideDried
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Cured Gut
+</td>
+<td>GEAR_GutDried
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Cured Moose Hide
+</td>
+<td>GEAR_MooseHideDried
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Cured Rabbit Pelt
+</td>
+<td>GEAR_RabbitPeltDried
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Cured Wolf Pelt
+</td>
+<td>GEAR_WolfPeltDried
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Fresh Black Bear Hide
+</td>
+<td>GEAR_BearHide
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Fresh Deer Hide
+</td>
+<td>GEAR_LeatherHide
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Fresh Gut
+</td>
+<td>GEAR_Gut
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Fresh Moose Hide
+</td>
+<td>GEAR_MooseHide
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Fresh Rabbit Pelt
+</td>
+<td>GEAR_RabbitPelt
+</td></tr>
+<tr>
+<td>Materials - Animal
+</td>
+<td>Fresh Wolf Pelt
+</td>
+<td>GEAR_WolfPelt
+</td></tr>
+<tr>
+<td>Materials - Archery
+</td>
+<td>Arrow Shaft
+</td>
+<td>GEAR_ArrowShaft
+</td></tr>
+<tr>
+<td>Materials - Archery
+</td>
+<td>Arrowhead
+</td>
+<td>GEAR_ArrowHead
+</td></tr>
+<tr>
+<td>Materials - Discontinued
+</td>
+<td>Fresh Leather
+</td>
+<td>GEAR_Leather
+</td></tr>
+<tr>
+<td>Materials - Gunsmithing
+</td>
+<td>Bullet
+</td>
+<td>GEAR_Bullet
+</td></tr>
+<tr>
+<td>Materials - Gunsmithing
+</td>
+<td>Dusting Sulfur
+</td>
+<td>GEAR_DustingSulfur
+</td></tr>
+<tr>
+<td>Materials - Gunsmithing
+</td>
+<td>Revolver Shell Casing
+</td>
+<td>GEAR_RevolverAmmoCasing
+</td></tr>
+<tr>
+<td>Materials - Gunsmithing
+</td>
+<td>Rifle Shell Casing
+</td>
+<td>GEAR_RifleAmmoCasing
+</td></tr>
+<tr>
+<td>Materials - Gunsmithing
+</td>
+<td>Scrap Lead
+</td>
+<td>GEAR_ScrapLead
+</td></tr>
+<tr>
+<td>Materials - Gunsmithing
+</td>
+<td>Stump Remover
+</td>
+<td>GEAR_StumpRemover
+</td></tr>
+<tr>
+<td>Materials - Other
+</td>
+<td>Cloth
+</td>
+<td>GEAR_Cloth
+</td></tr>
+<tr>
+<td>Materials - Other
+</td>
+<td>Cured Leather
+</td>
+<td>GEAR_LeatherDried
+</td></tr>
+<tr>
+<td>Materials - Other
+</td>
+<td>Scrap Metal
+</td>
+<td>GEAR_ScrapMetal
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Acorn Grounds
+</td>
+<td>GEAR_AcornGrounds
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Acorns
+</td>
+<td>GEAR_Acorn
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Burdock Root
+</td>
+<td>GEAR_Burdock
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Cured Birch Sapling
+</td>
+<td>GEAR_BirchSaplingDried
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Cured Maple Sapling
+</td>
+<td>GEAR_MapleSaplingDried
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Green Birch Sapling
+</td>
+<td>GEAR_BirchSapling
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Green Maple Sapling
+</td>
+<td>GEAR_MapleSapling
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Old Man's Beard Lichen
+</td>
+<td>GEAR_OldMansBeardHarvested
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Prepared Acorns
+</td>
+<td>GEAR_AcornShelled
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Prepared Acorns (Large Portion)
+</td>
+<td>GEAR_AcornShelledBig
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Reclaimed Wood
+</td>
+<td>GEAR_ReclaimedWoodB
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Reishi Mushroom
+</td>
+<td>GEAR_ReishiMushroom
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Rose Hip
+</td>
+<td>GEAR_RoseHip
+</td></tr>
+<tr>
+<td>Materials - Plant
+</td>
+<td>Stick
+</td>
+<td>GEAR_Stick
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Acorn Bannock (Prop)
+</td>
+<td>GEAR_UncookedBannockAcorn
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Acorn Pancakes (Prop)
+</td>
+<td>GEAR_UncookedPancakeAcorn
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Bannock (Prop)
+</td>
+<td>GEAR_UncookedBannock
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Breyerhouse Pie (Prop)
+</td>
+<td>GEAR_UncookedPieMeat
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Broth (Prop)
+</td>
+<td>GEAR_UncookedBroth
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Camber Flight Porridge (Prop)
+</td>
+<td>GEAR_UncookedPorridgeFruit
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Coastal Fishcakes (Prop)
+</td>
+<td>GEAR_UncookedFishcakes
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Cooking Pot (Prop)
+</td>
+<td>GEAR_CookingPotDummy
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Dockworker's Pie (Prop)
+</td>
+<td>GEAR_UncookedPieFishermans
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>GAMEPLAY_NEWSPRINTINSILATION
+</td>
+<td>GEAR_NewsprintBootStuffing
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>GAMEPLAY_NEWSPRINTINSILATION
+</td>
+<td>GEAR_NewsprintInsulation
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Gunpowder (Prop)
+</td>
+<td>GEAR_AccelerantGunpowder
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Line (Prop)
+</td>
+<td>GEAR_FishingLine
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Pancakes (Prop)
+</td>
+<td>GEAR_UncookedPancake
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Peach Pie (Prop)
+</td>
+<td>GEAR_UncookedPiePeach
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Porridge (Prop)
+</td>
+<td>GEAR_UncookedPorridge
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Prepper's Pie (Prop)
+</td>
+<td>GEAR_UncookedPieForagers
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Ptarmigan Pie (Prop)
+</td>
+<td>GEAR_UncookedPiePtarmigan
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Ptarmigan Stew (Prop)
+</td>
+<td>GEAR_UncookedStewPtarmigan
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Rabbit Pie (Prop)
+</td>
+<td>GEAR_UncookedPieRabbit
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Rabbit Stew (Prop)
+</td>
+<td>GEAR_UncookedStewRabbit
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Ranger Stew (Prop)
+</td>
+<td>GEAR_UncookedStewMeat
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Rose Hip Pie (Prop)
+</td>
+<td>GEAR_UncookedPieRoseHip
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Stalker's Pie (Prop)
+</td>
+<td>GEAR_UncookedPiePredator
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Thomson Family Stew (Prop)
+</td>
+<td>GEAR_UncookedStewVegetables
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Trout Stew (Prop)
+</td>
+<td>GEAR_UncookedStewTrout
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Venison Pie (Prop)
+</td>
+<td>GEAR_UncookedPieVenison
+</td></tr>
+<tr>
+<td>Props - Prop
+</td>
+<td>Venison Stew (Prop)
+</td>
+<td>GEAR_UncookedStewVenison
+</td></tr>
+<tr>
+<td>Tools - Cooking
+</td>
+<td>Can Opener
+</td>
+<td>GEAR_CanOpener
+</td></tr>
+<tr>
+<td>Tools - Cooking
+</td>
+<td>Cooking Pot
+</td>
+<td>GEAR_CookingPot
+</td></tr>
+<tr>
+<td>Tools - Cooking
+</td>
+<td>Cooking Skillet
+</td>
+<td>GEAR_Skillet
+</td></tr>
+<tr>
+<td>Tools - Cooking
+</td>
+<td>Cougar Claw Knife
+</td>
+<td>GEAR_CougarClawKnife
+</td></tr>
+<tr>
+<td>Tools - Cooking
+</td>
+<td>Insulated Flask
+</td>
+<td>GEAR_InsulatedFlask_A
+</td></tr>
+<tr>
+<td>Tools - Cooking
+</td>
+<td>Recycled Can
+</td>
+<td>GEAR_RecycledCan
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Hacksaw
+</td>
+<td>GEAR_Hacksaw
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Hatchet
+</td>
+<td>GEAR_Hatchet
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Heavy Hammer
+</td>
+<td>GEAR_Hammer
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Hunting Knife
+</td>
+<td>GEAR_Knife
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Improvised Hatchet
+</td>
+<td>GEAR_HatchetImprovised
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Improvised Knife
+</td>
+<td>GEAR_KnifeImprovised
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Prybar
+</td>
+<td>GEAR_Prybar
+</td></tr>
+<tr>
+<td>Tools - Hand Tools
+</td>
+<td>Survival knife
+</td>
+<td>GEAR_SurvivalKnife
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Fishing Bait
+</td>
+<td>GEAR_FishingBaitA
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Fishing Lure (Acorn)
+</td>
+<td>GEAR_FishingLureC
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Fishing Lure (Casing)
+</td>
+<td>GEAR_FishingLureB
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Fishing Lure (Wire)
+</td>
+<td>GEAR_FishingLureD
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Fishing Tackle
+</td>
+<td>GEAR_HookAndLine
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Fishing Tip-UP
+</td>
+<td>GEAR_TipUp
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Hook
+</td>
+<td>GEAR_Hook
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Line
+</td>
+<td>GEAR_Line
+</td></tr>
+<tr>
+<td>Tools - Ice Fishing
+</td>
+<td>Simple Fishing Lure
+</td>
+<td>GEAR_FishingLureA
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Flare
+</td>
+<td>GEAR_FlareA
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Flashlight
+</td>
+<td>GEAR_Flashlight
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Jerry Can
+</td>
+<td>GEAR_JerrycanRusty
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Lantern Fuel (0.50 kg)
+</td>
+<td>GEAR_LampFuelFull
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Lantern Fuel (Random amount)
+</td>
+<td>GEAR_LampFuel
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Magnifying Lens
+</td>
+<td>GEAR_MagnifyingLens
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Marine Flare
+</td>
+<td>GEAR_BlueFlare
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Spelunker's Lantern
+</td>
+<td>GEAR_KeroseneLamp_Spelunkers
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Storm Lantern
+</td>
+<td>GEAR_KeroseneLampB
+</td></tr>
+<tr>
+<td>Tools - Light
+</td>
+<td>Torch
+</td>
+<td>GEAR_Torch
+</td></tr>
+<tr>
+<td>Tools - Mending
+</td>
+<td>Firearm Cleaning Kit
+</td>
+<td>GEAR_RifleCleaningKit
+</td></tr>
+<tr>
+<td>Tools - Mending
+</td>
+<td>Fishing Tackle
+</td>
+<td>GEAR_HookAndLine
+</td></tr>
+<tr>
+<td>Tools - Mending
+</td>
+<td>Quality Tools
+</td>
+<td>GEAR_HighQualityTools
+</td></tr>
+<tr>
+<td>Tools - Mending
+</td>
+<td>Sewing Kit
+</td>
+<td>GEAR_SewingKit
+</td></tr>
+<tr>
+<td>Tools - Mending
+</td>
+<td>Simple Tools
+</td>
+<td>GEAR_SimpleTools
+</td></tr>
+<tr>
+<td>Tools - Mending
+</td>
+<td>Whetstone
+</td>
+<td>GEAR_SharpeningStone
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Broken Arrow
+</td>
+<td>GEAR_BrokenArrow
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Broken Fire Hardened Arrow
+</td>
+<td>GEAR_BrokenArrowHardened
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Charcoal
+</td>
+<td>GEAR_Charcoal
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Elevator Crank
+</td>
+<td>GEAR_SurvivalElevatorCrank
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Gold Nugget
+</td>
+<td>GEAR_GoldNugget
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Handheld Shortwave Radio
+</td>
+<td>GEAR_HandheldShortwave
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Handheld Shortwave Radio (Starts Tales)
+</td>
+<td>GEAR_Tale1ChiefNote1
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Mountaineering Rope
+</td>
+<td>GEAR_Rope
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Snare
+</td>
+<td>GEAR_Snare
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Spray Paint
+</td>
+<td>GEAR_SprayPaintCan
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Spray Paint - Glyph (Darkwalker)
+</td>
+<td>GEAR_SprayPaintCanGlyphA
+</td></tr>
+<tr>
+<td>Tools - Other
+</td>
+<td>Travois
+</td>
+<td>GEAR_Travois
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>A Sewing Primer (Mending Skill Book - Beginner)
+</td>
+<td>GEAR_BookMending
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Advanced Guns Guns Guns! (Rifle Firearm Skill Book - Advanced)
+</td>
+<td>GEAR_BookRifleFirearmAdvanced
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Field Dressing Your Kill, Vol. 1 (Carcass Harvesting Skill Book -  Intermediate)
+</td>
+<td>GEAR_BookCarcassHarvesting
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Frontier Shooting Guide (Rifle Firearm Skill Book - Beginner)
+</td>
+<td>GEAR_BookRifleFirearm
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Practical Gunsmithing (Gunsmithing Skill Book - Beginner)
+</td>
+<td>GEAR_BookGunsmithing
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Small Arms Handbook (Revolver Firearm Skill Book - Beginner)
+</td>
+<td>GEAR_BookRevolverFirearm
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Stay on Target (Archery Skill Book - Beginner)
+</td>
+<td>GEAR_BookArchery
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Surviving The Outdoors! (Fire Starting Skill Book - Beginner)
+</td>
+<td>GEAR_BookFireStarting
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>The Frozen Angler (Ice Fishing Skill Book - Beginner)
+</td>
+<td>GEAR_BookIceFishing
+</td></tr>
+<tr>
+<td>Tools - Research
+</td>
+<td>Wilderness Kitchen (Cooking Skill Book - Beginner)
+</td>
+<td>GEAR_BookCooking
+</td></tr>
+<tr>
+<td>Tools - Sleep
+</td>
+<td>Bear Skin Bedroll
+</td>
+<td>GEAR_BearSkinBedRoll
+</td></tr>
+<tr>
+<td>Tools - Sleep
+</td>
+<td>Bedroll
+</td>
+<td>GEAR_BedRoll
+</td></tr>
+<tr>
+<td>Tools - Sleep
+</td>
+<td>Improvised Down Bedroll
+</td>
+<td>GEAR_BedRoll_Down
+</td></tr>
+<tr>
+<td>Tools - Transmitter Parts
+</td>
+<td>Car Battery
+</td>
+<td>GEAR_CarBattery
+</td></tr>
+<tr>
+<td>Tools - Transmitter Parts
+</td>
+<td>Replacement Fuse
+</td>
+<td>GEAR_Fuse
+</td></tr>
+<tr>
+<td>Tools - Transmitter Parts
+</td>
+<td>Wires
+</td>
+<td>GEAR_WireBundle
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Barb's Rifle
+</td>
+<td>GEAR_Rifle_Barbs
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Bunker Rifle
+</td>
+<td>GEAR_Rifle_Trader
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Can of Gunpowder
+</td>
+<td>GEAR_GunpowderCan
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Curator's Rifle
+</td>
+<td>GEAR_Rifle_Curators
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Distress Pistol
+</td>
+<td>GEAR_FlareGun
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Fire Hardened Arrow
+</td>
+<td>GEAR_ArrowHardened
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Flare Shell
+</td>
+<td>GEAR_FlareGunAmmoSingle
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Forester's Revolver
+</td>
+<td>GEAR_RevolverGreen
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Hunter's Revolver
+</td>
+<td>GEAR_RevolverFancy
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Hunting Rifle
+</td>
+<td>GEAR_Rifle
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Manufactured Arrow
+</td>
+<td>GEAR_ArrowManufactured
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Noisemaker
+</td>
+<td>GEAR_NoiseMaker
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Revolver
+</td>
+<td>GEAR_Revolver
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Revolver Ammunition (1)
+</td>
+<td>GEAR_RevolverAmmoSingle
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Revolver Ammunition (10)
+</td>
+<td>GEAR_RevolverAmmoBox
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Rifle Ammunition (1)
+</td>
+<td>GEAR_RifleAmmoSingle
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Rifle Ammunition (5)
+</td>
+<td>GEAR_RifleAmmoBox
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Simple Arrow
+</td>
+<td>GEAR_Arrow
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Stone
+</td>
+<td>GEAR_Stone
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Survival Bow
+</td>
+<td>GEAR_Bow
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Vaughn's Rifle
+</td>
+<td>GEAR_Rifle_Vaughns
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Warden's Revolver
+</td>
+<td>GEAR_RevolverStubNosed
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Woodwright's Bow
+</td>
+<td>GEAR_Bow_Woodwrights
+</td></tr>
+<tr>
+<td>Tools - Weapons
+</td>
+<td>Bushcraft Bow
+</td>
+<td>GEAR_Bow_Bushcraft
+</td></tr>
+<tr>
+<td>Tools - Wintermute
+</td>
+<td>Bear Spear
+</td>
+<td>GEAR_BearSpear
+</td></tr>
+<tr>
+<td>Tools - Wintermute
+</td>
+<td>Broken Bear Spear
+</td>
+<td>GEAR_BearSpearBroken
+</td></tr>
+<tr>
+<td>Tools - Wintermute
+</td>
+<td>Elevator Crank
+</td>
+<td>GEAR_SurvivalElevatorCrank
+</td></tr>
+<tr>
+<td>Tools - Wintermute
+</td>
+<td>Spear Head
+</td>
+<td>GEAR_SpearHead
+</td></tr></tbody><tfoot></tfoot></table>
+
+
+
+<table title="Tales">
+
+<tbody><tr>
+<th>Category</th>
+<th>Name</th>
+<th>Console Name
+</th></tr>
+<tr>
+<td>Clothing</td>
+<td>Rifle Scabbard</td>
+<td>GEAR_RifleScabbardA
+</td></tr>
+<tr>
+<td>Clothing</td>
+<td>Flight Jacket</td>
+<td>GEAR_JacketLeatherFlightA
+</td></tr>
+<tr>
+<td>Clothing</td>
+<td>Jersy</td>
+<td>GEAR_JerseyHockeyA
+</td></tr>
+<tr>
+<td>Clothing</td>
+<td>Technical Balaclava</td>
+<td>GEAR_HatGatorBalaclavaA
+</td></tr>
+<tr>
+<td>Clothing</td>
+<td>Aviator Cap</td>
+<td>GEAR_HatLeatherAviatorA
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Post Card</td>
+<td>GEAR_PostCard_AF_Cabin
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Post Card</td>
+<td>GEAR_PostCard_AF_Plateau
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldCabinNote
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldCargomasterNote
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldControlNote
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldGeologistNote1
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldHangarNote
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldJunkerNote
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldSecChiefNote1
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Note</td>
+<td>GEAR_AirfieldTowerNote
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Clip Board</td>
+<td>GEAR_ClipBoardBunker_A
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Clip Board</td>
+<td>GEAR_ClipBoardBunker_B
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Clip Board</td>
+<td>GEAR_ClipBoardBunker_C
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Clip Board</td>
+<td>GEAR_ClipBoardBunker_D
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Log Book</td>
+<td>GEAR_Logbook_A01
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Log Book</td>
+<td>GEAR_Logbook_A02
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Log Book</td>
+<td>GEAR_Logbook_A03
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Log Book</td>
+<td>GEAR_Logbook_A04
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Chiefs Note</td>
+<td>GEAR_Tale1ChiefNote1
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Chiefs Note</td>
+<td>GEAR_Tale1ChiefNote2
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Chiefs Note</td>
+<td>GEAR_Tale1ChiefNote3
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Chiefs Note</td>
+<td>GEAR_Tale1ChiefNote4
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Chiefs Note</td>
+<td>GEAR_Tale1ChiefNote5
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Transcript</td>
+<td>GEAR_Tale1Transcript1
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Transcript</td>
+<td>GEAR_Tale1Transcript2
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Transcript</td>
+<td>GEAR_Tale1Transcript3
+</td></tr>
+<tr>
+<td>Collectibles</td>
+<td>Transcript</td>
+<td>GEAR_Tale1Transcript4
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Canned Ham</td>
+<td>GEAR_CannedHam
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Canned Corn</td>
+<td>GEAR_CannedCorn
+</td></tr>
+<tr>
+<td>Light Source</td>
+<td>Spelunkers Lamp</td>
+<td>GEAR_KeroseneLamp_Spelunkers
+</td></tr>
+<tr>
+<td>Navigation</td>
+<td>Handheld Shortwave</td>
+<td>GEAR_HandheldShortwave
+</td></tr>
+<tr>
+<td>Misc</td>
+<td>Fuse</td>
+<td>GEAR_Fuse
+</td></tr>
+<tr>
+<td>Misc</td>
+<td>Wires</td>
+<td>GEAR_WireBundle
+</td></tr>
+<tr>
+<td>Weapon</td>
+<td>Woodwrights Bow</td>
+<td>GEAR_Bow_Woodwrights
+</td></tr>
+<tr>
+<td>Weapon</td>
+<td>Barb's Rifle</td>
+<td>GEAR_Rifle_Barbs
+</td></tr>
+<tr>
+<td>Weapon</td>
+<td>Curators Rifle</td>
+<td>GEAR_Rifle_Curators
+</td></tr>
+<tr>
+<td>Weapon</td>
+<td>Vaughn's Rifle</td>
+<td>GEAR_Rifle_Vaughns
+</td></tr>
+</tbody></table>
+
+
+<table title="Broken Silence">
+
+<tbody><tr>
+<th>Category</th>
+<th>Name</th>
+<th>Console Name
+</th></tr>
+<tr>
+<td>Food</td>
+<td>Ptarmigan Carcass</td>
+<td>GEAR_PtarmiganCarcass
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Raw Ptarmigan</td>
+<td>GEAR_RawMeatPtarmigan
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Cooked Ptarmigan</td>
+<td>GEAR_CookedMeatPtarmigan
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Old Mill Flour</td>
+<td>GEAR_Flour
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Cooking Oil</td>
+<td>GEAR_CookingOil
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Salt</td>
+<td>GEAR_Salt
+</td></tr>
+<tr>
+<td>Food</td>
+<td>Broth</td>
+<td>GEAR_Broth
+</td></tr>
+</tbody></table>

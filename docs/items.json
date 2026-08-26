@@ -1,0 +1,2771 @@
+{
+  "sections": [
+    {
+      "title": "Base Game",
+      "categories": [
+        {
+          "title": "Clothing",
+          "sub": "Accessories",
+          "items": [
+            {
+              "name": "Ballistic Vest",
+              "id": "GEAR_BallisticVest"
+            },
+            {
+              "name": "Crampons",
+              "id": "GEAR_Crampons"
+            },
+            {
+              "name": "Foreman's Tool Belt",
+              "id": "GEAR_ToolBelt"
+            },
+            {
+              "name": "Improvised Crampons",
+              "id": "GEAR_ImprovisedCrampons"
+            },
+            {
+              "name": "Improvised Insulation",
+              "id": "GEAR_ImprovisedDownInsulation"
+            },
+            {
+              "name": "Moose-Hide Satchel",
+              "id": "GEAR_MooseHideBag"
+            },
+            {
+              "name": "Security Chief's Rifle Holster",
+              "id": "GEAR_RifleScabbardA"
+            },
+            {
+              "name": "Technical Backpack (upgrade)",
+              "id": "GEAR_TechnicalBackpack"
+            },
+            {
+              "name": "Wool Ear Wrap",
+              "id": "GEAR_EarMuffs"
+            }
+          ]
+        },
+        {
+          "title": "Clothing",
+          "sub": "Gloves",
+          "items": [
+            {
+              "name": "Driving Gloves",
+              "id": "GEAR_BasicGloves"
+            },
+            {
+              "name": "Fleece Mittens",
+              "id": "GEAR_FleeceMittens"
+            },
+            {
+              "name": "Gauntlets",
+              "id": "GEAR_Gauntlets"
+            },
+            {
+              "name": "Improvised Hand Wraps",
+              "id": "GEAR_ImprovisedMittens"
+            },
+            {
+              "name": "Patterned Wool Mittens (Blue)",
+              "id": "GEAR_MittenBlueStripe"
+            },
+            {
+              "name": "Patterned Wool Mittens (Brown)",
+              "id": "GEAR_MittenBrownPattern"
+            },
+            {
+              "name": "Patterned Wool Mittens (Burgundy)",
+              "id": "GEAR_MittenBurgundyPattern"
+            },
+            {
+              "name": "Rabbitskin Mitts",
+              "id": "GEAR_RabbitSkinMittens"
+            },
+            {
+              "name": "Ski Gloves",
+              "id": "GEAR_SkiGloves"
+            },
+            {
+              "name": "Tactical Gloves",
+              "id": "GEAR_TacticalGloves"
+            },
+            {
+              "name": "Wool Mittens",
+              "id": "GEAR_Mittens"
+            },
+            {
+              "name": "Work Gloves",
+              "id": "GEAR_WorkGloves"
+            }
+          ]
+        },
+        {
+          "title": "Clothing",
+          "sub": "Headgear",
+          "items": [
+            {
+              "name": "Aviator Cap",
+              "id": "GEAR_HatLeatherAviatorA"
+            },
+            {
+              "name": "Balaclava",
+              "id": "GEAR_Balaclava"
+            },
+            {
+              "name": "Baseball Cap",
+              "id": "GEAR_BaseballCap"
+            },
+            {
+              "name": "Cougar Hide Wrap",
+              "id": "GEAR_CougarWrap"
+            },
+            {
+              "name": "Cotton Scarf",
+              "id": "GEAR_CottonScarf"
+            },
+            {
+              "name": "Cotton Toque",
+              "id": "GEAR_BasicWoolHat"
+            },
+            {
+              "name": "Fleece Cowl",
+              "id": "GEAR_WoolWrapCap"
+            },
+            {
+              "name": "Hardhat",
+              "id": "GEAR_MinersHelmet"
+            },
+            {
+              "name": "Improvised Head Wrap",
+              "id": "GEAR_ImprovisedHat"
+            },
+            {
+              "name": "Long Wool Scarf",
+              "id": "GEAR_WoolWrap"
+            },
+            {
+              "name": "Rabbitskin Hat",
+              "id": "GEAR_RabbitskinHat"
+            },
+            {
+              "name": "Tachnical Balaclava",
+              "id": "GEAR_HatGatorBalaclavaA"
+            },
+            {
+              "name": "Tachnical Balaclava",
+              "id": "GEAR_HatGatorBalaclavaA"
+            },
+            {
+              "name": "Wolfskin Hat",
+              "id": "GEAR_WolfSkinHat"
+            },
+            {
+              "name": "Wool Toque",
+              "id": "GEAR_Toque"
+            }
+          ]
+        },
+        {
+          "title": "Clothing",
+          "sub": "Pants",
+          "items": [
+            {
+              "name": "Cargo Pants",
+              "id": "GEAR_CargoPants"
+            },
+            {
+              "name": "Combat Pants",
+              "id": "GEAR_CombatPants"
+            },
+            {
+              "name": "Deerskin Pants",
+              "id": "GEAR_DeerSkinPants"
+            },
+            {
+              "name": "Jeans",
+              "id": "GEAR_Jeans"
+            },
+            {
+              "name": "Miner's Pants",
+              "id": "GEAR_MinersPants"
+            },
+            {
+              "name": "Snow Pants",
+              "id": "GEAR_InsulatedPants"
+            },
+            {
+              "name": "Thermal Underwear",
+              "id": "GEAR_LongUnderwear"
+            },
+            {
+              "name": "Wolfskin Pants",
+              "id": "GEAR_WolfSkinPant"
+            },
+            {
+              "name": "Wool Longjohns",
+              "id": "GEAR_LongUnderwearWool"
+            },
+            {
+              "name": "Work Pants",
+              "id": "GEAR_WorkPants"
+            }
+          ]
+        },
+        {
+          "title": "Clothing",
+          "sub": "Shirts",
+          "items": [
+            {
+              "name": "Bearskin Coat",
+              "id": "GEAR_BearSkinCoat"
+            },
+            {
+              "name": "Cowichan Sweater",
+              "id": "GEAR_CowichanSweater"
+            },
+            {
+              "name": "Down Vest",
+              "id": "GEAR_DownVest"
+            },
+            {
+              "name": "Dress Shirt",
+              "id": "GEAR_CottonShirt"
+            },
+            {
+              "name": "Expedition Parka",
+              "id": "GEAR_PremiumWinterCoat"
+            },
+            {
+              "name": "Festive Sweater",
+              "id": "GEAR_SweaterChristmasA"
+            },
+            {
+              "name": "Fisherman's Sweater",
+              "id": "GEAR_FishermanSweater"
+            },
+            {
+              "name": "Flight Jacket",
+              "id": "GEAR_JacketLeatherFlightA"
+            },
+            {
+              "name": "Hockey Jersey",
+              "id": "GEAR_JerseyHockeyA"
+            },
+            {
+              "name": "Hoodie",
+              "id": "GEAR_CottonHoodie"
+            },
+            {
+              "name": "Light Shell",
+              "id": "GEAR_SkiJacket"
+            },
+            {
+              "name": "Mackinaw Jacket",
+              "id": "GEAR_MackinawJacket"
+            },
+            {
+              "name": "Mariner's Pea Coat",
+              "id": "GEAR_QualityWinterCoat"
+            },
+            {
+              "name": "Military Coat",
+              "id": "GEAR_MilitaryParka"
+            },
+            {
+              "name": "Miner's Jacket",
+              "id": "GEAR_MinersJacket"
+            },
+            {
+              "name": "Moose-Hide Cloak",
+              "id": "GEAR_MooseHideCloak"
+            },
+            {
+              "name": "Old Fashioned Parka",
+              "id": "GEAR_HeavyParka"
+            },
+            {
+              "name": "Plaid Shirt",
+              "id": "GEAR_PlaidShirt"
+            },
+            {
+              "name": "Simple Parka",
+              "id": "GEAR_LightParka"
+            },
+            {
+              "name": "Ski Jacket",
+              "id": "GEAR_DownSkiJacket"
+            },
+            {
+              "name": "Sport Vest",
+              "id": "GEAR_InsulatedVest"
+            },
+            {
+              "name": "Sweatshirt",
+              "id": "GEAR_FleeceSweater"
+            },
+            {
+              "name": "Tactical Jacket",
+              "id": "GEAR_TacticalJacket"
+            },
+            {
+              "name": "Thick Wool Sweater",
+              "id": "GEAR_HeavyWoolSweater"
+            },
+            {
+              "name": "Thin Wool Sweater",
+              "id": "GEAR_WoolSweater"
+            },
+            {
+              "name": "T-Shirt",
+              "id": "GEAR_TeeShirt"
+            },
+            {
+              "name": "T-Shirt (CM)",
+              "id": "GEAR_TShirtCM"
+            },
+            {
+              "name": "T-Shirt (GBI)",
+              "id": "GEAR_TShirtGBI"
+            },
+            {
+              "name": "T-Shirt (Snappy)",
+              "id": "GEAR_TShirtSnappy"
+            },
+            {
+              "name": "Urban Parka",
+              "id": "GEAR_DownParka"
+            },
+            {
+              "name": "Windbreaker",
+              "id": "GEAR_BasicWinterCoat"
+            },
+            {
+              "name": "Wolfskin Coat",
+              "id": "GEAR_WolfSkinCape"
+            },
+            {
+              "name": "Wool Shirt",
+              "id": "GEAR_WoolShirt"
+            }
+          ]
+        },
+        {
+          "title": "Clothing",
+          "sub": "Shoes",
+          "items": [
+            {
+              "name": "Chemical Boots",
+              "id": "GEAR_MinersBoots"
+            },
+            {
+              "name": "Climbing Socks",
+              "id": "GEAR_ClimbingSocks"
+            },
+            {
+              "name": "Combat Boots",
+              "id": "GEAR_CombatBoots"
+            },
+            {
+              "name": "Deerskin Boots",
+              "id": "GEAR_DeerSkinBoots"
+            },
+            {
+              "name": "Insulated Boots",
+              "id": "GEAR_InsulatedBoots"
+            },
+            {
+              "name": "Leather Shoes",
+              "id": "GEAR_LeatherShoes"
+            },
+            {
+              "name": "Mukluks",
+              "id": "GEAR_MuklukBoots"
+            },
+            {
+              "name": "Patterned Wool Socks (Dots)",
+              "id": "GEAR_SockDots"
+            },
+            {
+              "name": "Patterned Wool Socks (Moose)",
+              "id": "GEAR_SockMoose"
+            },
+            {
+              "name": "Patterned Wool Socks (Plaid)",
+              "id": "GEAR_SockPlaid"
+            },
+            {
+              "name": "Running Shoes",
+              "id": "GEAR_BasicShoes"
+            },
+            {
+              "name": "Ski Boots",
+              "id": "GEAR_SkiBoots"
+            },
+            {
+              "name": "Sports Socks",
+              "id": "GEAR_CottonSocks"
+            },
+            {
+              "name": "Trail Boots",
+              "id": "GEAR_BasicBoots"
+            },
+            {
+              "name": "Wool Socks",
+              "id": "GEAR_WoolSocks"
+            },
+            {
+              "name": "Work Boots",
+              "id": "GEAR_WorkBoots"
+            }
+          ]
+        },
+        {
+          "title": "Collectibles",
+          "sub": "Memento",
+          "items": [
+            {
+              "name": "Memento - Blackrock - Memento Key",
+              "id": "GEAR_VisorNoteBlackrockKey3"
+            },
+            {
+              "name": "Memento - Blackrock - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteBlackrock2"
+            },
+            {
+              "name": "Memento - Blackrock - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteBlackrock3"
+            },
+            {
+              "name": "Memento - Blackrock - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteBlackrock1"
+            },
+            {
+              "name": "Memento - Bleak Inlet - Memento Key",
+              "id": "GEAR_BIKey1"
+            },
+            {
+              "name": "Memento - Bleak Inlet - Memento Key",
+              "id": "GEAR_BIKey2"
+            },
+            {
+              "name": "Memento - Bleak Inlet - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteBI1"
+            },
+            {
+              "name": "Memento - Bleak Inlet - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteBI2"
+            },
+            {
+              "name": "Memento - Bleak Inlet - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteBI3"
+            },
+            {
+              "name": "Memento - Bolt Cutters",
+              "id": "GEAR_BoltCutters"
+            },
+            {
+              "name": "Memento - Broken Railroad - Memento Key",
+              "id": "GEAR_BRKey1"
+            },
+            {
+              "name": "Memento - Broken Railroad - Memento Key",
+              "id": "GEAR_BRKey2"
+            },
+            {
+              "name": "Memento - Broken Railroad - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteBR1"
+            },
+            {
+              "name": "Memento - Broken Railroad - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteBR2"
+            },
+            {
+              "name": "Memento - Broken Railroad - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteBR3"
+            },
+            {
+              "name": "Memento - Coastal Highway - Memento Key",
+              "id": "GEAR_VisorNoteACKey1"
+            },
+            {
+              "name": "Memento - Coastal Highway - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteAC1"
+            },
+            {
+              "name": "Memento - Coastal Highway - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteCH1"
+            },
+            {
+              "name": "Memento - Coastal Highway - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteCH2"
+            },
+            {
+              "name": "Memento - Coastal Highway - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteAC2"
+            },
+            {
+              "name": "Memento - Coastal Highway - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteAC3"
+            },
+            {
+              "name": "Memento - Desolation Point - Memento Key",
+              "id": "GEAR_VisorNoteDPKey1"
+            },
+            {
+              "name": "Memento - Desolation Point - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteDP1"
+            },
+            {
+              "name": "Memento - Desolation Point - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteDP2"
+            },
+            {
+              "name": "Memento - Desolation Point - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteDP3"
+            },
+            {
+              "name": "Memento - Forlorn Muskeg - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteFM1"
+            },
+            {
+              "name": "Memento - Forlorn Muskeg - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteFM2"
+            },
+            {
+              "name": "Memento - Forlorn Muskeg - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteFM3"
+            },
+            {
+              "name": "Memento - Hushed River Valley - Memento Key",
+              "id": "GEAR_VisorNoteHRVKey1"
+            },
+            {
+              "name": "Memento - Hushed River Valley - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteHRV1"
+            },
+            {
+              "name": "Memento - Hushed River Valley - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteHRV2"
+            },
+            {
+              "name": "Memento - Hushed River Valley - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteHRV3"
+            },
+            {
+              "name": "Memento - Mountain Town - Memento Key",
+              "id": "GEAR_VisorNoteMTKey1"
+            },
+            {
+              "name": "Memento - Mountain Town - Paradise Meadows Farm Key",
+              "id": "GEAR_MountainTownFarmKey"
+            },
+            {
+              "name": "Memento - Mountain Town - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteMT1"
+            },
+            {
+              "name": "Memento - Mountain Town - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteMT2"
+            },
+            {
+              "name": "Memento - Mountain Town - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteMT3"
+            },
+            {
+              "name": "Memento - Mystery Lake - Memento Key",
+              "id": "GEAR_VisorNoteMLKey2"
+            },
+            {
+              "name": "Memento - Mystery Lake - Memento Key",
+              "id": "GEAR_VisorNoteMLKey3"
+            },
+            {
+              "name": "Memento - Mystery Lake - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteML2"
+            },
+            {
+              "name": "Memento - Mystery Lake - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNoteML3"
+            },
+            {
+              "name": "Memento - Mystery Lake - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteML1"
+            },
+            {
+              "name": "Memento - Pleasant Valley - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNotePV1"
+            },
+            {
+              "name": "Memento - Pleasant Valley - Scrawled Message (Memento Cache)",
+              "id": "GEAR_VisorNotePV2"
+            },
+            {
+              "name": "Memento - Pleasant Valley - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNotePV3"
+            },
+            {
+              "name": "Memento - Timberwolf Mountain - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteTWM1"
+            },
+            {
+              "name": "Memento - Timberwolf Mountain - Scrawled Message (Memento Hint)",
+              "id": "GEAR_VisorNoteTWM2"
+            },
+            {
+              "name": "Memento - Zone of Contamination - Mine Lockbox Key",
+              "id": "GEAR_LangstonMineLockboxKey1"
+            },
+            {
+              "name": "Memento - Zone of Contamination - Mine Lockbox Key",
+              "id": "GEAR_Tale2_LockerKey"
+            },
+            {
+              "name": "Memento - Zone of Contamination - Mine Office Key",
+              "id": "GEAR_LangstonMineKey1"
+            },
+            {
+              "name": "Memento - Zone of Contamination - Mine Office Key",
+              "id": "GEAR_Tale2_CorpseKey"
+            }
+          ]
+        },
+        {
+          "title": "Collectibles",
+          "sub": "Note",
+          "items": [
+            {
+              "name": "Note -  - Langston Mine Memo",
+              "id": "GEAR_MineRegionPumphouseNote"
+            },
+            {
+              "name": "Note -  - Mining Newsletter",
+              "id": "GEAR_MineRegionBunkhouseNote"
+            },
+            {
+              "name": "Note - Airfield - Faded Paper",
+              "id": "GEAR_AirfieldGeologistNote1"
+            },
+            {
+              "name": "Note - Airfield - Journal Page",
+              "id": "GEAR_AirfieldJunkerNote"
+            },
+            {
+              "name": "Note - Airfield - Memo",
+              "id": "GEAR_AirfieldHangarNote"
+            },
+            {
+              "name": "Note - Airfield - Note",
+              "id": "GEAR_AirfieldControlNote"
+            },
+            {
+              "name": "Note - Airfield - Note (bugged)",
+              "id": "GEAR_AirfieldTowerNote"
+            },
+            {
+              "name": "Note - Airfield - Page",
+              "id": "GEAR_AirfieldCabinNote"
+            },
+            {
+              "name": "Note - Airfield - Paper",
+              "id": "GEAR_AirfieldCargomasterNote"
+            },
+            {
+              "name": "Note - Airfield - Stained Paper",
+              "id": "GEAR_AirfieldSecChiefNote1"
+            },
+            {
+              "name": "Note - Ash Canyon - Diary Page",
+              "id": "GEAR_CanyonFishingHutJournal"
+            },
+            {
+              "name": "Note - Ash Canyon - Notebook Page",
+              "id": "GEAR_CanyonClimbersCaveNote"
+            },
+            {
+              "name": "Note - Ash Canyon - Notebook Page",
+              "id": "GEAR_CanyonDeadClimberNote"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote1A"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote1B"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote1C"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote2A"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote2B"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote2C"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote3A"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote3B"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote3C"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote4A"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote4B"
+            },
+            {
+              "name": "Note - Backer - A Note Left Behind",
+              "id": "GEAR_BackerNote4C"
+            },
+            {
+              "name": "Note - Blackrock - Blackrock Memo (bugged)",
+              "id": "GEAR_BlackrockAmmoRoomNote"
+            },
+            {
+              "name": "Note - Blackrock - Handwritten Note (bugged)",
+              "id": "GEAR_BlackrockCodeNote"
+            },
+            {
+              "name": "Note - Blackrock - Note (bugged)",
+              "id": "GEAR_BlackrockSecurityNote"
+            },
+            {
+              "name": "Note - Blackrock - Note (bugged)",
+              "id": "GEAR_BlackrockTowerNote"
+            },
+            {
+              "name": "Note - Blackrock - Page (bugged)",
+              "id": "GEAR_BlackrockAdminNote"
+            },
+            {
+              "name": "Note - Bleak Inlet - Communication Report (Contains workshop door key  code)",
+              "id": "GEAR_CanneryCodeNote"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary1"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary10"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary11"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary2"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary3"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary4"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary5"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary6"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary7"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary8"
+            },
+            {
+              "name": "Note - Darkwalker - Diary Page",
+              "id": "GEAR_DarkwalkerDiary9"
+            },
+            {
+              "name": "Note - Darkwalker - ID: Naomi Moore",
+              "id": "GEAR_DarkwalkerID"
+            },
+            {
+              "name": "Note - Deadman - Memento Mori 1",
+              "id": "GEAR_DeadmanNote1"
+            },
+            {
+              "name": "Note - Deadman - Memento Mori 2",
+              "id": "GEAR_DeadmanNote2"
+            },
+            {
+              "name": "Note - Deadman - Memento Mori 3",
+              "id": "GEAR_DeadmanNote3"
+            },
+            {
+              "name": "Note - Deadman - Memento Mori 4",
+              "id": "GEAR_DeadmanNote4"
+            },
+            {
+              "name": "Note - Deadman - Memento Mori 5",
+              "id": "GEAR_DeadmanNote5"
+            },
+            {
+              "name": "Note - Tales - A Page From A Journal",
+              "id": "GEAR_Tale2GeologistNote1"
+            },
+            {
+              "name": "Note - Tales - Interview Transcript 12",
+              "id": "GEAR_Tale1Transcript3"
+            },
+            {
+              "name": "Note - Tales - Interview Transcript 14",
+              "id": "GEAR_Tale1Transcript1"
+            },
+            {
+              "name": "Note - Tales - Interview Transcript 17",
+              "id": "GEAR_Tale1Transcript4"
+            },
+            {
+              "name": "Note - Tales - Interview Transcript 4",
+              "id": "GEAR_Tale1Transcript2"
+            },
+            {
+              "name": "Note - Tales - My Testament",
+              "id": "GEAR_Tale2RudigerNote1"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 14",
+              "id": "GEAR_Logbook_A02"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 14",
+              "id": "GEAR_Tale1ChiefNote3"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 23",
+              "id": "GEAR_Logbook_A03"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 23",
+              "id": "GEAR_Tale1ChiefNote4"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 29",
+              "id": "GEAR_Logbook_A04"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 29",
+              "id": "GEAR_Tale1ChiefNote5"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 6",
+              "id": "GEAR_Logbook_A01"
+            },
+            {
+              "name": "Note - Tales - Security Chief's Log 6",
+              "id": "GEAR_Tale1ChiefNote2"
+            },
+            {
+              "name": "Note - Tales - The Security Chief's Remains",
+              "id": "GEAR_Tale2SecurityChiefBones"
+            },
+            {
+              "name": "Note - Timberwolf Mountain - Climber's Journal Page",
+              "id": "GEAR_ClimbersJournal"
+            },
+            {
+              "name": "Note - Zone of Contamination - Foreman's Site Report, Day [Illegible]",
+              "id": "GEAR_ClipBoardTale2_D"
+            },
+            {
+              "name": "Note - Zone of Contamination - Foreman's Site Report, Day 38",
+              "id": "GEAR_ClipBoardTale2_A"
+            },
+            {
+              "name": "Note - Zone of Contamination - Foreman's Site Report, Day 45",
+              "id": "GEAR_ClipBoardTale2_B"
+            },
+            {
+              "name": "Note - Zone of Contamination - Foreman's Site Report, Day 64",
+              "id": "GEAR_ClipBoardTale2_C"
+            }
+          ]
+        },
+        {
+          "title": "Collectibles",
+          "sub": "Polaroid",
+          "items": [
+            {
+              "name": "Polaroid - Ash Canyon - High Meadow",
+              "id": "GEAR_PostCard_AC_CentralSpire"
+            },
+            {
+              "name": "Polaroid - Ash Canyon - Wolf's Jaw Overlook",
+              "id": "GEAR_PostCard_AC_TopShelf"
+            },
+            {
+              "name": "Polaroid - Blackrock - Fool's Corner",
+              "id": "GEAR_PostCard_BR_Canyon"
+            },
+            {
+              "name": "Polaroid - Blackrock - Prison",
+              "id": "GEAR_PostCard_BR_Prison"
+            },
+            {
+              "name": "Polaroid - Bleak Inlet - Echo One Radio Tower",
+              "id": "GEAR_PostCard_BI_EchoOne-RadioTower"
+            },
+            {
+              "name": "Polaroid - Coastal Highway - Abandoned Lookout",
+              "id": "GEAR_PostCard_CR_AbandonedLookout"
+            },
+            {
+              "name": "Polaroid - Forlorn Muskeg - Muskeg Overlook",
+              "id": "GEAR_PostCard_FM_MuskegOverlook"
+            },
+            {
+              "name": "Polaroid - Forlorn Muskeg - Shortwave Tower",
+              "id": "GEAR_PostCard_FM_ShortwaveTower"
+            },
+            {
+              "name": "Polaroid - Hushed River Valley  -  Pensive Vista",
+              "id": "GEAR_PostCard_RV_Pensive"
+            },
+            {
+              "name": "Polaroid - Mountain Town - Radio Tower",
+              "id": "GEAR_PostCard_MT_RadioTower"
+            },
+            {
+              "name": "Polaroid - Mystery Lake - Forestry Lookout",
+              "id": "GEAR_PostCard_ML_ForestryLookout"
+            },
+            {
+              "name": "Polaroid - Mystery Lake - Lake Overlook",
+              "id": "GEAR_PostCard_ML_LakeOverlook"
+            },
+            {
+              "name": "Polaroid - Pleasant Valley - Pleasant Valley",
+              "id": "GEAR_PostCard_PV_SignalHill"
+            },
+            {
+              "name": "Polaroid - Tales - Faded Photograph",
+              "id": "GEAR_PostCard_Tale02"
+            },
+            {
+              "name": "Polaroid - Timberwolf  Mountain  - Andre's Peak",
+              "id": "GEAR_PostCard_TM_AndresPeak"
+            },
+            {
+              "name": "Polaroid - Timberwolf  Mountain  - Summit",
+              "id": "GEAR_PostCard_TM_TailSection"
+            },
+            {
+              "name": "Polaroid - Zone of Contamination - Cliff near Boss's Settlement",
+              "id": "GEAR_PostCard_MR_Settlement"
+            },
+            {
+              "name": "Polaroid - Zone of Contamination - Cliff near Welkin's Window",
+              "id": "GEAR_PostCard_MR_Window"
+            }
+          ]
+        },
+        {
+          "title": "Collectibles",
+          "sub": "Unique Recipes",
+          "items": [
+            {
+              "name": "Unique Recipe - Camber Flight Porridge",
+              "id": "GEAR_RecipeCardPorridgeFruit"
+            },
+            {
+              "name": "Unique Recipe - Coastal Fishcakes",
+              "id": "GEAR_RecipeCardFishcakes"
+            },
+            {
+              "name": "Unique Recipe - Lily's Pancakes",
+              "id": "GEAR_RecipeCardMeat"
+            },
+            {
+              "name": "Unique Recipe - Lily's Pancakes",
+              "id": "GEAR_RecipeCardPancakePeach"
+            },
+            {
+              "name": "Unique Recipe - Ranger Stew",
+              "id": "GEAR_RecipeCardStewMeat"
+            }
+          ]
+        },
+        {
+          "title": "Fire Starting",
+          "sub": "Accelerant",
+          "items": [
+            {
+              "name": "Accelerant",
+              "id": "GEAR_Accelerant"
+            },
+            {
+              "name": "Accelerant",
+              "id": "GEAR_AccelerantKerosene"
+            },
+            {
+              "name": "Accelerant",
+              "id": "GEAR_AccelerantMedium"
+            },
+            {
+              "name": "Can of Gunpowder",
+              "id": "GEAR_GunpowderCan"
+            },
+            {
+              "name": "Jerry Can",
+              "id": "GEAR_JerrycanRusty"
+            },
+            {
+              "name": "Lantern Fuel (0.50 kg)",
+              "id": "GEAR_LampFuelFull"
+            },
+            {
+              "name": "Lantern Fuel (Random amount)",
+              "id": "GEAR_LampFuel"
+            }
+          ]
+        },
+        {
+          "title": "Fire Starting",
+          "sub": "Fuel",
+          "items": [
+            {
+              "name": "Book",
+              "id": "GEAR_BookA"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookB"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookBopen"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookC"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookD"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookE"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookEopen"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookF"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookFopen"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookG"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookH"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookHopen"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookI"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookLabE_01"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookLabE_02"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookLabE_03"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookLabE_Open_01"
+            },
+            {
+              "name": "Book",
+              "id": "GEAR_BookManual"
+            },
+            {
+              "name": "Cedar Firewood",
+              "id": "GEAR_Softwood"
+            },
+            {
+              "name": "Coal",
+              "id": "GEAR_Coal"
+            },
+            {
+              "name": "Fir Firewood",
+              "id": "GEAR_Hardwood"
+            },
+            {
+              "name": "Firelog",
+              "id": "GEAR_Firelog"
+            },
+            {
+              "name": "Reclaimed Wood",
+              "id": "GEAR_ReclaimedWoodB"
+            },
+            {
+              "name": "Stick",
+              "id": "GEAR_Stick"
+            }
+          ]
+        },
+        {
+          "title": "Fire Starting",
+          "sub": "Skillbook",
+          "items": [
+            {
+              "name": "A Sewing Primer (Mending Skill Book - Beginner)",
+              "id": "GEAR_BookMending"
+            },
+            {
+              "name": "Advanced Guns Guns Guns! (Rifle Firearm Skill Book - Advanced)",
+              "id": "GEAR_BookRifleFirearmAdvanced"
+            },
+            {
+              "name": "Field Dressing Your Kill, Vol. 1 (Carcass Harvesting Skill Book -  Intermediate)",
+              "id": "GEAR_BookCarcassHarvesting"
+            },
+            {
+              "name": "Frontier Shooting Guide (Rifle Firearm Skill Book - Beginner)",
+              "id": "GEAR_BookRifleFirearm"
+            },
+            {
+              "name": "Practical Gunsmithing (Gunsmithing Skill Book - Beginner)",
+              "id": "GEAR_BookGunsmithing"
+            },
+            {
+              "name": "Small Arms Handbook (Revolver Firearm Skill Book - Beginner)",
+              "id": "GEAR_BookRevolverFirearm"
+            },
+            {
+              "name": "Stay on Target (Archery Skill Book - Beginner)",
+              "id": "GEAR_BookArchery"
+            },
+            {
+              "name": "Surviving The Outdoors! (Fire Starting Skill Book - Beginner)",
+              "id": "GEAR_BookFireStarting"
+            },
+            {
+              "name": "The Frozen Angler (Ice Fishing Skill Book - Beginner)",
+              "id": "GEAR_BookIceFishing"
+            },
+            {
+              "name": "Wilderness Kitchen (Cooking Skill Book - Beginner)",
+              "id": "GEAR_BookCooking"
+            }
+          ]
+        },
+        {
+          "title": "Fire Starting",
+          "sub": "Starters",
+          "items": [
+            {
+              "name": "Cardboard Matches (20)",
+              "id": "GEAR_PackMatches"
+            },
+            {
+              "name": "Firestriker",
+              "id": "GEAR_Firestriker"
+            },
+            {
+              "name": "Flare",
+              "id": "GEAR_FlareA"
+            },
+            {
+              "name": "Magnifying Lens",
+              "id": "GEAR_MagnifyingLens"
+            },
+            {
+              "name": "Marine Flare",
+              "id": "GEAR_BlueFlare"
+            },
+            {
+              "name": "Torch",
+              "id": "GEAR_Torch"
+            },
+            {
+              "name": "Wood Matches (12)",
+              "id": "GEAR_WoodMatches"
+            }
+          ]
+        },
+        {
+          "title": "Fire Starting",
+          "sub": "Tinder",
+          "items": [
+            {
+              "name": "Birch Bark",
+              "id": "GEAR_BarkTinder"
+            },
+            {
+              "name": "Cash",
+              "id": "GEAR_CashBundle"
+            },
+            {
+              "name": "Cat Tail Head",
+              "id": "GEAR_CattailTinder"
+            },
+            {
+              "name": "Newsprint",
+              "id": "GEAR_Newsprint"
+            },
+            {
+              "name": "Newsprint Roll",
+              "id": "GEAR_NewsprintRoll"
+            },
+            {
+              "name": "Stack of Papers",
+              "id": "GEAR_PaperStack"
+            },
+            {
+              "name": "Tinder Plug",
+              "id": "GEAR_Tinder"
+            }
+          ]
+        },
+        {
+          "title": "First Aid",
+          "sub": null,
+          "items": [
+            {
+              "name": "Antibiotics (6)",
+              "id": "GEAR_BottleAntibiotics"
+            },
+            {
+              "name": "Antiseptic",
+              "id": "GEAR_BottleHydrogenPeroxide"
+            },
+            {
+              "name": "Bandage",
+              "id": "GEAR_HeavyBandage"
+            },
+            {
+              "name": "Canister",
+              "id": "GEAR_Canister"
+            },
+            {
+              "name": "Emergency Stim",
+              "id": "GEAR_EmergencyStim"
+            },
+            {
+              "name": "Go! Energy Drink",
+              "id": "GEAR_SodaEnergy"
+            },
+            {
+              "name": "Old Man's Beard Wound Dressing",
+              "id": "GEAR_OldMansBeardDressing"
+            },
+            {
+              "name": "Painkillers (6)",
+              "id": "GEAR_BottlePainKillers"
+            },
+            {
+              "name": "Prepared Birch Bark",
+              "id": "GEAR_BirchbarkPrepared"
+            },
+            {
+              "name": "Prepared Reishi Mushrooms",
+              "id": "GEAR_ReishiPrepared"
+            },
+            {
+              "name": "Prepared Rose Hips",
+              "id": "GEAR_RosehipsPrepared"
+            },
+            {
+              "name": "Respirator",
+              "id": "GEAR_Respirator"
+            },
+            {
+              "name": "Water Purification Tablets (4)",
+              "id": "GEAR_WaterPurificationTablets"
+            }
+          ]
+        },
+        {
+          "title": "Food and Drink",
+          "sub": "Carcasses",
+          "items": [
+            {
+              "name": "Bear Quarter (0kg, fully harvestable)",
+              "id": "GEAR_BearQuarter"
+            },
+            {
+              "name": "Deer Quarter (0kg, fully harvestable)",
+              "id": "GEAR_StagQuarter"
+            },
+            {
+              "name": "Moose Quarter (0kg, fully harvestable)",
+              "id": "GEAR_MooseQuarter"
+            },
+            {
+              "name": "Ptarmigan Carcass",
+              "id": "GEAR_PtarmiganCarcass"
+            },
+            {
+              "name": "Rabbit Carcass",
+              "id": "GEAR_RabbitCarcass"
+            },
+            {
+              "name": "Wolf Carcass (0kg, fully harvestable)",
+              "id": "GEAR_WolfCarcass"
+            },
+            {
+              "name": "Wolf Quarter (0kg, fully harvestable)",
+              "id": "GEAR_TimberwolfQuarter"
+            },
+            {
+              "name": "Wolf Quarter (0kg, fully harvestable)",
+              "id": "GEAR_WolfQuarter"
+            }
+          ]
+        },
+        {
+          "title": "Food and Drink",
+          "sub": "Drink",
+          "items": [
+            {
+              "name": "Birch Bark Tea",
+              "id": "GEAR_BirchbarkTea"
+            },
+            {
+              "name": "Burdock Tea",
+              "id": "GEAR_BurdockTea"
+            },
+            {
+              "name": "Cup of Acorn Coffee",
+              "id": "GEAR_AcornCoffeeCup"
+            },
+            {
+              "name": "Cup of Coffee",
+              "id": "GEAR_CoffeeCup"
+            },
+            {
+              "name": "Cup of Herbal Tea",
+              "id": "GEAR_GreenTeaCup"
+            },
+            {
+              "name": "Orange Soda",
+              "id": "GEAR_SodaOrange"
+            },
+            {
+              "name": "Reishi Tea",
+              "id": "GEAR_ReishiTea"
+            },
+            {
+              "name": "Rose Hip Tea",
+              "id": "GEAR_RoseHipTea"
+            },
+            {
+              "name": "Stacy's Grape Soda",
+              "id": "GEAR_SodaGrape"
+            },
+            {
+              "name": "Summit Soda",
+              "id": "GEAR_Soda"
+            },
+            {
+              "name": "Water (Potable) (0,5L)",
+              "id": "GEAR_Water500ml"
+            },
+            {
+              "name": "Water (Potable) (1L)",
+              "id": "GEAR_Water1000ml"
+            }
+          ]
+        },
+        {
+          "title": "Food and Drink",
+          "sub": "Food",
+          "items": [
+            {
+              "name": "Acorn Bannock (2)",
+              "id": "GEAR_CookedBannockAcorn"
+            },
+            {
+              "name": "Acorn Pancakes",
+              "id": "GEAR_CookedPancakeAcorn"
+            },
+            {
+              "name": "Airline Food - Chicken",
+              "id": "GEAR_AirlineFoodChick"
+            },
+            {
+              "name": "Airline Food - Vegetarian",
+              "id": "GEAR_AirlineFoodVeg"
+            },
+            {
+              "name": "Bannock (2)",
+              "id": "GEAR_CookedBannock"
+            },
+            {
+              "name": "Bear Meat",
+              "id": "GEAR_RawMeatBear"
+            },
+            {
+              "name": "Bear Meat (Cooked)",
+              "id": "GEAR_CookedMeatBear"
+            },
+            {
+              "name": "Beef Jerky",
+              "id": "GEAR_BeefJerky"
+            },
+            {
+              "name": "Breyerhouse Pie",
+              "id": "GEAR_CookedPieMeat"
+            },
+            {
+              "name": "Broth",
+              "id": "GEAR_Broth"
+            },
+            {
+              "name": "Burbot (Cooked)",
+              "id": "GEAR_CookedBurbot"
+            },
+            {
+              "name": "Burbot (Raw)",
+              "id": "GEAR_RawBurbot"
+            },
+            {
+              "name": "Canned Corn",
+              "id": "GEAR_CannedCorn"
+            },
+            {
+              "name": "Canned Ham",
+              "id": "GEAR_CannedHam"
+            },
+            {
+              "name": "Carrot",
+              "id": "GEAR_Carrot"
+            },
+            {
+              "name": "Cat Tail Head + Cat Tail Stalk",
+              "id": "GEAR_CattailPlant"
+            },
+            {
+              "name": "Cat Tail Stalk",
+              "id": "GEAR_CattailStalk"
+            },
+            {
+              "name": "Chocolate Bar",
+              "id": "GEAR_CandyBar"
+            },
+            {
+              "name": "Coastal Fishcakes (4)",
+              "id": "GEAR_CookedFishcakes"
+            },
+            {
+              "name": "Coho Salmon (Cooked)",
+              "id": "GEAR_CookedCohoSalmon"
+            },
+            {
+              "name": "Coho Salmon (Raw)",
+              "id": "GEAR_RawCohoSalmon"
+            },
+            {
+              "name": "Condensed Milk",
+              "id": "GEAR_CondensedMilk"
+            },
+            {
+              "name": "Cooked Potato",
+              "id": "GEAR_PotatoCooked"
+            },
+            {
+              "name": "Dockworker's Pie",
+              "id": "GEAR_CookedPieFishermans"
+            },
+            {
+              "name": "Dog Food",
+              "id": "GEAR_DogFood"
+            },
+            {
+              "name": "Energy Bar",
+              "id": "GEAR_EnergyBar"
+            },
+            {
+              "name": "Granola Bar",
+              "id": "GEAR_GranolaBar"
+            },
+            {
+              "name": "Ketchup Chips",
+              "id": "GEAR_KetchupChips"
+            },
+            {
+              "name": "Lake Whitefish (Cooked)",
+              "id": "GEAR_CookedLakeWhiteFish"
+            },
+            {
+              "name": "Lake Whitefish (Raw)",
+              "id": "GEAR_RawLakeWhiteFish"
+            },
+            {
+              "name": "Lily's Pancakes",
+              "id": "GEAR_CookedPancakePeach"
+            },
+            {
+              "name": "Maple Syrup",
+              "id": "GEAR_MapleSyrup"
+            },
+            {
+              "name": "Military-Grade MRE",
+              "id": "GEAR_MRE"
+            },
+            {
+              "name": "Moose Meat",
+              "id": "GEAR_RawMeatMoose"
+            },
+            {
+              "name": "Moose Meat (Cooked)",
+              "id": "GEAR_CookedMeatMoose"
+            },
+            {
+              "name": "Pancakes",
+              "id": "GEAR_CookedPancake"
+            },
+            {
+              "name": "Peach Pie (3)",
+              "id": "GEAR_CookedPiePeach"
+            },
+            {
+              "name": "Peanut Butter",
+              "id": "GEAR_PeanutButter"
+            },
+            {
+              "name": "Pinnacle Peaches",
+              "id": "GEAR_PinnacleCanPeaches"
+            },
+            {
+              "name": "Pork and Beans",
+              "id": "GEAR_CannedBeans"
+            },
+            {
+              "name": "Potato",
+              "id": "GEAR_Potato"
+            },
+            {
+              "name": "Prepared Burdock",
+              "id": "GEAR_BurdockPrepared"
+            },
+            {
+              "name": "Prepper's Pie",
+              "id": "GEAR_CookedPieForagers"
+            },
+            {
+              "name": "Ptarmigan (Cooked)",
+              "id": "GEAR_CookedMeatPtarmigan"
+            },
+            {
+              "name": "Ptarmigan (Raw)",
+              "id": "GEAR_RawMeatPtarmigan"
+            },
+            {
+              "name": "Ptarmigan Pie (3)",
+              "id": "GEAR_CookedPiePtarmigan"
+            },
+            {
+              "name": "Ptarmigan Stew",
+              "id": "GEAR_CookedStewPtarmigan"
+            },
+            {
+              "name": "Rabbit (Cooked)",
+              "id": "GEAR_CookedMeatRabbit"
+            },
+            {
+              "name": "Rabbit (Raw)",
+              "id": "GEAR_RawMeatRabbit"
+            },
+            {
+              "name": "Rabbit Pie (3)",
+              "id": "GEAR_CookedPieRabbit"
+            },
+            {
+              "name": "Rabbit Stew",
+              "id": "GEAR_CookedStewRabbit"
+            },
+            {
+              "name": "Rainbow Trout (Cooked)",
+              "id": "GEAR_CookedRainbowTrout"
+            },
+            {
+              "name": "Rainbow Trout (Raw)",
+              "id": "GEAR_RawRainbowTrout"
+            },
+            {
+              "name": "Ranger Stew",
+              "id": "GEAR_CookedStewMeat"
+            },
+            {
+              "name": "Red Irish Lord (Cooked)",
+              "id": "GEAR_CookedRedIrishLord"
+            },
+            {
+              "name": "Red Irish Lord (Raw)",
+              "id": "GEAR_RawRedIrishLord"
+            },
+            {
+              "name": "Rockfish (Cooked)",
+              "id": "GEAR_CookedRockfish"
+            },
+            {
+              "name": "Rockfish (Raw)",
+              "id": "GEAR_RawRockfish"
+            },
+            {
+              "name": "Rose Hip Pie (3)",
+              "id": "GEAR_CookedPieRoseHip"
+            },
+            {
+              "name": "Salty Crackers",
+              "id": "GEAR_Crackers"
+            },
+            {
+              "name": "Smallmouth Bass (Cooked)",
+              "id": "GEAR_CookedSmallMouthBass"
+            },
+            {
+              "name": "Smallmouth Bass (Raw)",
+              "id": "GEAR_RawSmallMouthBass"
+            },
+            {
+              "name": "Stalker's Pie",
+              "id": "GEAR_CookedPiePredator"
+            },
+            {
+              "name": "Thomson Family Stew",
+              "id": "GEAR_CookedStewVegetables"
+            },
+            {
+              "name": "Tin of Sardines",
+              "id": "GEAR_CannedSardines"
+            },
+            {
+              "name": "Tomato Soup",
+              "id": "GEAR_TomatoSoupCan"
+            },
+            {
+              "name": "Trout Stew",
+              "id": "GEAR_CookedStewTrout"
+            },
+            {
+              "name": "Venison",
+              "id": "GEAR_RawMeatDeer"
+            },
+            {
+              "name": "Venison (Cooked)",
+              "id": "GEAR_CookedMeatDeer"
+            },
+            {
+              "name": "Venison Pie (3)",
+              "id": "GEAR_CookedPieVenison"
+            },
+            {
+              "name": "Venison Stew",
+              "id": "GEAR_CookedStewVenison"
+            },
+            {
+              "name": "Wolf Meat (Cooked)",
+              "id": "GEAR_CookedMeatWolf"
+            },
+            {
+              "name": "Wolf Meat (Raw)",
+              "id": "GEAR_RawMeatWolf"
+            }
+          ]
+        },
+        {
+          "title": "Food and Drink",
+          "sub": "Ingredients",
+          "items": [
+            {
+              "name": "Acorns (Cooked - Large Portion)",
+              "id": "GEAR_AcornCookedBig"
+            },
+            {
+              "name": "Acorns (Cooked)",
+              "id": "GEAR_AcornCooked"
+            },
+            {
+              "name": "Cooking Oil",
+              "id": "GEAR_CookingOil"
+            },
+            {
+              "name": "Herbal Tea (5)",
+              "id": "GEAR_GreenTeaPackage"
+            },
+            {
+              "name": "Old Mill Flour",
+              "id": "GEAR_Flour"
+            },
+            {
+              "name": "Running River Oats",
+              "id": "GEAR_OatsTin"
+            },
+            {
+              "name": "Salt",
+              "id": "GEAR_Salt"
+            },
+            {
+              "name": "Salt Bag",
+              "id": "GEAR_SaltBag"
+            },
+            {
+              "name": "Tin of Coffee",
+              "id": "GEAR_CoffeeTin"
+            }
+          ]
+        },
+        {
+          "title": "Materials",
+          "sub": "Animal",
+          "items": [
+            {
+              "name": "Crow Feather",
+              "id": "GEAR_CrowFeather"
+            },
+            {
+              "name": "Ptarmigan Feather",
+              "id": "GEAR_PtarmiganFeathers"
+            },
+            {
+              "name": "Cured Black Bear Hide",
+              "id": "GEAR_BearHideDried"
+            },
+            {
+              "name": "Cured Deer Hide",
+              "id": "GEAR_LeatherHideDried"
+            },
+            {
+              "name": "Cured Gut",
+              "id": "GEAR_GutDried"
+            },
+            {
+              "name": "Cured Moose Hide",
+              "id": "GEAR_MooseHideDried"
+            },
+            {
+              "name": "Cured Rabbit Pelt",
+              "id": "GEAR_RabbitPeltDried"
+            },
+            {
+              "name": "Cured Wolf Pelt",
+              "id": "GEAR_WolfPeltDried"
+            },
+            {
+              "name": "Fresh Black Bear Hide",
+              "id": "GEAR_BearHide"
+            },
+            {
+              "name": "Fresh Deer Hide",
+              "id": "GEAR_LeatherHide"
+            },
+            {
+              "name": "Fresh Gut",
+              "id": "GEAR_Gut"
+            },
+            {
+              "name": "Fresh Moose Hide",
+              "id": "GEAR_MooseHide"
+            },
+            {
+              "name": "Fresh Rabbit Pelt",
+              "id": "GEAR_RabbitPelt"
+            },
+            {
+              "name": "Fresh Wolf Pelt",
+              "id": "GEAR_WolfPelt"
+            }
+          ]
+        },
+        {
+          "title": "Materials",
+          "sub": "Archery",
+          "items": [
+            {
+              "name": "Arrow Shaft",
+              "id": "GEAR_ArrowShaft"
+            },
+            {
+              "name": "Arrowhead",
+              "id": "GEAR_ArrowHead"
+            }
+          ]
+        },
+        {
+          "title": "Materials",
+          "sub": "Discontinued",
+          "items": [
+            {
+              "name": "Fresh Leather",
+              "id": "GEAR_Leather"
+            }
+          ]
+        },
+        {
+          "title": "Materials",
+          "sub": "Gunsmithing",
+          "items": [
+            {
+              "name": "Bullet",
+              "id": "GEAR_Bullet"
+            },
+            {
+              "name": "Dusting Sulfur",
+              "id": "GEAR_DustingSulfur"
+            },
+            {
+              "name": "Revolver Shell Casing",
+              "id": "GEAR_RevolverAmmoCasing"
+            },
+            {
+              "name": "Rifle Shell Casing",
+              "id": "GEAR_RifleAmmoCasing"
+            },
+            {
+              "name": "Scrap Lead",
+              "id": "GEAR_ScrapLead"
+            },
+            {
+              "name": "Stump Remover",
+              "id": "GEAR_StumpRemover"
+            }
+          ]
+        },
+        {
+          "title": "Materials",
+          "sub": "Other",
+          "items": [
+            {
+              "name": "Cloth",
+              "id": "GEAR_Cloth"
+            },
+            {
+              "name": "Cured Leather",
+              "id": "GEAR_LeatherDried"
+            },
+            {
+              "name": "Scrap Metal",
+              "id": "GEAR_ScrapMetal"
+            }
+          ]
+        },
+        {
+          "title": "Materials",
+          "sub": "Plant",
+          "items": [
+            {
+              "name": "Acorn Grounds",
+              "id": "GEAR_AcornGrounds"
+            },
+            {
+              "name": "Acorns",
+              "id": "GEAR_Acorn"
+            },
+            {
+              "name": "Burdock Root",
+              "id": "GEAR_Burdock"
+            },
+            {
+              "name": "Cured Birch Sapling",
+              "id": "GEAR_BirchSaplingDried"
+            },
+            {
+              "name": "Cured Maple Sapling",
+              "id": "GEAR_MapleSaplingDried"
+            },
+            {
+              "name": "Green Birch Sapling",
+              "id": "GEAR_BirchSapling"
+            },
+            {
+              "name": "Green Maple Sapling",
+              "id": "GEAR_MapleSapling"
+            },
+            {
+              "name": "Old Man's Beard Lichen",
+              "id": "GEAR_OldMansBeardHarvested"
+            },
+            {
+              "name": "Prepared Acorns",
+              "id": "GEAR_AcornShelled"
+            },
+            {
+              "name": "Prepared Acorns (Large Portion)",
+              "id": "GEAR_AcornShelledBig"
+            },
+            {
+              "name": "Reclaimed Wood",
+              "id": "GEAR_ReclaimedWoodB"
+            },
+            {
+              "name": "Reishi Mushroom",
+              "id": "GEAR_ReishiMushroom"
+            },
+            {
+              "name": "Rose Hip",
+              "id": "GEAR_RoseHip"
+            },
+            {
+              "name": "Stick",
+              "id": "GEAR_Stick"
+            }
+          ]
+        },
+        {
+          "title": "Props",
+          "sub": "Prop",
+          "items": [
+            {
+              "name": "Acorn Bannock (Prop)",
+              "id": "GEAR_UncookedBannockAcorn"
+            },
+            {
+              "name": "Acorn Pancakes (Prop)",
+              "id": "GEAR_UncookedPancakeAcorn"
+            },
+            {
+              "name": "Bannock (Prop)",
+              "id": "GEAR_UncookedBannock"
+            },
+            {
+              "name": "Breyerhouse Pie (Prop)",
+              "id": "GEAR_UncookedPieMeat"
+            },
+            {
+              "name": "Broth (Prop)",
+              "id": "GEAR_UncookedBroth"
+            },
+            {
+              "name": "Camber Flight Porridge (Prop)",
+              "id": "GEAR_UncookedPorridgeFruit"
+            },
+            {
+              "name": "Coastal Fishcakes (Prop)",
+              "id": "GEAR_UncookedFishcakes"
+            },
+            {
+              "name": "Cooking Pot (Prop)",
+              "id": "GEAR_CookingPotDummy"
+            },
+            {
+              "name": "Dockworker's Pie (Prop)",
+              "id": "GEAR_UncookedPieFishermans"
+            },
+            {
+              "name": "GAMEPLAY_NEWSPRINTINSILATION",
+              "id": "GEAR_NewsprintBootStuffing"
+            },
+            {
+              "name": "GAMEPLAY_NEWSPRINTINSILATION",
+              "id": "GEAR_NewsprintInsulation"
+            },
+            {
+              "name": "Gunpowder (Prop)",
+              "id": "GEAR_AccelerantGunpowder"
+            },
+            {
+              "name": "Line (Prop)",
+              "id": "GEAR_FishingLine"
+            },
+            {
+              "name": "Pancakes (Prop)",
+              "id": "GEAR_UncookedPancake"
+            },
+            {
+              "name": "Peach Pie (Prop)",
+              "id": "GEAR_UncookedPiePeach"
+            },
+            {
+              "name": "Porridge (Prop)",
+              "id": "GEAR_UncookedPorridge"
+            },
+            {
+              "name": "Prepper's Pie (Prop)",
+              "id": "GEAR_UncookedPieForagers"
+            },
+            {
+              "name": "Ptarmigan Pie (Prop)",
+              "id": "GEAR_UncookedPiePtarmigan"
+            },
+            {
+              "name": "Ptarmigan Stew (Prop)",
+              "id": "GEAR_UncookedStewPtarmigan"
+            },
+            {
+              "name": "Rabbit Pie (Prop)",
+              "id": "GEAR_UncookedPieRabbit"
+            },
+            {
+              "name": "Rabbit Stew (Prop)",
+              "id": "GEAR_UncookedStewRabbit"
+            },
+            {
+              "name": "Ranger Stew (Prop)",
+              "id": "GEAR_UncookedStewMeat"
+            },
+            {
+              "name": "Rose Hip Pie (Prop)",
+              "id": "GEAR_UncookedPieRoseHip"
+            },
+            {
+              "name": "Stalker's Pie (Prop)",
+              "id": "GEAR_UncookedPiePredator"
+            },
+            {
+              "name": "Thomson Family Stew (Prop)",
+              "id": "GEAR_UncookedStewVegetables"
+            },
+            {
+              "name": "Trout Stew (Prop)",
+              "id": "GEAR_UncookedStewTrout"
+            },
+            {
+              "name": "Venison Pie (Prop)",
+              "id": "GEAR_UncookedPieVenison"
+            },
+            {
+              "name": "Venison Stew (Prop)",
+              "id": "GEAR_UncookedStewVenison"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Cooking",
+          "items": [
+            {
+              "name": "Can Opener",
+              "id": "GEAR_CanOpener"
+            },
+            {
+              "name": "Cooking Pot",
+              "id": "GEAR_CookingPot"
+            },
+            {
+              "name": "Cooking Skillet",
+              "id": "GEAR_Skillet"
+            },
+            {
+              "name": "Cougar Claw Knife",
+              "id": "GEAR_CougarClawKnife"
+            },
+            {
+              "name": "Insulated Flask",
+              "id": "GEAR_InsulatedFlask_A"
+            },
+            {
+              "name": "Recycled Can",
+              "id": "GEAR_RecycledCan"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Hand Tools",
+          "items": [
+            {
+              "name": "Hacksaw",
+              "id": "GEAR_Hacksaw"
+            },
+            {
+              "name": "Hatchet",
+              "id": "GEAR_Hatchet"
+            },
+            {
+              "name": "Heavy Hammer",
+              "id": "GEAR_Hammer"
+            },
+            {
+              "name": "Hunting Knife",
+              "id": "GEAR_Knife"
+            },
+            {
+              "name": "Improvised Hatchet",
+              "id": "GEAR_HatchetImprovised"
+            },
+            {
+              "name": "Improvised Knife",
+              "id": "GEAR_KnifeImprovised"
+            },
+            {
+              "name": "Prybar",
+              "id": "GEAR_Prybar"
+            },
+            {
+              "name": "Survival knife",
+              "id": "GEAR_SurvivalKnife"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Ice Fishing",
+          "items": [
+            {
+              "name": "Fishing Bait",
+              "id": "GEAR_FishingBaitA"
+            },
+            {
+              "name": "Fishing Lure (Acorn)",
+              "id": "GEAR_FishingLureC"
+            },
+            {
+              "name": "Fishing Lure (Casing)",
+              "id": "GEAR_FishingLureB"
+            },
+            {
+              "name": "Fishing Lure (Wire)",
+              "id": "GEAR_FishingLureD"
+            },
+            {
+              "name": "Fishing Tackle",
+              "id": "GEAR_HookAndLine"
+            },
+            {
+              "name": "Fishing Tip-UP",
+              "id": "GEAR_TipUp"
+            },
+            {
+              "name": "Hook",
+              "id": "GEAR_Hook"
+            },
+            {
+              "name": "Line",
+              "id": "GEAR_Line"
+            },
+            {
+              "name": "Simple Fishing Lure",
+              "id": "GEAR_FishingLureA"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Light",
+          "items": [
+            {
+              "name": "Flare",
+              "id": "GEAR_FlareA"
+            },
+            {
+              "name": "Flashlight",
+              "id": "GEAR_Flashlight"
+            },
+            {
+              "name": "Jerry Can",
+              "id": "GEAR_JerrycanRusty"
+            },
+            {
+              "name": "Lantern Fuel (0.50 kg)",
+              "id": "GEAR_LampFuelFull"
+            },
+            {
+              "name": "Lantern Fuel (Random amount)",
+              "id": "GEAR_LampFuel"
+            },
+            {
+              "name": "Magnifying Lens",
+              "id": "GEAR_MagnifyingLens"
+            },
+            {
+              "name": "Marine Flare",
+              "id": "GEAR_BlueFlare"
+            },
+            {
+              "name": "Spelunker's Lantern",
+              "id": "GEAR_KeroseneLamp_Spelunkers"
+            },
+            {
+              "name": "Storm Lantern",
+              "id": "GEAR_KeroseneLampB"
+            },
+            {
+              "name": "Torch",
+              "id": "GEAR_Torch"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Mending",
+          "items": [
+            {
+              "name": "Firearm Cleaning Kit",
+              "id": "GEAR_RifleCleaningKit"
+            },
+            {
+              "name": "Fishing Tackle",
+              "id": "GEAR_HookAndLine"
+            },
+            {
+              "name": "Quality Tools",
+              "id": "GEAR_HighQualityTools"
+            },
+            {
+              "name": "Sewing Kit",
+              "id": "GEAR_SewingKit"
+            },
+            {
+              "name": "Simple Tools",
+              "id": "GEAR_SimpleTools"
+            },
+            {
+              "name": "Whetstone",
+              "id": "GEAR_SharpeningStone"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Other",
+          "items": [
+            {
+              "name": "Broken Arrow",
+              "id": "GEAR_BrokenArrow"
+            },
+            {
+              "name": "Broken Fire Hardened Arrow",
+              "id": "GEAR_BrokenArrowHardened"
+            },
+            {
+              "name": "Charcoal",
+              "id": "GEAR_Charcoal"
+            },
+            {
+              "name": "Elevator Crank",
+              "id": "GEAR_SurvivalElevatorCrank"
+            },
+            {
+              "name": "Gold Nugget",
+              "id": "GEAR_GoldNugget"
+            },
+            {
+              "name": "Handheld Shortwave Radio",
+              "id": "GEAR_HandheldShortwave"
+            },
+            {
+              "name": "Handheld Shortwave Radio (Starts Tales)",
+              "id": "GEAR_Tale1ChiefNote1"
+            },
+            {
+              "name": "Mountaineering Rope",
+              "id": "GEAR_Rope"
+            },
+            {
+              "name": "Snare",
+              "id": "GEAR_Snare"
+            },
+            {
+              "name": "Spray Paint",
+              "id": "GEAR_SprayPaintCan"
+            },
+            {
+              "name": "Spray Paint - Glyph (Darkwalker)",
+              "id": "GEAR_SprayPaintCanGlyphA"
+            },
+            {
+              "name": "Travois",
+              "id": "GEAR_Travois"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Research",
+          "items": [
+            {
+              "name": "A Sewing Primer (Mending Skill Book - Beginner)",
+              "id": "GEAR_BookMending"
+            },
+            {
+              "name": "Advanced Guns Guns Guns! (Rifle Firearm Skill Book - Advanced)",
+              "id": "GEAR_BookRifleFirearmAdvanced"
+            },
+            {
+              "name": "Field Dressing Your Kill, Vol. 1 (Carcass Harvesting Skill Book -  Intermediate)",
+              "id": "GEAR_BookCarcassHarvesting"
+            },
+            {
+              "name": "Frontier Shooting Guide (Rifle Firearm Skill Book - Beginner)",
+              "id": "GEAR_BookRifleFirearm"
+            },
+            {
+              "name": "Practical Gunsmithing (Gunsmithing Skill Book - Beginner)",
+              "id": "GEAR_BookGunsmithing"
+            },
+            {
+              "name": "Small Arms Handbook (Revolver Firearm Skill Book - Beginner)",
+              "id": "GEAR_BookRevolverFirearm"
+            },
+            {
+              "name": "Stay on Target (Archery Skill Book - Beginner)",
+              "id": "GEAR_BookArchery"
+            },
+            {
+              "name": "Surviving The Outdoors! (Fire Starting Skill Book - Beginner)",
+              "id": "GEAR_BookFireStarting"
+            },
+            {
+              "name": "The Frozen Angler (Ice Fishing Skill Book - Beginner)",
+              "id": "GEAR_BookIceFishing"
+            },
+            {
+              "name": "Wilderness Kitchen (Cooking Skill Book - Beginner)",
+              "id": "GEAR_BookCooking"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Sleep",
+          "items": [
+            {
+              "name": "Bear Skin Bedroll",
+              "id": "GEAR_BearSkinBedRoll"
+            },
+            {
+              "name": "Bedroll",
+              "id": "GEAR_BedRoll"
+            },
+            {
+              "name": "Improvised Down Bedroll",
+              "id": "GEAR_BedRoll_Down"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Transmitter Parts",
+          "items": [
+            {
+              "name": "Car Battery",
+              "id": "GEAR_CarBattery"
+            },
+            {
+              "name": "Replacement Fuse",
+              "id": "GEAR_Fuse"
+            },
+            {
+              "name": "Wires",
+              "id": "GEAR_WireBundle"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Weapons",
+          "items": [
+            {
+              "name": "Barb's Rifle",
+              "id": "GEAR_Rifle_Barbs"
+            },
+            {
+              "name": "Bunker Rifle",
+              "id": "GEAR_Rifle_Trader"
+            },
+            {
+              "name": "Can of Gunpowder",
+              "id": "GEAR_GunpowderCan"
+            },
+            {
+              "name": "Curator's Rifle",
+              "id": "GEAR_Rifle_Curators"
+            },
+            {
+              "name": "Distress Pistol",
+              "id": "GEAR_FlareGun"
+            },
+            {
+              "name": "Fire Hardened Arrow",
+              "id": "GEAR_ArrowHardened"
+            },
+            {
+              "name": "Flare Shell",
+              "id": "GEAR_FlareGunAmmoSingle"
+            },
+            {
+              "name": "Forester's Revolver",
+              "id": "GEAR_RevolverGreen"
+            },
+            {
+              "name": "Hunter's Revolver",
+              "id": "GEAR_RevolverFancy"
+            },
+            {
+              "name": "Hunting Rifle",
+              "id": "GEAR_Rifle"
+            },
+            {
+              "name": "Manufactured Arrow",
+              "id": "GEAR_ArrowManufactured"
+            },
+            {
+              "name": "Noisemaker",
+              "id": "GEAR_NoiseMaker"
+            },
+            {
+              "name": "Revolver",
+              "id": "GEAR_Revolver"
+            },
+            {
+              "name": "Revolver Ammunition (1)",
+              "id": "GEAR_RevolverAmmoSingle"
+            },
+            {
+              "name": "Revolver Ammunition (10)",
+              "id": "GEAR_RevolverAmmoBox"
+            },
+            {
+              "name": "Rifle Ammunition (1)",
+              "id": "GEAR_RifleAmmoSingle"
+            },
+            {
+              "name": "Rifle Ammunition (5)",
+              "id": "GEAR_RifleAmmoBox"
+            },
+            {
+              "name": "Simple Arrow",
+              "id": "GEAR_Arrow"
+            },
+            {
+              "name": "Stone",
+              "id": "GEAR_Stone"
+            },
+            {
+              "name": "Survival Bow",
+              "id": "GEAR_Bow"
+            },
+            {
+              "name": "Vaughn's Rifle",
+              "id": "GEAR_Rifle_Vaughns"
+            },
+            {
+              "name": "Warden's Revolver",
+              "id": "GEAR_RevolverStubNosed"
+            },
+            {
+              "name": "Woodwright's Bow",
+              "id": "GEAR_Bow_Woodwrights"
+            },
+            {
+              "name": "Bushcraft Bow",
+              "id": "GEAR_Bow_Bushcraft"
+            }
+          ]
+        },
+        {
+          "title": "Tools",
+          "sub": "Wintermute",
+          "items": [
+            {
+              "name": "Bear Spear",
+              "id": "GEAR_BearSpear"
+            },
+            {
+              "name": "Broken Bear Spear",
+              "id": "GEAR_BearSpearBroken"
+            },
+            {
+              "name": "Elevator Crank",
+              "id": "GEAR_SurvivalElevatorCrank"
+            },
+            {
+              "name": "Spear Head",
+              "id": "GEAR_SpearHead"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Tales",
+      "categories": [
+        {
+          "title": "Clothing",
+          "sub": null,
+          "items": [
+            {
+              "name": "Rifle Scabbard",
+              "id": "GEAR_RifleScabbardA"
+            },
+            {
+              "name": "Flight Jacket",
+              "id": "GEAR_JacketLeatherFlightA"
+            },
+            {
+              "name": "Jersy",
+              "id": "GEAR_JerseyHockeyA"
+            },
+            {
+              "name": "Technical Balaclava",
+              "id": "GEAR_HatGatorBalaclavaA"
+            },
+            {
+              "name": "Aviator Cap",
+              "id": "GEAR_HatLeatherAviatorA"
+            }
+          ]
+        },
+        {
+          "title": "Collectibles",
+          "sub": null,
+          "items": [
+            {
+              "name": "Post Card",
+              "id": "GEAR_PostCard_AF_Cabin"
+            },
+            {
+              "name": "Post Card",
+              "id": "GEAR_PostCard_AF_Plateau"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldCabinNote"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldCargomasterNote"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldControlNote"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldGeologistNote1"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldHangarNote"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldJunkerNote"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldSecChiefNote1"
+            },
+            {
+              "name": "Note",
+              "id": "GEAR_AirfieldTowerNote"
+            },
+            {
+              "name": "Clip Board",
+              "id": "GEAR_ClipBoardBunker_A"
+            },
+            {
+              "name": "Clip Board",
+              "id": "GEAR_ClipBoardBunker_B"
+            },
+            {
+              "name": "Clip Board",
+              "id": "GEAR_ClipBoardBunker_C"
+            },
+            {
+              "name": "Clip Board",
+              "id": "GEAR_ClipBoardBunker_D"
+            },
+            {
+              "name": "Log Book",
+              "id": "GEAR_Logbook_A01"
+            },
+            {
+              "name": "Log Book",
+              "id": "GEAR_Logbook_A02"
+            },
+            {
+              "name": "Log Book",
+              "id": "GEAR_Logbook_A03"
+            },
+            {
+              "name": "Log Book",
+              "id": "GEAR_Logbook_A04"
+            },
+            {
+              "name": "Chiefs Note",
+              "id": "GEAR_Tale1ChiefNote1"
+            },
+            {
+              "name": "Chiefs Note",
+              "id": "GEAR_Tale1ChiefNote2"
+            },
+            {
+              "name": "Chiefs Note",
+              "id": "GEAR_Tale1ChiefNote3"
+            },
+            {
+              "name": "Chiefs Note",
+              "id": "GEAR_Tale1ChiefNote4"
+            },
+            {
+              "name": "Chiefs Note",
+              "id": "GEAR_Tale1ChiefNote5"
+            },
+            {
+              "name": "Transcript",
+              "id": "GEAR_Tale1Transcript1"
+            },
+            {
+              "name": "Transcript",
+              "id": "GEAR_Tale1Transcript2"
+            },
+            {
+              "name": "Transcript",
+              "id": "GEAR_Tale1Transcript3"
+            },
+            {
+              "name": "Transcript",
+              "id": "GEAR_Tale1Transcript4"
+            }
+          ]
+        },
+        {
+          "title": "Food",
+          "sub": null,
+          "items": [
+            {
+              "name": "Canned Ham",
+              "id": "GEAR_CannedHam"
+            },
+            {
+              "name": "Canned Corn",
+              "id": "GEAR_CannedCorn"
+            }
+          ]
+        },
+        {
+          "title": "Light Source",
+          "sub": null,
+          "items": [
+            {
+              "name": "Spelunkers Lamp",
+              "id": "GEAR_KeroseneLamp_Spelunkers"
+            }
+          ]
+        },
+        {
+          "title": "Navigation",
+          "sub": null,
+          "items": [
+            {
+              "name": "Handheld Shortwave",
+              "id": "GEAR_HandheldShortwave"
+            }
+          ]
+        },
+        {
+          "title": "Misc",
+          "sub": null,
+          "items": [
+            {
+              "name": "Fuse",
+              "id": "GEAR_Fuse"
+            },
+            {
+              "name": "Wires",
+              "id": "GEAR_WireBundle"
+            }
+          ]
+        },
+        {
+          "title": "Weapon",
+          "sub": null,
+          "items": [
+            {
+              "name": "Woodwrights Bow",
+              "id": "GEAR_Bow_Woodwrights"
+            },
+            {
+              "name": "Barb's Rifle",
+              "id": "GEAR_Rifle_Barbs"
+            },
+            {
+              "name": "Curators Rifle",
+              "id": "GEAR_Rifle_Curators"
+            },
+            {
+              "name": "Vaughn's Rifle",
+              "id": "GEAR_Rifle_Vaughns"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Broken Silence",
+      "categories": [
+        {
+          "title": "Food",
+          "sub": null,
+          "items": [
+            {
+              "name": "Ptarmigan Carcass",
+              "id": "GEAR_PtarmiganCarcass"
+            },
+            {
+              "name": "Raw Ptarmigan",
+              "id": "GEAR_RawMeatPtarmigan"
+            },
+            {
+              "name": "Cooked Ptarmigan",
+              "id": "GEAR_CookedMeatPtarmigan"
+            },
+            {
+              "name": "Old Mill Flour",
+              "id": "GEAR_Flour"
+            },
+            {
+              "name": "Cooking Oil",
+              "id": "GEAR_CookingOil"
+            },
+            {
+              "name": "Salt",
+              "id": "GEAR_Salt"
+            },
+            {
+              "name": "Broth",
+              "id": "GEAR_Broth"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
