@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  @class(['dark' => ($appearance ?? 'system') == 'dark'])>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,13 +40,20 @@
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
         @fonts
-
-        @vite(['resources/css/app.css', 'resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
-        <x-inertia::head>
-            <title>{{ config('app.name', 'Laravel') }}</title>
-        </x-inertia::head>
+        @vite(['resources/css/app.css'])
     </head>
     <body class="font-sans antialiased">
-        <x-inertia::app />
+        <div class="min-h-screen flex flex-col items-center justify-center text-center text-white">
+            <h1 class="text-4xl font-bold uppercase">Bush Pilot's Guide</h1>
+            <p>An Unofficial Companion for The Long Dark</p>
+            <p>
+                @if ($user)
+                    <a href="{{ route('dashboard') }}" class="text-blue-500 hover:underline">Go to Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}" class="text-blue-500 hover:underline">Login</a> or
+                    <a href="{{ route('register') }}" class="text-blue-500 hover:underline">Register</a> to get started.
+                @endif
+            </p>
+        </div>
     </body>
 </html>
