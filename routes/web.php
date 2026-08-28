@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (Request $request) {
     return view('landing', [
-        'user' => $request->user()
+        'user' => $request->user(),
     ]);
 })->name('home');
 
