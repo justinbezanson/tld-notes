@@ -38,6 +38,9 @@ class NotesItem extends Model
         ];
     }
 
+    /**
+     * @return BelongsTo<Note, $this>
+     */
     public function note(): BelongsTo
     {
         return $this->belongsTo(Note::class, 'note_id');
