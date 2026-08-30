@@ -44,8 +44,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen flex flex-col items-center justify-center text-center text-white">
-            <h1 class="text-4xl font-bold uppercase">Bush Pilot's Guide</h1>
-            <p>An Unofficial Companion for The Long Dark</p>
+            <img src="/images/tld.png" alt="Bush Pilot's Guide Logo" class="mb-4">
             <p>
                 @if ($user)
                     <a href="{{ route('dashboard') }}" class="text-blue-500 hover:underline">Go to Dashboard</a>

@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
-import { LayoutGrid, Menu, Search } from '@lucide/vue';
+import { Goal, Menu, Search, NotebookPen } from '@lucide/vue';
 import { computed } from 'vue';
-import AppLogo from '@/components/AppLogo.vue';
-import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -55,9 +53,14 @@ const activeItemStyles =
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'Region Notes',
         href: dashboard(),
-        icon: LayoutGrid,
+        icon: NotebookPen,
+    },
+    {
+        title: 'Goals & Tasks',
+        href: dashboard(),
+        icon: Goal,
     },
 ];
 
@@ -96,9 +99,9 @@ const rightNavItems: NavItem[] = [
                                 >Navigation menu</SheetTitle
                             >
                             <SheetHeader class="flex justify-start text-left">
-                                <AppLogoIcon
-                                    class="size-6 fill-current text-black dark:text-white"
-                                />
+                                <img
+                                    src="/images/tld.png"
+                                    alt="Logo">
                             </SheetHeader>
                             <div
                                 class="flex h-full flex-1 flex-col justify-between space-y-4 py-6"
@@ -147,7 +150,7 @@ const rightNavItems: NavItem[] = [
                 </div>
 
                 <Link :href="dashboard()" class="flex items-center gap-x-2">
-                    <AppLogo />
+                    <img src="/images/tld.png" alt="Logo" class="w-64" />
                 </Link>
 
                 <!-- Desktop Menu -->
