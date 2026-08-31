@@ -11,6 +11,7 @@ Route::get('/', function (Request $request) {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'Dashboard')->name('dashboard');
+    Route::inertia('goals', 'Goals')->name('goals');
 });
 
 require __DIR__.'/settings.php';

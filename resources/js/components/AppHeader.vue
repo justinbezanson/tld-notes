@@ -33,7 +33,7 @@ import UserMenuContent from '@/components/UserMenuContent.vue';
 import { useCurrentUrl } from '@/composables/useCurrentUrl';
 import { getInitials } from '@/composables/useInitials';
 import { toUrl } from '@/lib/utils';
-import { dashboard } from '@/routes';
+import { dashboard, goals } from '@/routes';
 import type { BreadcrumbItem, NavItem } from '@/types';
 
 type Props = {
@@ -59,7 +59,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Goals & Tasks',
-        href: dashboard(),
+        href: goals(),
         icon: Goal,
     },
 ];
@@ -99,9 +99,7 @@ const rightNavItems: NavItem[] = [
                                 >Navigation menu</SheetTitle
                             >
                             <SheetHeader class="flex justify-start text-left">
-                                <img
-                                    src="/images/tld.png"
-                                    alt="Logo">
+                                <img src="/images/tld.png" alt="Logo" />
                             </SheetHeader>
                             <div
                                 class="flex h-full flex-1 flex-col justify-between space-y-4 py-6"
