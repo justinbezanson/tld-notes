@@ -9,6 +9,11 @@ import {
     CardTitle,
 } from '@/components/ui/card';
 import { dashboard } from '@/routes';
+import type { Run } from '@/types';
+
+const props = defineProps<{
+    runs: Array<Run>;
+}>();
 
 defineOptions({
     layout: {
@@ -29,6 +34,10 @@ defineOptions({
         class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4 text-center md:text-left"
     >
         <h1>Region Notes</h1>
+
+        <div v-if="props.runs.length === 0">
+            <p>No runs found.</p>
+        </div>
 
         <div
             class="regions-container grid grid-cols-1 gap-4 text-left md:grid-cols-3"

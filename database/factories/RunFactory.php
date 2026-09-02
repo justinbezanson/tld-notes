@@ -2,15 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Note;
 use App\Models\Run;
 use App\Models\User;
+use App\RunType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Note>
+ * @extends Factory<Run>
  */
-class NoteFactory extends Factory
+class RunFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,9 +20,9 @@ class NoteFactory extends Factory
     public function definition(): array
     {
         return [
-            'region_id' => fake()->unique()->word(),
+            'name' => fake()->words(2, true),
             'user_id' => User::factory(),
-            'run_id' => Run::factory(),
+            'run_type' => RunType::Custom,
         ];
     }
 }

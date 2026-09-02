@@ -19,3 +19,19 @@ CREATE TABLE IF NOT EXISTS notes_items (
     CONSTRAINT notes_items_note_id_foreign FOREIGN KEY (note_id) REFERENCES notes (id) ON DELETE CASCADE,
     INDEX notes_items_note_id_index (note_id)
 );
+
+CREATE TABLE IF NOT EXISTS runs (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    user_id BIGINT UNSIGNED NOT NULL,
+    created_at TIMESTAMP NULL,
+    updated_at TIMESTAMP NULL,
+    CONSTRAINT runs_user_id_foreign FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
+
+ALTER TABLE notes ADD COLUMN run_id INT UNSIGNED NOT NULL;
+
+ALTER TABLE notes ADD CONSTRAINT notes_run_id_foreign 
+FOREIGN KEY (run_id) REFERENCES runs (id) ON DELETE CASCADE;
+
+ALTER TABLE runs ADD COLUMN run_type ENUM('PILGRIM', 'VOYAGER', 'STALKER', 'INTERLOPER', 'MISERY', 'CUSTOM') NOT NULL DEFAULT 'CUSTOM';

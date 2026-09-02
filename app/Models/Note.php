@@ -15,12 +15,14 @@ use Illuminate\Support\Carbon;
  * @property int $id
  * @property string|null $region_id
  * @property int $user_id
+ * @property int $run_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property-read User $user
+ * @property-read Run $run
  * @property-read Collection<int, NotesItem> $items
  */
-#[Fillable(['region_id', 'user_id'])]
+#[Fillable(['region_id', 'user_id', 'run_id'])]
 class Note extends Model
 {
     /** @use HasFactory<NoteFactory> */
@@ -32,6 +34,14 @@ class Note extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return BelongsTo<Run, $this>
+     */
+    public function run(): BelongsTo
+    {
+        return $this->belongsTo(Run::class);
     }
 
     /**

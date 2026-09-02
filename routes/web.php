@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RunController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,7 +11,7 @@ Route::get('/', function (Request $request) {
 })->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::inertia('dashboard', 'Dashboard')->name('dashboard');
+    Route::get('dashboard', [RunController::class, 'index'])->name('dashboard');
     Route::inertia('goals', 'Goals')->name('goals');
 });
 
