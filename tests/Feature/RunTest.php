@@ -78,3 +78,53 @@ test('the dashboard lists only the authenticated user runs newest first', functi
             ->where('runs.0.run_type', 'CUSTOM')
             ->where('runs.1.name', 'Older'));
 });
+
+test('an authenticated user can create a run', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+        ->post(route('runs.store'), [
+            'name' => 'Road To 500',
+            'run_type' => 'INTERLOPER',
+        ])
+        ->assertRedirect(route('dashboard'));
+
+    $this->assertDatabaseHas('runs', [
+        'user_id' => $user->id,
+        'name' => 'Road To 500',
+        'run_type' => 'INTERLOPER',
+    ]);
+});
+
+test('creating a run requires a name and a run type', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+        ->post(route('runs.store'), [])
+        ->assertSessionHasErrors([
+            'name' => 'The name field is required.',
+            'run_type' => 'The run type field is required.',
+        ]);
+
+    expect(Run::where('user_id', $user->id)->count())->toBe(0);
+});
+
+test('creating a run requires a valid run type', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+        ->post(route('runs.store'), [
+            'name' => 'Road To 500',
+            'run_type' => 'ILLEGAL',
+        ])
+        ->assertSessionHasErrors(['run_type' => 'The selected run type is invalid.']);
+
+    expect(Run::where('user_id', $user->id)->count())->toBe(0);
+});
+
+test('guests are redirected to login when creating a run', function () {
+    $this->post(route('runs.store'), [
+        'name' => 'Road To 500',
+        'run_type' => 'CUSTOM',
+    ])->assertRedirect(route('login'));
+});
