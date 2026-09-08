@@ -32,7 +32,7 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { dashboard } from '@/routes';
-import { destroy, store } from '@/routes/runs';
+import { destroy, store, update } from '@/routes/runs';
 import type { Run } from '@/types';
 
 const props = defineProps<{
@@ -89,6 +89,36 @@ function deleteRun() {
         },
     });
 }
+
+const editDialogOpen = ref(false);
+const editingRun = ref<Run | null>(null);
+
+const editForm = useForm({
+    name: '',
+    run_type: 'CUSTOM',
+});
+
+function requestEdit(run: Run) {
+    editingRun.value = run;
+    editForm.clearErrors();
+    editForm.name = run.name;
+    editForm.run_type = run.run_type;
+    editDialogOpen.value = true;
+}
+
+function updateRun() {
+    if (!editingRun.value) {
+        return;
+    }
+
+    editForm.put(update.url(editingRun.value.id), {
+        onSuccess: () => {
+            editDialogOpen.value = false;
+            editForm.reset();
+            editingRun.value = null;
+        },
+    });
+}
 </script>
 
 <template>
@@ -103,7 +133,11 @@ function deleteRun() {
             <h1 class="mr-4">Save Files</h1>
             <Dialog v-model:open="dialogOpen">
                 <DialogTrigger as-child>
-                    <Button variant="outline" title="Create a new run">
+                    <Button
+                        variant="outline"
+                        title="Create a new run"
+                        class="cursor-pointer"
+                    >
                         <Plus />
                     </Button>
                 </DialogTrigger>
@@ -162,11 +196,19 @@ function deleteRun() {
                         </div>
                         <DialogFooter>
                             <DialogClose as-child>
-                                <Button variant="outline" type="button">
+                                <Button
+                                    variant="outline"
+                                    type="button"
+                                    class="cursor-pointer"
+                                >
                                     Cancel
                                 </Button>
                             </DialogClose>
-                            <Button type="submit" :disabled="form.processing">
+                            <Button
+                                type="submit"
+                                :disabled="form.processing"
+                                class="cursor-pointer"
+                            >
                                 {{ form.processing ? 'Saving...' : 'Save' }}
                             </Button>
                         </DialogFooter>
@@ -192,13 +234,18 @@ function deleteRun() {
                 </CardContent>
                 <CardFooter>
                     <div class="flex w-full justify-end gap-2">
-                        <Button variant="outline" size="icon"
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            title="Edit run"
+                            class="cursor-pointer"
+                            @click="requestEdit(run)"
                             ><Pencil
                         /></Button>
                         <Button
                             variant="outline"
                             size="icon"
-                            class="border-destructive/40 bg-destructive/10 text-destructive hover:bg-destructive/20 hover:text-destructive"
+                            class="cursor-pointer border-destructive/40 bg-destructive/10 text-destructive hover:bg-destructive/20 hover:text-destructive"
                             title="Delete run"
                             @click="requestDelete(run)"
                         >
@@ -208,6 +255,85 @@ function deleteRun() {
                 </CardFooter>
             </Card>
         </div>
+
+        <Dialog v-model:open="editDialogOpen">
+            <DialogContent class="sm:max-w-[425px]">
+                <form @submit.prevent="updateRun">
+                    <DialogHeader>
+                        <DialogTitle>Edit Run</DialogTitle>
+                        <DialogDescription>
+                            Update the settings for your run. Click save when
+                            you're done.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <div class="mb-4 grid gap-4">
+                        <div class="grid gap-3">
+                            <Label for="edit-name">Name</Label>
+                            <Input
+                                id="edit-name"
+                                v-model="editForm.name"
+                                name="name"
+                                placeholder="Road to 500"
+                                required
+                            />
+                            <InputError :message="editForm.errors.name" />
+                        </div>
+                        <div class="grid gap-3">
+                            <Label for="edit-run_type">Run Type</Label>
+                            <Select v-model="editForm.run_type">
+                                <SelectTrigger
+                                    id="edit-run_type"
+                                    class="w-full"
+                                >
+                                    <SelectValue
+                                        placeholder="Select a run type"
+                                    />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="PILGRIM"
+                                        >Pilgrim</SelectItem
+                                    >
+                                    <SelectItem value="VOYAGER"
+                                        >Voyager</SelectItem
+                                    >
+                                    <SelectItem value="STALKER"
+                                        >Stalker</SelectItem
+                                    >
+                                    <SelectItem value="INTERLOPER"
+                                        >Interloper</SelectItem
+                                    >
+                                    <SelectItem value="MISERY"
+                                        >Misery</SelectItem
+                                    >
+                                    <SelectItem value="CUSTOM"
+                                        >Custom</SelectItem
+                                    >
+                                </SelectContent>
+                            </Select>
+                            <InputError :message="editForm.errors.run_type" />
+                        </div>
+                    </div>
+                    <DialogFooter>
+                        <DialogClose as-child>
+                            <Button
+                                variant="outline"
+                                type="button"
+                                class="cursor-pointer"
+                            >
+                                Cancel
+                            </Button>
+                        </DialogClose>
+                        <Button
+                            type="submit"
+                            :disabled="editForm.processing"
+                            class="cursor-pointer"
+                        >
+                            {{ editForm.processing ? 'Saving...' : 'Save' }}
+                        </Button>
+                    </DialogFooter>
+                </form>
+            </DialogContent>
+        </Dialog>
 
         <Dialog v-model:open="deleteDialogOpen">
             <DialogContent class="sm:max-w-[425px]">
@@ -221,11 +347,18 @@ function deleteRun() {
                 </DialogHeader>
                 <DialogFooter>
                     <DialogClose as-child>
-                        <Button variant="outline" type="button">Cancel</Button>
+                        <Button
+                            variant="outline"
+                            type="button"
+                            class="cursor-pointer"
+                        >
+                            Cancel
+                        </Button>
                     </DialogClose>
                     <Button
                         variant="destructive"
                         :disabled="deleteForm.processing"
+                        class="cursor-pointer"
                         @click="deleteRun"
                     >
                         {{ deleteForm.processing ? 'Deleting...' : 'Delete' }}

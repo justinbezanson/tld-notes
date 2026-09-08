@@ -13,6 +13,7 @@ Route::get('/', function (Request $request) {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', [RunController::class, 'index'])->name('dashboard');
     Route::post('runs', [RunController::class, 'store'])->name('runs.store');
+    Route::put('runs/{run}', [RunController::class, 'update'])->name('runs.update');
     Route::delete('runs/{run}', [RunController::class, 'destroy'])->name('runs.destroy');
     Route::inertia('goals', 'Goals')->name('goals');
 });

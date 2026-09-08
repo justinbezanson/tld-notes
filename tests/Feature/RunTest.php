@@ -155,3 +155,52 @@ test('guests are redirected to login when deleting a run', function () {
 
     $this->delete(route('runs.destroy', $run))->assertRedirect(route('login'));
 });
+
+test('an authenticated user can update their own run', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->put(route('runs.update', $run), [
+            'name' => 'Road To 500',
+            'run_type' => 'STALKER',
+        ])
+        ->assertRedirect(route('dashboard'));
+
+    $this->assertDatabaseHas('runs', [
+        'id' => $run->id,
+        'name' => 'Road To 500',
+        'run_type' => 'STALKER',
+    ]);
+});
+
+test('a user cannot update another user run', function () {
+    $user = User::factory()->create();
+    $run = Run::factory()->for(User::factory())->create();
+
+    $this->actingAs($user)
+        ->put(route('runs.update', $run), [
+            'name' => 'Road To 500',
+            'run_type' => 'STALKER',
+        ])
+        ->assertForbidden();
+});
+
+test('updating a run requires a name and a run type', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->put(route('runs.update', $run), [])
+        ->assertSessionHasErrors([
+            'name' => 'The name field is required.',
+            'run_type' => 'The run type field is required.',
+        ]);
+});
+
+test('guests are redirected to login when updating a run', function () {
+    $run = Run::factory()->create();
+
+    $this->put(route('runs.update', $run), [
+        'name' => 'Road To 500',
+        'run_type' => 'STALKER',
+    ])->assertRedirect(route('login'));
+});

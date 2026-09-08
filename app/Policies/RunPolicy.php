@@ -16,6 +16,14 @@ class RunPolicy
     }
 
     /**
+     * Determine whether the user can update the run.
+     */
+    public function update(User $user, Run $run): bool
+    {
+        return $run->user_id === $user->id;
+    }
+
+    /**
      * Determine whether the user can delete the run.
      */
     public function delete(User $user, Run $run): bool

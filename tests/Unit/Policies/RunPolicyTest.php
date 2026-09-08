@@ -23,3 +23,17 @@ test('a user cannot delete another user run', function () {
 
     expect((new RunPolicy)->delete($user, $run))->toBeFalse();
 });
+
+test('a user may update their own run', function () {
+    $user = User::factory()->create();
+    $run = Run::factory()->for($user)->create();
+
+    expect((new RunPolicy)->update($user, $run))->toBeTrue();
+});
+
+test('a user cannot update another user run', function () {
+    $user = User::factory()->create();
+    $run = Run::factory()->for(User::factory())->create();
+
+    expect((new RunPolicy)->update($user, $run))->toBeFalse();
+});
