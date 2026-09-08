@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Actions\CreateRunAction;
+use App\Actions\DeleteRunAction;
 use App\Actions\GetRunsAction;
+use App\Http\Requests\DestroyRunRequest;
 use App\Http\Requests\GetRunsRequest;
 use App\Http\Requests\StoreRunRequest;
+use App\Models\Run;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -30,6 +33,15 @@ class RunController extends Controller
         );
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Run created.')]);
+
+        return to_route('dashboard');
+    }
+
+    public function destroy(DestroyRunRequest $request, DeleteRunAction $action, Run $run): RedirectResponse
+    {
+        $action->execute($run);
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => __('Run deleted.')]);
 
         return to_route('dashboard');
     }

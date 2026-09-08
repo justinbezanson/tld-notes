@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Models\Run;
 use App\Models\User;
 
 class RunPolicy
@@ -12,5 +13,13 @@ class RunPolicy
     public function create(User $user): bool
     {
         return true;
+    }
+
+    /**
+     * Determine whether the user can delete the run.
+     */
+    public function delete(User $user, Run $run): bool
+    {
+        return $run->user_id === $user->id;
     }
 }

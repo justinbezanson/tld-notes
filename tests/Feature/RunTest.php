@@ -128,3 +128,30 @@ test('guests are redirected to login when creating a run', function () {
         'run_type' => 'CUSTOM',
     ])->assertRedirect(route('login'));
 });
+
+test('an authenticated user can delete their own run', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->delete(route('runs.destroy', $run))
+        ->assertRedirect(route('dashboard'));
+
+    $this->assertDatabaseMissing('runs', ['id' => $run->id]);
+});
+
+test('a user cannot delete another user run', function () {
+    $user = User::factory()->create();
+    $run = Run::factory()->for(User::factory())->create();
+
+    $this->actingAs($user)
+        ->delete(route('runs.destroy', $run))
+        ->assertForbidden();
+
+    $this->assertDatabaseHas('runs', ['id' => $run->id]);
+});
+
+test('guests are redirected to login when deleting a run', function () {
+    $run = Run::factory()->create();
+
+    $this->delete(route('runs.destroy', $run))->assertRedirect(route('login'));
+});

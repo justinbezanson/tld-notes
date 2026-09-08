@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Head, useForm } from '@inertiajs/vue3';
-import { Plus } from '@lucide/vue';
+import { Plus, Pencil, Trash } from '@lucide/vue';
 import { ref } from 'vue';
 import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
@@ -32,7 +32,7 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { dashboard } from '@/routes';
-import { store } from '@/routes/runs';
+import { destroy, store } from '@/routes/runs';
 import type { Run } from '@/types';
 
 const props = defineProps<{
@@ -66,32 +66,29 @@ function createRun() {
     });
 }
 
-// const runs: Array<Run> = [
-//     {
-//         id: 1,
-//         user_id: 1,
-//         name: 'Road To 500 Days',
-//         run_type: 'INTERLOPER',
-//         created_at: '2024-06-01T12:00:00Z',
-//         updated_at: '2024-06-01T12:00:00Z',
-//     },
-//     {
-//         id: 2,
-//         user_id: 1,
-//         name: 'Stalker',
-//         run_type: 'STALKER',
-//         created_at: '2024-06-01T12:00:00Z',
-//         updated_at: '2024-06-01T12:00:00Z',
-//     },
-//     {
-//         id: 3,
-//         user_id: 1,
-//         name: 'All Achievements',
-//         run_type: 'VOYAGER',
-//         created_at: '2024-06-01T12:00:00Z',
-//         updated_at: '2024-06-01T12:00:00Z',
-//     },
-// ];
+const deleteDialogOpen = ref(false);
+const runToDelete = ref<Run | null>(null);
+
+const deleteForm = useForm({});
+
+function requestDelete(run: Run) {
+    runToDelete.value = run;
+    deleteDialogOpen.value = true;
+}
+
+function deleteRun() {
+    if (!runToDelete.value) {
+        return;
+    }
+
+    deleteForm.delete(destroy.url(runToDelete.value.id), {
+        preserveScroll: true,
+        onSuccess: () => {
+            deleteDialogOpen.value = false;
+            runToDelete.value = null;
+        },
+    });
+}
 </script>
 
 <template>
@@ -194,11 +191,47 @@ function createRun() {
                     <p class="text-gray-500">Updated: {{ run.updated_at }}</p>
                 </CardContent>
                 <CardFooter>
-                    <p>
-                        <Button>Load</Button>
-                    </p>
+                    <div class="flex w-full justify-end gap-2">
+                        <Button variant="outline" size="icon"
+                            ><Pencil
+                        /></Button>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            class="border-destructive/40 bg-destructive/10 text-destructive hover:bg-destructive/20 hover:text-destructive"
+                            title="Delete run"
+                            @click="requestDelete(run)"
+                        >
+                            <Trash />
+                        </Button>
+                    </div>
                 </CardFooter>
             </Card>
         </div>
+
+        <Dialog v-model:open="deleteDialogOpen">
+            <DialogContent class="sm:max-w-[425px]">
+                <DialogHeader>
+                    <DialogTitle>Delete Run</DialogTitle>
+                    <DialogDescription>
+                        Are you sure you want to delete "{{
+                            runToDelete?.name
+                        }}"? This action cannot be undone.
+                    </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                    <DialogClose as-child>
+                        <Button variant="outline" type="button">Cancel</Button>
+                    </DialogClose>
+                    <Button
+                        variant="destructive"
+                        :disabled="deleteForm.processing"
+                        @click="deleteRun"
+                    >
+                        {{ deleteForm.processing ? 'Deleting...' : 'Delete' }}
+                    </Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
     </div>
 </template>
