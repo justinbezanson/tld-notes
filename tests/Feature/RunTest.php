@@ -156,6 +156,34 @@ test('guests are redirected to login when deleting a run', function () {
     $this->delete(route('runs.destroy', $run))->assertRedirect(route('login'));
 });
 
+test('an authenticated user can view their own run', function () {
+    $run = Run::factory()->create(['name' => 'Road To 500', 'run_type' => RunType::Interloper]);
+
+    $this->actingAs($run->user)
+        ->get(route('runs.show', $run))
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('Runs/Show')
+            ->where('run.id', $run->id)
+            ->where('run.name', 'Road To 500')
+            ->where('run.run_type', 'INTERLOPER'));
+});
+
+test('a user cannot view another user run', function () {
+    $user = User::factory()->create();
+    $run = Run::factory()->for(User::factory())->create();
+
+    $this->actingAs($user)
+        ->get(route('runs.show', $run))
+        ->assertForbidden();
+});
+
+test('guests are redirected to login when viewing a run', function () {
+    $run = Run::factory()->create();
+
+    $this->get(route('runs.show', $run))->assertRedirect(route('login'));
+});
+
 test('an authenticated user can update their own run', function () {
     $run = Run::factory()->create();
 

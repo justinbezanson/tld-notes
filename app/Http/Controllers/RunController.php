@@ -8,6 +8,7 @@ use App\Actions\GetRunsAction;
 use App\Actions\UpdateRunAction;
 use App\Http\Requests\DestroyRunRequest;
 use App\Http\Requests\GetRunsRequest;
+use App\Http\Requests\ShowRunRequest;
 use App\Http\Requests\StoreRunRequest;
 use App\Http\Requests\UpdateRunRequest;
 use App\Models\Run;
@@ -23,6 +24,13 @@ class RunController extends Controller
 
         return inertia('Runs/Index', [
             'runs' => $runs,
+        ]);
+    }
+
+    public function show(ShowRunRequest $request, Run $run): Response
+    {
+        return inertia('Runs/Show', [
+            'run' => $run,
         ]);
     }
 

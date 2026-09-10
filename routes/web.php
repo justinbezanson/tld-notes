@@ -15,6 +15,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('runs', [RunController::class, 'store'])->name('runs.store');
     Route::put('runs/{run}', [RunController::class, 'update'])->name('runs.update');
     Route::delete('runs/{run}', [RunController::class, 'destroy'])->name('runs.destroy');
+    Route::get('runs/{run}', [RunController::class, 'show'])->name('runs.show');
     Route::inertia('goals', 'Goals')->name('goals');
 });
 

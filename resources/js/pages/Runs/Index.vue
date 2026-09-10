@@ -6,7 +6,6 @@ import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
 import {
     Card,
-    CardContent,
     CardDescription,
     CardFooter,
     CardHeader,
@@ -32,7 +31,7 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { dashboard } from '@/routes';
-import { destroy, store, update } from '@/routes/runs';
+import { destroy, store, update, show } from '@/routes/runs';
 import type { Run } from '@/types';
 
 const props = defineProps<{
@@ -226,12 +225,13 @@ function updateRun() {
         >
             <Card v-for="run in props.runs" :key="run.id">
                 <CardHeader>
-                    <CardTitle class="text-2xl">{{ run.name }}</CardTitle>
+                    <CardTitle class="text-2xl">
+                        <a :href="show.url(run.id)" class="hover:underline">
+                            {{ run.name }}
+                        </a>
+                    </CardTitle>
                     <CardDescription>{{ run.run_type }}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                    <p class="text-gray-500">Updated: {{ run.updated_at }}</p>
-                </CardContent>
                 <CardFooter>
                     <div class="flex w-full justify-end gap-2">
                         <Button
