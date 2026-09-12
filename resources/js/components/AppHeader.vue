@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
-import { Goal, Menu, Search, NotebookPen } from '@lucide/vue';
+import { Menu, Search, NotebookPen } from '@lucide/vue';
 import { computed } from 'vue';
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -33,7 +33,7 @@ import UserMenuContent from '@/components/UserMenuContent.vue';
 import { useCurrentUrl } from '@/composables/useCurrentUrl';
 import { getInitials } from '@/composables/useInitials';
 import { toUrl } from '@/lib/utils';
-import { dashboard, goals } from '@/routes';
+import { dashboard } from '@/routes';
 import type { BreadcrumbItem, NavItem } from '@/types';
 
 type Props = {
@@ -53,14 +53,9 @@ const activeItemStyles =
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Region Notes',
+        title: 'Save Files',
         href: dashboard(),
         icon: NotebookPen,
-    },
-    {
-        title: 'Goals & Tasks',
-        href: goals(),
-        icon: Goal,
     },
 ];
 
