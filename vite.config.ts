@@ -4,9 +4,15 @@ import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 import laravel from 'laravel-vite-plugin';
 import { bunny } from 'laravel-vite-plugin/fonts';
+import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    resolve: {
+        alias: {
+            '@data': fileURLToPath(new URL('./resources/data', import.meta.url)),
+        },
+    },
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.ts'],
