@@ -2,6 +2,7 @@
 import { Head, useForm } from '@inertiajs/vue3';
 import { ChevronsUpDown, Plus } from '@lucide/vue';
 import { ref } from 'vue';
+import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
 import {
     Card,
@@ -25,13 +26,23 @@ import {
     DialogTitle,
     DialogTrigger,
 } from '@/components/ui/dialog';
+import { Label } from '@/components/ui/label';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { dashboard } from '@/routes';
-import type { Run } from '@/types';
+import { store } from '@/routes/runs/regions';
+import type { Region, Run } from '@/types';
 import regionsData from '@data/regions.json';
 
 const props = defineProps<{
     run: Run;
+    regions: Array<Region>;
 }>();
 
 const dialogOpen = ref(false);
@@ -48,17 +59,22 @@ defineOptions({
 });
 
 const form = useForm({
-    name: '',
-    run_type: 'CUSTOM',
+    region_id: 'GENERAL',
 });
 
 function createRegion() {
-    // form.post(store.url(), {
-    //     onSuccess: () => {
-    //         dialogOpen.value = false;
-    //         form.reset();
-    //     },
-    // });
+    form.post(store.url(props.run.id), {
+        onSuccess: () => {
+            dialogOpen.value = false;
+            form.reset();
+        },
+    });
+}
+
+function getRegionNameFromId(regionId: string): string {
+    const region = regionsData.find((r) => r.id === regionId);
+
+    return region ? region.name : 'Unknown Region';
 }
 
 const isOpen = ref(false);
@@ -111,50 +127,31 @@ const isOpen = ref(false);
                             </DialogHeader>
                             <div class="mb-4 grid gap-4">
                                 <div class="grid gap-3">
-                                    <Label for="name">Name</Label>
-                                    <Input
-                                        id="name"
-                                        v-model="form.name"
-                                        name="name"
-                                        placeholder="Road to 500"
-                                        required
-                                    />
-                                    <InputError :message="form.errors.name" />
-                                </div>
-                                <div class="grid gap-3">
-                                    <Label for="run_type">Run Type</Label>
-                                    <Select v-model="form.run_type">
+                                    <Label for="region">Region</Label>
+                                    <Select v-model="form.region_id">
                                         <SelectTrigger
-                                            id="run_type"
+                                            id="region"
                                             class="w-full"
                                         >
                                             <SelectValue
-                                                placeholder="Select a run type"
+                                                placeholder="Select a region"
                                             />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="PILGRIM"
-                                                >Pilgrim</SelectItem
+                                            <SelectItem value="GENERAL">
+                                                General (No specific region)
+                                            </SelectItem>
+                                            <SelectItem
+                                                v-for="region in regionsData"
+                                                :key="region.id"
+                                                :value="region.id"
                                             >
-                                            <SelectItem value="VOYAGER"
-                                                >Voyager</SelectItem
-                                            >
-                                            <SelectItem value="STALKER"
-                                                >Stalker</SelectItem
-                                            >
-                                            <SelectItem value="INTERLOPER"
-                                                >Interloper</SelectItem
-                                            >
-                                            <SelectItem value="MISERY"
-                                                >Misery</SelectItem
-                                            >
-                                            <SelectItem value="CUSTOM"
-                                                >Custom</SelectItem
-                                            >
+                                                {{ region.name }}
+                                            </SelectItem>
                                         </SelectContent>
                                     </Select>
                                     <InputError
-                                        :message="form.errors.run_type"
+                                        :message="form.errors.region_id"
                                     />
                                 </div>
                             </div>
@@ -180,17 +177,18 @@ const isOpen = ref(false);
                     </DialogContent>
                 </Dialog>
 
-                <Card class="w-full">
+                <Card v-for="region in regions" :key="region.id" class="w-full">
                     <Collapsible v-model:open="isOpen">
                         <CardHeader
                             class="flex flex-row items-center justify-between space-y-0"
                         >
                             <div>
-                                <CardTitle>Collapsible Card</CardTitle>
-                                <CardDescription
-                                    >Click the button to reveal
-                                    content.</CardDescription
-                                >
+                                <CardTitle>{{
+                                    getRegionNameFromId(region.region_id)
+                                }}</CardTitle>
+                                <CardDescription>
+                                    Click reveal notes.
+                                </CardDescription>
                             </div>
 
                             <CollapsibleTrigger as-child>
@@ -208,17 +206,7 @@ const isOpen = ref(false);
                         <CollapsibleContent
                             class="data-[state=closed]:animate-collapse-up data-[state=open]:animate-collapse-down transition-all"
                         >
-                            <CardContent>
-                                <ul class="space-y-1 text-sm">
-                                    <li
-                                        v-for="region in regionsData"
-                                        :key="region.id"
-                                        class="rounded-md px-2 py-1 hover:bg-muted"
-                                    >
-                                        {{ region.name }}
-                                    </li>
-                                </ul>
-                            </CardContent>
+                            <CardContent> Notes... </CardContent>
                         </CollapsibleContent>
                     </Collapsible>
                 </Card>

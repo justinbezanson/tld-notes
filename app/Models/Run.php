@@ -21,6 +21,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read User $user
  * @property-read Collection<int, Note> $notes
+ * @property-read Collection<int, Region> $regions
  */
 #[Fillable(['name', 'user_id', 'run_type'])]
 class Run extends Model
@@ -54,5 +55,13 @@ class Run extends Model
     public function notes(): HasMany
     {
         return $this->hasMany(Note::class);
+    }
+
+    /**
+     * @return HasMany<Region, $this>
+     */
+    public function regions(): HasMany
+    {
+        return $this->hasMany(Region::class);
     }
 }

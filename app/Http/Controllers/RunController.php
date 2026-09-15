@@ -31,6 +31,7 @@ class RunController extends Controller
     {
         return inertia('Runs/Show', [
             'run' => $run,
+            'regions' => $run->regions,
         ]);
     }
 
