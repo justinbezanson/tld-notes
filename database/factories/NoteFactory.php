@@ -21,6 +21,7 @@ class NoteFactory extends Factory
     {
         return [
             'region_id' => fake()->unique()->word(),
+            'location_id' => null,
             'user_id' => User::factory(),
             'run_id' => Run::factory(),
         ];

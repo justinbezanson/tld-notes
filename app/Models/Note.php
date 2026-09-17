@@ -14,6 +14,7 @@ use Illuminate\Support\Carbon;
 /**
  * @property int $id
  * @property string|null $region_id
+ * @property string|null $location_id
  * @property int $user_id
  * @property int $run_id
  * @property Carbon|null $created_at
@@ -22,7 +23,7 @@ use Illuminate\Support\Carbon;
  * @property-read Run $run
  * @property-read Collection<int, NotesItem> $items
  */
-#[Fillable(['region_id', 'user_id', 'run_id'])]
+#[Fillable(['region_id', 'location_id', 'user_id', 'run_id'])]
 class Note extends Model
 {
     /** @use HasFactory<NoteFactory> */

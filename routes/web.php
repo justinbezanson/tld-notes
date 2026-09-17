@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\RunController;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('runs/{run}', [RunController::class, 'destroy'])->name('runs.destroy');
     Route::get('runs/{run}', [RunController::class, 'show'])->name('runs.show');
     Route::post('runs/{run}/regions', [RegionController::class, 'store'])->name('runs.regions.store');
+    Route::post('runs/{run}/notes', [NoteController::class, 'store'])->name('runs.notes.store');
     Route::inertia('goals', 'Goals')->name('goals');
 });
 

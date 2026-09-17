@@ -1,16 +1,10 @@
 <script setup lang="ts">
 import { Head, useForm } from '@inertiajs/vue3';
 import { ChevronsUpDown, Plus } from '@lucide/vue';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
-import {
-    Card,
-    CardHeader,
-    CardTitle,
-    CardDescription,
-    CardContent,
-} from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import {
     Collapsible,
     CollapsibleContent,
@@ -36,16 +30,20 @@ import {
 } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { dashboard } from '@/routes';
+import { store as notesStore } from '@/routes/runs/notes';
 import { store } from '@/routes/runs/regions';
-import type { Region, Run } from '@/types';
+import type { Note, Region, Run } from '@/types';
 import regionsData from '@data/regions.json';
 
 const props = defineProps<{
     run: Run;
     regions: Array<Region>;
+    notes: Array<Note>;
 }>();
 
 const dialogOpen = ref(false);
+const noteDialogOpen = ref(false);
+const activeRegion = ref<Region | null>(null);
 
 defineOptions({
     layout: {
@@ -62,6 +60,27 @@ const form = useForm({
     region_id: 'GENERAL',
 });
 
+const noteForm = useForm({
+    region_id: '',
+    location_id: 'GENERAL',
+});
+
+const locationOptions = computed(() => {
+    const options: Array<{ name: string; id: string }> = [
+        { name: 'General', id: 'GENERAL' },
+    ];
+
+    const region = activeRegion.value
+        ? regionsData.find((r) => r.id === activeRegion.value?.region_id)
+        : undefined;
+
+    if (region) {
+        options.push(...region.locations);
+    }
+
+    return options;
+});
+
 function createRegion() {
     form.post(store.url(props.run.id), {
         onSuccess: () => {
@@ -71,10 +90,42 @@ function createRegion() {
     });
 }
 
+function openAddNote(region: Region) {
+    activeRegion.value = region;
+    noteForm.clearErrors();
+    noteForm.reset('location_id');
+    noteForm.region_id = region.region_id;
+    noteDialogOpen.value = true;
+}
+
+function createNote() {
+    noteForm.post(notesStore.url(props.run.id), {
+        onSuccess: () => {
+            noteDialogOpen.value = false;
+            noteForm.reset();
+        },
+    });
+}
+
 function getRegionNameFromId(regionId: string): string {
     const region = regionsData.find((r) => r.id === regionId);
 
     return region ? region.name : 'Unknown Region';
+}
+
+function getLocationName(regionId: string, locationId: string | null): string {
+    if (!locationId) {
+        return 'General';
+    }
+
+    const region = regionsData.find((r) => r.id === regionId);
+    const location = region?.locations.find((l) => l.id === locationId);
+
+    return location?.name ?? 'Unknown Location';
+}
+
+function notesForRegion(region: Region): Note[] {
+    return props.notes.filter((note) => note.region_id === region.region_id);
 }
 
 const isOpen = ref(false);
@@ -177,6 +228,78 @@ const isOpen = ref(false);
                     </DialogContent>
                 </Dialog>
 
+                <Dialog v-model:open="noteDialogOpen">
+                    <DialogContent class="sm:max-w-[425px]">
+                        <form @submit.prevent="createNote">
+                            <DialogHeader>
+                                <DialogTitle>
+                                    Add Note to
+                                    {{
+                                        activeRegion
+                                            ? getRegionNameFromId(
+                                                  activeRegion.region_id,
+                                              )
+                                            : ''
+                                    }}
+                                </DialogTitle>
+                                <DialogDescription>
+                                    Choose the location within this region the
+                                    note is for.
+                                </DialogDescription>
+                            </DialogHeader>
+                            <div class="mb-4 grid gap-4">
+                                <div class="grid gap-3">
+                                    <Label for="location">Location</Label>
+                                    <Select v-model="noteForm.location_id">
+                                        <SelectTrigger
+                                            id="location"
+                                            class="w-full"
+                                        >
+                                            <SelectValue
+                                                placeholder="Select a location"
+                                            />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem
+                                                v-for="location in locationOptions"
+                                                :key="location.id"
+                                                :value="location.id"
+                                            >
+                                                {{ location.name }}
+                                            </SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <InputError
+                                        :message="noteForm.errors.location_id"
+                                    />
+                                </div>
+                            </div>
+                            <DialogFooter>
+                                <DialogClose as-child>
+                                    <Button
+                                        variant="outline"
+                                        type="button"
+                                        class="cursor-pointer"
+                                    >
+                                        Cancel
+                                    </Button>
+                                </DialogClose>
+                                <Button
+                                    type="submit"
+                                    :disabled="noteForm.processing"
+                                    class="cursor-pointer"
+                                >
+                                    {{
+                                        noteForm.processing
+                                            ? 'Saving...'
+                                            : 'Save'
+                                    }}
+                                </Button>
+                            </DialogFooter>
+                        </form>
+                    </DialogContent>
+                </Dialog>
+
                 <Card v-for="region in regions" :key="region.id" class="w-full">
                     <Collapsible v-model:open="isOpen">
                         <CardHeader
@@ -186,9 +309,6 @@ const isOpen = ref(false);
                                 <CardTitle>{{
                                     getRegionNameFromId(region.region_id)
                                 }}</CardTitle>
-                                <CardDescription>
-                                    Click reveal notes.
-                                </CardDescription>
                             </div>
 
                             <CollapsibleTrigger as-child>
@@ -206,7 +326,37 @@ const isOpen = ref(false);
                         <CollapsibleContent
                             class="data-[state=closed]:animate-collapse-up data-[state=open]:animate-collapse-down transition-all"
                         >
-                            <CardContent> Notes... </CardContent>
+                            <CardContent>
+                                <div class="mt-2 mb-2">
+                                    <Button
+                                        variant="outline"
+                                        class="cursor-pointer"
+                                        @click="openAddNote(region)"
+                                    >
+                                        <Plus /> Add Note
+                                    </Button>
+                                </div>
+                                <ul
+                                    v-if="notesForRegion(region).length > 0"
+                                    class="space-y-1"
+                                >
+                                    <li
+                                        v-for="note in notesForRegion(region)"
+                                        :key="note.id"
+                                        class="rounded-md border px-3 py-2 text-sm"
+                                    >
+                                        {{
+                                            getLocationName(
+                                                region.region_id,
+                                                note.location_id,
+                                            )
+                                        }}
+                                    </li>
+                                </ul>
+                                <p v-else class="text-sm text-muted-foreground">
+                                    No notes yet.
+                                </p>
+                            </CardContent>
                         </CollapsibleContent>
                     </Collapsible>
                 </Card>
