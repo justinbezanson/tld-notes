@@ -20,7 +20,6 @@ class NotesItemFactory extends Factory
     {
         return [
             'note_id' => Note::factory(),
-            'location_id' => fake()->city(),
             'item_id' => fake()->unique()->numerify('ITEM####'),
             'item_name' => fake()->words(3, true),
             'quantity' => fake()->randomDigitNotNull(),

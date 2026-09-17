@@ -9,3 +9,4 @@ Before planning or editing, find the row whose globs match the file's path and r
 | resources/data/** | .ai/rules/data.md |
 | database/factories/** | .ai/rules/factories.md |
 | vite.config.ts | .ai/rules/general.md |
+| app/Models/NotesItem.php | .ai/rules/models.md |

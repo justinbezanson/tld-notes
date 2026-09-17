@@ -13,6 +13,12 @@ test('a note belongs to a run', function () {
     expect($note->run->is($run))->toBeTrue();
 });
 
+test('a note stores its text note', function () {
+    $note = Note::factory()->create(['note_text' => 'Stashed rifle behind the counter.']);
+
+    expect($note->note_text)->toBe('Stashed rifle behind the counter.');
+});
+
 test('deleting a run cascades to its notes', function () {
     $run = Run::factory()
         ->has(Note::factory()->count(2))
