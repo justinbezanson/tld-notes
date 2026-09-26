@@ -76,6 +76,7 @@ function requestAddNote(region: Region) {
             <RegionCard
                 v-for="region in props.regions"
                 :key="region.id"
+                :run-id="props.runId"
                 :region="region"
                 :notes="notesForRegion(groupedNotes, region.region_id)"
                 :open="openRegionIds.has(region.region_id)"

@@ -12,6 +12,7 @@ import { useGameData } from '@/composables/useGameData';
 import type { Note, Region } from '@/types';
 
 type Props = {
+    runId: number;
     region: Region;
     notes: Note[];
     open: boolean;
@@ -65,6 +66,7 @@ const { regionName } = useGameData();
                     </div>
 
                     <NoteList
+                        :run-id="props.runId"
                         :region-id="props.region.region_id"
                         :notes="props.notes"
                     />

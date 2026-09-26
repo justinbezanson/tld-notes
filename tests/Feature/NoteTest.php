@@ -367,3 +367,169 @@ test('the run show page lists the items for each note', function () {
             ->where('notes.0.items.0.item_name', 'Ballistic Vest')
             ->where('notes.0.items.0.quantity', 1));
 });
+
+test('an authenticated user can update a note', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+        'note_text' => 'Matches by the door.',
+    ]);
+    NotesItem::factory()->for($note)->create([
+        'item_id' => 'GEAR_BallisticVest',
+        'item_name' => 'Ballistic Vest',
+        'quantity' => 1,
+    ]);
+
+    $this->actingAs($run->user)
+        ->from(route('runs.show', $run))
+        ->put(route('runs.notes.update', [$run, $note]), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'fishing-hut',
+            'note_text' => 'Rope is frayed, replaced it.',
+            'items' => [
+                ['item_id' => 'GEAR_Hardwood', 'item_name' => 'Fir Firewood', 'quantity' => 8],
+            ],
+        ])
+        ->assertRedirect(route('runs.show', $run))
+        ->assertSessionHasNoErrors();
+
+    $note->refresh()->load('items');
+
+    expect($note->location_id)->toBe('fishing-hut')
+        ->and($note->note_text)->toBe('Rope is frayed, replaced it.')
+        ->and($note->items)->toHaveCount(1)
+        ->and($note->items->first()?->item_id)->toBe('GEAR_Hardwood')
+        ->and($note->items->first()?->quantity)->toBe(8);
+});
+
+test('updating a note replaces its item lines', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+    NotesItem::factory()->count(2)->for($note)->create();
+
+    $this->actingAs($run->user)
+        ->put(route('runs.notes.update', [$run, $note]), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_id' => 'GEAR_BallisticVest', 'item_name' => 'Ballistic Vest', 'quantity' => 3],
+            ],
+        ]);
+
+    expect($note->items()->count())->toBe(1)
+        ->and($note->items()->first()?->quantity)->toBe(3);
+});
+
+test('a note can be updated without items or text', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+        'note_text' => 'Matches by the door.',
+    ]);
+    NotesItem::factory()->for($note)->create();
+
+    $this->actingAs($run->user)
+        ->put(route('runs.notes.update', [$run, $note]), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'GENERAL',
+            'note_text' => '',
+            'items' => [],
+        ])
+        ->assertSessionHasNoErrors();
+
+    $note->refresh()->load('items');
+
+    expect($note->location_id)->toBeNull()
+        ->and($note->note_text)->toBeNull()
+        ->and($note->items)->toHaveCount(0);
+});
+
+test('updating a note requires a location within the region', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->actingAs($run->user)
+        ->put(route('runs.notes.update', [$run, $note]), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'power-plant',
+        ])
+        ->assertSessionHasErrors('location_id');
+
+    expect($note->refresh()->location_id)->toBe('camp-office');
+});
+
+test('updating a note item name is taken from the item reference data', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->actingAs($run->user)
+        ->put(route('runs.notes.update', [$run, $note]), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_id' => 'GEAR_BallisticVest', 'item_name' => 'Definitely Not A Vest', 'quantity' => 1],
+            ],
+        ]);
+
+    expect($note->items()->first()?->item_name)->toBe('Ballistic Vest');
+});
+
+test('a user cannot update a note on another user run', function () {
+    $user = User::factory()->create();
+    $run = Run::factory()->for(User::factory())->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->actingAs($user)
+        ->put(route('runs.notes.update', [$run, $note]), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'fishing-hut',
+        ])
+        ->assertForbidden();
+
+    expect($note->refresh()->location_id)->toBe('camp-office');
+});
+
+test('a user cannot update a note that belongs to a different run', function () {
+    $run = Run::factory()->create();
+    $otherRun = Run::factory()->create();
+    $note = Note::factory()->for($otherRun)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->actingAs($run->user)
+        ->put(route('runs.notes.update', [$run, $note]), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'fishing-hut',
+        ])
+        ->assertForbidden();
+
+    expect($note->refresh()->location_id)->toBe('camp-office');
+});
+
+test('guests are redirected to login when updating a note', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->put(route('runs.notes.update', [$run, $note]), [
+        'region_id' => 'mystery-lake',
+        'location_id' => 'fishing-hut',
+    ])->assertRedirect(route('login'));
+});

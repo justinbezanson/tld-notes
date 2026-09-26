@@ -3,17 +3,19 @@
 namespace App\Http\Requests;
 
 use App\Concerns\NoteValidationRules;
+use App\Models\Note;
 use App\Models\Run;
 use App\Models\User;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreNoteRequest extends FormRequest
+class UpdateNoteRequest extends FormRequest
 {
     use NoteValidationRules;
 
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the user is authorized to make this request. The run policy
+     * establishes ownership, so the note only has to belong to that run.
      */
     public function authorize(): bool
     {
@@ -23,7 +25,13 @@ class StoreNoteRequest extends FormRequest
         /** @var Run $run */
         $run = $this->route('run');
 
-        return $user?->can('update', $run) ?? false;
+        $note = $this->route('note');
+
+        if ($user === null || ! $user->can('update', $run)) {
+            return false;
+        }
+
+        return $note instanceof Note && $note->run_id === $run->id;
     }
 
     /**

@@ -5,12 +5,12 @@ import FormDialog from '@/components/FormDialog.vue';
 import NoteFormFields from '@/components/runs/NoteFormFields.vue';
 import { GENERAL_ID, useGameData } from '@/composables/useGameData';
 import { firstItemsError, itemLinesToSubmit } from '@/lib/notes';
-import { store } from '@/routes/runs/notes';
-import type { NoteFormData, Region } from '@/types';
+import { update } from '@/routes/runs/notes';
+import type { Note, NoteFormData } from '@/types';
 
 type Props = {
     runId: number;
-    region: Region | null;
+    note: Note;
 };
 
 const props = defineProps<Props>();
@@ -28,23 +28,32 @@ const form = useForm<NoteFormData>({
 
 const itemsError = computed(() => firstItemsError(form.errors));
 
-watch(open, (isOpen) => {
-    if (!isOpen || !props.region) {
-        return;
-    }
+watch(
+    open,
+    (isOpen) => {
+        if (!isOpen) {
+            return;
+        }
 
-    form.clearErrors();
-    form.reset();
-    form.region_id = props.region.region_id;
-});
+        form.clearErrors();
+        form.region_id = props.note.region_id;
+        form.location_id = props.note.location_id ?? GENERAL_ID;
+        form.note_text = props.note.note_text ?? '';
+        form.items = props.note.items.map((item) => ({
+            item_id: item.item_id,
+            item_name: item.item_name,
+            quantity: item.quantity,
+        }));
+    },
+    { immediate: true },
+);
 
-function createNote() {
+function updateNote() {
     form.items = itemLinesToSubmit(form.items);
 
-    form.post(store.url(props.runId), {
+    form.put(update.url({ run: props.runId, note: props.note.id }), {
         onSuccess: () => {
             open.value = false;
-            form.reset();
         },
     });
 }
@@ -53,18 +62,17 @@ function createNote() {
 <template>
     <FormDialog
         v-model:open="open"
-        :title="
-            region ? `Add Note to ${regionName(region.region_id)}` : 'Add Note'
-        "
-        description="Log what you are carrying at this location."
+        :title="`Edit Note in ${regionName(props.note.region_id)}`"
+        description="Update what you are carrying at this location."
+        submit-label="Update"
         :processing="form.processing"
-        @submit="createNote"
+        @submit="updateNote"
     >
         <NoteFormFields
             v-model:location-id="form.location_id"
             v-model:items="form.items"
             v-model:note-text="form.note_text"
-            :region-id="props.region?.region_id ?? ''"
+            :region-id="props.note.region_id"
             :location-error="form.errors.location_id"
             :items-error="itemsError"
             :note-text-error="form.errors.note_text"

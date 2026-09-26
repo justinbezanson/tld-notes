@@ -20,6 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('runs/{run}', [RunController::class, 'show'])->name('runs.show');
     Route::post('runs/{run}/regions', [RegionController::class, 'store'])->name('runs.regions.store');
     Route::post('runs/{run}/notes', [NoteController::class, 'store'])->name('runs.notes.store');
+    Route::put('runs/{run}/notes/{note}', [NoteController::class, 'update'])->name('runs.notes.update');
     Route::inertia('goals', 'Goals')->name('goals');
 });
 

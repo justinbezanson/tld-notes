@@ -10,3 +10,6 @@ No component may import @data/regions.json directly — call composables/useGame
 
 ## Note item rows mirror the request payload, not the picker model
 Note items are a nested repeater whose form rows deliberately use the request shape (`{ item_id, item_name, quantity }`, NoteItemLine) instead of the picker's selection object, and AddNoteDialog filters unselected rows before posting. That keeps Inertia error keys (`items.0.quantity`) and the form field in sync without a form.transform. The first `items.*` error is surfaced once under the repeater via a computed scan of form.errors, since each row is not a real form field.
+
+## Share note fields with explicit v-models, never a form prop
+AddNoteDialog and UpdateNoteDialog share their body through NoteFormFields.vue, which takes explicit `v-model:location-id` / `v-model:items` / `v-model:note-text` plus one error prop per field — not a `form` prop. `v-model` on a prop member is rejected by the project's `vue/no-mutating-props` rule, and the first-items-error scan lives in lib/notes.ts firstItemsError() so both dialogs surface the same message. UpdateNoteDialog is mounted behind `v-if="editingNote"` from NoteList, so its open watcher must pass `{ immediate: true }` or it never populates the form.

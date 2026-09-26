@@ -17,3 +17,10 @@ export type NoteItemLine = {
     item_name: string;
     quantity: number;
 };
+
+export type NoteFormData = {
+    region_id: string;
+    location_id: string;
+    note_text: string;
+    items: NoteItemLine[];
+};

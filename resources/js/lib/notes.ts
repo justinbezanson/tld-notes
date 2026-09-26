@@ -1,4 +1,4 @@
-import type { Note } from '@/types';
+import type { Note, NoteItemLine } from '@/types';
 
 export function groupNotesByRegion(notes: Note[]): Map<string, Note[]> {
     const grouped = new Map<string, Note[]>();
@@ -21,4 +21,18 @@ export function notesForRegion(
     regionId: string,
 ): Note[] {
     return grouped.get(regionId) ?? [];
+}
+
+export function itemLinesToSubmit(lines: NoteItemLine[]): NoteItemLine[] {
+    return lines.filter(
+        (line) => line.item_id !== null || line.item_name !== '',
+    );
+}
+
+export function firstItemsError(
+    errors: Record<string, string | undefined>,
+): string | undefined {
+    return Object.entries(errors).find(([field]) =>
+        field.startsWith('items.'),
+    )?.[1];
 }

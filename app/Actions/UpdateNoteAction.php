@@ -4,35 +4,31 @@ namespace App\Actions;
 
 use App\Concerns\NoteItemAttributes;
 use App\Models\Note;
-use App\Models\Run;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
-class CreateNoteAction
+class UpdateNoteAction
 {
     use NoteItemAttributes;
 
     /**
-     * Add a note, along with its item lines, to the given run.
+     * Update a note's location, text, and item lines. The item lines are
+     * replaced wholesale so removed lines do not linger.
      *
      * @param  array<int, array<string, mixed>>  $items
      */
     public function execute(
-        User $user,
-        Run $run,
-        string $regionId,
+        Note $note,
         ?string $locationId,
         ?string $noteText = null,
         array $items = [],
     ): Note {
-        return DB::transaction(function () use ($user, $run, $regionId, $locationId, $noteText, $items): Note {
-            $note = Note::create([
-                'region_id' => $regionId,
+        return DB::transaction(function () use ($note, $locationId, $noteText, $items): Note {
+            $note->update([
                 'location_id' => $locationId,
                 'note_text' => $noteText,
-                'run_id' => $run->id,
-                'user_id' => $user->id,
             ]);
+
+            $note->items()->delete();
 
             $note->items()->createMany($this->itemAttributes($items));
 
