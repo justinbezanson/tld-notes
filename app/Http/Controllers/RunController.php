@@ -32,7 +32,7 @@ class RunController extends Controller
         return inertia('Runs/Show', [
             'run' => $run,
             'regions' => $run->regions,
-            'notes' => $run->notes()->latest()->get(),
+            'notes' => $run->notes()->with('items')->latest()->get(),
         ]);
     }
 

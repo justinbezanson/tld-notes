@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { MapPin } from '@lucide/vue';
 import EmptyState from '@/components/EmptyState.vue';
-import { useGameData } from '@/composables/useGameData';
+import NoteItem from '@/components/runs/NoteItem.vue';
 import type { Note } from '@/types';
 
 type Props = {
@@ -10,19 +10,16 @@ type Props = {
 };
 
 const props = defineProps<Props>();
-
-const { locationName } = useGameData();
 </script>
 
 <template>
-    <ul v-if="props.notes.length > 0" class="space-y-1">
-        <li
+    <ul v-if="props.notes.length > 0" class="space-y-2">
+        <NoteItem
             v-for="note in props.notes"
             :key="note.id"
-            class="rounded-md border px-3 py-2 text-sm"
-        >
-            {{ locationName(props.regionId, note.location_id) }}
-        </li>
+            :note="note"
+            :region-id="props.regionId"
+        />
     </ul>
 
     <EmptyState

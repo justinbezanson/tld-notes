@@ -23,3 +23,11 @@ it('lists every item id across all sections and categories', function () {
         ->not->toBeEmpty()
         ->toContain('GEAR_BallisticVest');
 });
+
+it('resolves the display name for an item id', function () {
+    expect(Items::nameFor('GEAR_BallisticVest'))->toBe('Ballistic Vest');
+});
+
+it('returns null for an unknown item id', function () {
+    expect(Items::nameFor('NOT_A_REAL_ITEM'))->toBeNull();
+});

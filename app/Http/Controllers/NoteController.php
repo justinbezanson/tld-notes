@@ -13,12 +13,15 @@ class NoteController extends Controller
     public function store(StoreNoteRequest $request, CreateNoteAction $action, Run $run): RedirectResponse
     {
         $locationId = $request->string('location_id')->toString();
+        $noteText = $request->string('note_text')->toString();
 
         $action->execute(
             $request->user(),
             $run,
             $request->string('region_id')->toString(),
             $locationId === 'GENERAL' ? null : $locationId,
+            $noteText === '' ? null : $noteText,
+            $request->validated('items', []),
         );
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Note added.')]);

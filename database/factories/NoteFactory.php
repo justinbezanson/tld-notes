@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Note;
 use App\Models\Run;
 use App\Models\User;
+use App\Regions;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +21,7 @@ class NoteFactory extends Factory
     public function definition(): array
     {
         return [
-            'region_id' => fake()->unique()->word(),
+            'region_id' => fake()->randomElement(Regions::ids()),
             'location_id' => null,
             'note_text' => null,
             'user_id' => User::factory(),

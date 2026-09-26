@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Items;
 use App\Models\Run;
 use App\Models\User;
 use App\Regions;
@@ -44,6 +45,35 @@ class StoreNoteRequest extends FormRequest
                 'required',
                 'string',
                 Rule::in(['GENERAL', ...Regions::locationsFor($regionId)]),
+            ],
+            'note_text' => [
+                'nullable',
+                'string',
+                'max:5000',
+            ],
+            'items' => [
+                'nullable',
+                'array',
+                'max:100',
+            ],
+            'items.*' => [
+                'array',
+            ],
+            'items.*.item_id' => [
+                'nullable',
+                'string',
+                Rule::in(Items::ids()),
+            ],
+            'items.*.item_name' => [
+                'required',
+                'string',
+                'max:255',
+            ],
+            'items.*.quantity' => [
+                'required',
+                'integer',
+                'min:0',
+                'max:9999',
             ],
         ];
     }

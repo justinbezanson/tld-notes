@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Note;
+use App\Models\NotesItem;
 use App\Models\Region;
 use App\Models\Run;
 use App\Models\User;
@@ -11,6 +12,33 @@ test('a note belongs to a run', function () {
     $note = Note::factory()->for($run)->create();
 
     expect($note->run->is($run))->toBeTrue();
+});
+
+test('a note has many items', function () {
+    $note = Note::factory()
+        ->has(NotesItem::factory()->count(2), 'items')
+        ->create();
+
+    expect($note->items)->toHaveCount(2)
+        ->and($note->items->every(fn (NotesItem $item) => $item->note->is($note)))->toBeTrue();
+});
+
+test('deleting a note cascades to its items', function () {
+    $note = Note::factory()
+        ->has(NotesItem::factory()->count(2), 'items')
+        ->create();
+
+    $note->delete();
+
+    expect(NotesItem::where('note_id', $note->id)->exists())->toBeFalse();
+});
+
+test('a region can hold more than one note', function () {
+    $run = Run::factory()->create();
+
+    Note::factory()->count(2)->for($run)->create(['region_id' => 'mystery-lake']);
+
+    expect(Note::where('run_id', $run->id)->where('region_id', 'mystery-lake')->count())->toBe(2);
 });
 
 test('a note stores its text note', function () {
@@ -157,4 +185,185 @@ test('the run show page lists the run notes', function () {
             ->has('notes', 1)
             ->where('notes.0.region_id', 'blackrock')
             ->where('notes.0.location_id', 'power-plant'));
+});
+
+test('an authenticated user can add a note with items and text', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->from(route('runs.show', $run))
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'note_text' => 'Crate by the door has extra matches.',
+            'items' => [
+                ['item_id' => 'GEAR_BallisticVest', 'item_name' => 'Ballistic Vest', 'quantity' => 1],
+                ['item_id' => 'GEAR_Hardwood', 'item_name' => 'Fir Firewood', 'quantity' => 12],
+            ],
+        ])
+        ->assertRedirect(route('runs.show', $run))
+        ->assertSessionHasNoErrors();
+
+    $note = Note::where('run_id', $run->id)->sole();
+
+    expect($note->note_text)->toBe('Crate by the door has extra matches.')
+        ->and($note->items)->toHaveCount(2);
+
+    $this->assertDatabaseHas('notes_items', [
+        'note_id' => $note->id,
+        'item_id' => 'GEAR_BallisticVest',
+        'item_name' => 'Ballistic Vest',
+        'quantity' => 1,
+    ]);
+
+    $this->assertDatabaseHas('notes_items', [
+        'note_id' => $note->id,
+        'item_id' => 'GEAR_Hardwood',
+        'item_name' => 'Fir Firewood',
+        'quantity' => 12,
+    ]);
+});
+
+test('a note item name is taken from the item reference data', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_id' => 'GEAR_BallisticVest', 'item_name' => 'Definitely Not A Vest', 'quantity' => 1],
+            ],
+        ]);
+
+    $note = Note::where('run_id', $run->id)->sole();
+
+    expect($note->items->first()?->item_name)->toBe('Ballistic Vest');
+});
+
+test('a note keeps a free form item line without an item id', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_name' => 'Some unidentified berries', 'quantity' => 3],
+            ],
+        ]);
+
+    $note = Note::where('run_id', $run->id)->sole();
+
+    expect($note->items->first()?->item_id)->toBeNull()
+        ->and($note->items->first()?->item_name)->toBe('Some unidentified berries')
+        ->and($note->items->first()?->quantity)->toBe(3);
+});
+
+test('a note can be added without items or text', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'note_text' => '',
+            'items' => [],
+        ])
+        ->assertSessionHasNoErrors();
+
+    $note = Note::where('run_id', $run->id)->sole();
+
+    expect($note->note_text)->toBeNull()
+        ->and($note->items)->toHaveCount(0);
+});
+
+test('adding a note requires a known item id', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_id' => 'NOT_A_REAL_ITEM', 'item_name' => 'Mystery Item', 'quantity' => 1],
+            ],
+        ])
+        ->assertSessionHasErrors(['items.0.item_id' => 'The selected items.0.item_id is invalid.']);
+
+    expect(Note::where('run_id', $run->id)->count())->toBe(0);
+});
+
+test('adding a note requires an item name', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_id' => 'GEAR_BallisticVest', 'quantity' => 1],
+            ],
+        ])
+        ->assertSessionHasErrors(['items.0.item_name' => 'The items.0.item_name field is required.']);
+
+    expect(Note::where('run_id', $run->id)->count())->toBe(0);
+});
+
+test('adding a note requires an item quantity', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_id' => 'GEAR_BallisticVest', 'item_name' => 'Ballistic Vest'],
+            ],
+        ])
+        ->assertSessionHasErrors(['items.0.quantity' => 'The items.0.quantity field is required.']);
+
+    expect(Note::where('run_id', $run->id)->count())->toBe(0);
+});
+
+test('an item quantity cannot be negative', function () {
+    $run = Run::factory()->create();
+
+    $this->actingAs($run->user)
+        ->post(route('runs.notes.store', $run), [
+            'region_id' => 'mystery-lake',
+            'location_id' => 'camp-office',
+            'items' => [
+                ['item_id' => 'GEAR_BallisticVest', 'item_name' => 'Ballistic Vest', 'quantity' => -3],
+            ],
+        ])
+        ->assertSessionHasErrors(['items.0.quantity']);
+
+    expect(Note::where('run_id', $run->id)->count())->toBe(0);
+});
+
+test('the run show page lists the items for each note', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+        'note_text' => 'Matches by the door.',
+    ]);
+    NotesItem::factory()->for($note)->create([
+        'item_id' => 'GEAR_BallisticVest',
+        'item_name' => 'Ballistic Vest',
+        'quantity' => 1,
+    ]);
+
+    $this->actingAs($run->user)
+        ->get(route('runs.show', $run))
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('Runs/Show')
+            ->has('notes', 1)
+            ->where('notes.0.note_text', 'Matches by the door.')
+            ->has('notes.0.items', 1)
+            ->where('notes.0.items.0.item_id', 'GEAR_BallisticVest')
+            ->where('notes.0.items.0.item_name', 'Ballistic Vest')
+            ->where('notes.0.items.0.quantity', 1));
 });
