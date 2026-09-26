@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useForm } from '@inertiajs/vue3';
-import { computed, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import FormDialog from '@/components/FormDialog.vue';
 import NoteFormFields from '@/components/runs/NoteFormFields.vue';
+import { Button } from '@/components/ui/button';
 import { GENERAL_ID, useGameData } from '@/composables/useGameData';
 import { firstItemsError, itemLinesToSubmit } from '@/lib/notes';
-import { update } from '@/routes/runs/notes';
+import { destroy, update } from '@/routes/runs/notes';
 import type { Note, NoteFormData } from '@/types';
 
 type Props = {
@@ -27,6 +28,15 @@ const form = useForm<NoteFormData>({
 });
 
 const itemsError = computed(() => firstItemsError(form.errors));
+
+const deleteDialogOpen = ref(false);
+
+const deleteForm = useForm({});
+
+const deleteDescription = computed(
+    () =>
+        `Are you sure you want to delete the note in ${regionName(props.note.region_id)}? This action cannot be undone.`,
+);
 
 watch(
     open,
@@ -57,6 +67,20 @@ function updateNote() {
         },
     });
 }
+
+function requestDelete() {
+    deleteDialogOpen.value = true;
+}
+
+function deleteNote() {
+    deleteForm.delete(destroy.url({ run: props.runId, note: props.note.id }), {
+        preserveScroll: true,
+        onSuccess: () => {
+            deleteDialogOpen.value = false;
+            open.value = false;
+        },
+    });
+}
 </script>
 
 <template>
@@ -77,5 +101,27 @@ function updateNote() {
             :items-error="itemsError"
             :note-text-error="form.errors.note_text"
         />
+
+        <template #actions>
+            <Button
+                type="button"
+                variant="outline"
+                class="order-first cursor-pointer border-destructive text-destructive hover:bg-destructive/10 hover:text-destructive sm:order-first sm:mr-auto"
+                @click="requestDelete"
+            >
+                Delete
+            </Button>
+        </template>
     </FormDialog>
+
+    <FormDialog
+        v-model:open="deleteDialogOpen"
+        title="Delete Note"
+        :description="deleteDescription"
+        submit-label="Delete"
+        submit-variant="destructive"
+        processing-label="Deleting..."
+        :processing="deleteForm.processing"
+        @submit="deleteNote"
+    />
 </template>

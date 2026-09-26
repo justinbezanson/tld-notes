@@ -21,6 +21,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('runs/{run}/regions', [RegionController::class, 'store'])->name('runs.regions.store');
     Route::post('runs/{run}/notes', [NoteController::class, 'store'])->name('runs.notes.store');
     Route::put('runs/{run}/notes/{note}', [NoteController::class, 'update'])->name('runs.notes.update');
+    Route::delete('runs/{run}/notes/{note}', [NoteController::class, 'destroy'])->name('runs.notes.destroy');
     Route::inertia('goals', 'Goals')->name('goals');
 });
 

@@ -70,6 +70,7 @@ const emit = defineEmits<{
                     >
                         {{ processing ? processingLabel : submitLabel }}
                     </Button>
+                    <slot name="actions" />
                 </DialogFooter>
             </form>
         </DialogContent>

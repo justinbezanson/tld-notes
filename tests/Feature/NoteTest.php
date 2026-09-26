@@ -533,3 +533,69 @@ test('guests are redirected to login when updating a note', function () {
         'location_id' => 'fishing-hut',
     ])->assertRedirect(route('login'));
 });
+
+test('an authenticated user can delete a note', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+    $otherNote = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'fishing-hut',
+    ]);
+    NotesItem::factory()->for($note)->create();
+
+    $this->actingAs($run->user)
+        ->from(route('runs.show', $run))
+        ->delete(route('runs.notes.destroy', [$run, $note]))
+        ->assertRedirect(route('runs.show', $run))
+        ->assertSessionHasNoErrors();
+
+    expect(Note::whereKey($note->id)->exists())->toBeFalse()
+        ->and(NotesItem::where('note_id', $note->id)->exists())->toBeFalse()
+        ->and(Note::whereKey($otherNote->id)->exists())->toBeTrue();
+});
+
+test('a user cannot delete a note on another user run', function () {
+    $user = User::factory()->create();
+    $run = Run::factory()->for(User::factory())->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->actingAs($user)
+        ->delete(route('runs.notes.destroy', [$run, $note]))
+        ->assertForbidden();
+
+    expect(Note::whereKey($note->id)->exists())->toBeTrue();
+});
+
+test('a user cannot delete a note that belongs to a different run', function () {
+    $run = Run::factory()->create();
+    $otherRun = Run::factory()->create();
+    $note = Note::factory()->for($otherRun)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->actingAs($run->user)
+        ->delete(route('runs.notes.destroy', [$run, $note]))
+        ->assertForbidden();
+
+    expect(Note::whereKey($note->id)->exists())->toBeTrue();
+});
+
+test('guests are redirected to login when deleting a note', function () {
+    $run = Run::factory()->create();
+    $note = Note::factory()->for($run)->create([
+        'region_id' => 'mystery-lake',
+        'location_id' => 'camp-office',
+    ]);
+
+    $this->delete(route('runs.notes.destroy', [$run, $note]))
+        ->assertRedirect(route('login'));
+
+    expect(Note::whereKey($note->id)->exists())->toBeTrue();
+});

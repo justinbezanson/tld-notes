@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Actions\CreateNoteAction;
+use App\Actions\DeleteNoteAction;
 use App\Actions\UpdateNoteAction;
+use App\Http\Requests\DestroyNoteRequest;
 use App\Http\Requests\StoreNoteRequest;
 use App\Http\Requests\UpdateNoteRequest;
 use App\Models\Note;
@@ -43,6 +45,19 @@ class NoteController extends Controller
         );
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Note updated.')]);
+
+        return back();
+    }
+
+    /**
+     * Delete one of a run's notes. The run is type hinted so the framework binds
+     * it before DestroyNoteRequest authorizes against the run policy.
+     */
+    public function destroy(DestroyNoteRequest $request, DeleteNoteAction $action, Run $run, Note $note): RedirectResponse
+    {
+        $action->execute($note);
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => __('Note deleted.')]);
 
         return back();
     }
