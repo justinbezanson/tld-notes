@@ -3,6 +3,7 @@
 use App\Models\Region;
 use App\Models\Run;
 use App\Models\User;
+use App\Regions;
 use Inertia\Testing\AssertableInertia as Assert;
 
 test('a region belongs to a run', function () {
@@ -26,6 +27,16 @@ test('a run has many regions', function () {
 
     expect($run->regions)->toHaveCount(2)
         ->and($run->regions->every(fn (Region $region) => $region->run->is($run)))->toBeTrue();
+});
+
+test('a run can hold every region at once', function () {
+    $ids = Regions::ids();
+
+    $run = Run::factory()->create();
+    $regions = Region::factory()->count(count($ids))->for($run)->create();
+
+    expect($regions->pluck('region_id')->sort()->values()->all())
+        ->toBe(collect($ids)->sort()->values()->all());
 });
 
 test('deleting a run cascades to its regions', function () {
