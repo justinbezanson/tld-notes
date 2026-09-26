@@ -29,7 +29,7 @@ function removeLine(index: number) {
 </script>
 
 <template>
-    <div class="grid gap-3">
+    <div class="grid min-w-0 gap-3">
         <Label>Items</Label>
         <NoteItemRow
             v-for="(line, index) in lines"

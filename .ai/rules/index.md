@@ -14,3 +14,4 @@ Before planning or editing, find the row whose globs match the file's path and r
 | resources/js/**/*.vue | .ai/rules/js.md |
 | app/Models/NotesItem.php | .ai/rules/models.md |
 | resources/js/components/runs/** | .ai/rules/runs.md |
+| resources/js/components/ui/** | .ai/rules/ui.md |

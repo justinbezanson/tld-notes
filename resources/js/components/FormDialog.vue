@@ -41,15 +41,15 @@ const emit = defineEmits<{
         <DialogTrigger v-if="$slots.trigger" as-child>
             <slot name="trigger" />
         </DialogTrigger>
-        <DialogContent class="sm:max-w-[425px]">
-            <form @submit.prevent="emit('submit')">
+        <DialogContent class="max-h-[85vh] overflow-y-auto sm:max-w-[425px]">
+            <form class="min-w-0" @submit.prevent="emit('submit')">
                 <DialogHeader>
                     <DialogTitle>{{ title }}</DialogTitle>
                     <DialogDescription v-if="description">
                         {{ description }}
                     </DialogDescription>
                 </DialogHeader>
-                <div v-if="$slots.default" class="mb-4 grid gap-4">
+                <div v-if="$slots.default" class="mb-4 grid min-w-0 gap-4">
                     <slot />
                 </div>
                 <DialogFooter>

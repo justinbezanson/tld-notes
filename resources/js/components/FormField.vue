@@ -14,7 +14,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-    <div class="grid gap-3">
+    <div class="grid min-w-0 gap-3">
         <Label :for="id">{{ label }}</Label>
         <slot />
         <InputError :message="error" />
