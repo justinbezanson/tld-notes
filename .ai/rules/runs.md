@@ -13,3 +13,6 @@ Note items are a nested repeater whose form rows deliberately use the request sh
 
 ## Share note fields with explicit v-models, never a form prop
 AddNoteDialog and UpdateNoteDialog share their body through NoteFormFields.vue, which takes explicit `v-model:location-id` / `v-model:items` / `v-model:note-text` plus one error prop per field — not a `form` prop. `v-model` on a prop member is rejected by the project's `vue/no-mutating-props` rule, and the first-items-error scan lives in lib/notes.ts firstItemsError() so both dialogs surface the same message. UpdateNoteDialog is mounted behind `v-if="editingNote"` from NoteList, so its open watcher must pass `{ immediate: true }` or it never populates the form.
+
+## Wrapper dialogs must forward FormDialog's optional #trigger slot
+FormDialog only renders its DialogTrigger when `$slots.trigger` exists, so a wrapper dialog that accepts a `#trigger` slot must forward it: `<template v-if="slots.trigger" #trigger><slot name="trigger" /></template>` (useSlots() + v-if, otherwise FormDialog always sees a slot and renders an empty as-child trigger). The eff5de1 Show.vue refactor moved the "Add Region" Button into NotesPanel's `#trigger` slot, but AddRegionDialog had no slot outlet, so it rendered nothing and the button silently vanished. AddNoteDialog has no trigger (opened programmatically) and must stay that way.

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useForm } from '@inertiajs/vue3';
+import { useSlots } from 'vue';
 import FormDialog from '@/components/FormDialog.vue';
 import FormField from '@/components/FormField.vue';
 import {
@@ -19,6 +20,8 @@ type Props = {
 const props = defineProps<Props>();
 
 const open = defineModel<boolean>('open', { required: true });
+
+const slots = useSlots();
 
 const { regionOptions } = useGameData();
 
@@ -44,6 +47,10 @@ function createRegion() {
         :processing="form.processing"
         @submit="createRegion"
     >
+        <template v-if="slots.trigger" #trigger>
+            <slot name="trigger" />
+        </template>
+
         <FormField id="region" label="Region" :error="form.errors.region_id">
             <Select v-model="form.region_id">
                 <SelectTrigger id="region" class="w-full">
