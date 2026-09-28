@@ -42,10 +42,12 @@ export function useCurrentUrl(): UseCurrentUrlReturn {
         const urlToCompare = currentUrl ?? currentUrlReactive.value;
         const urlString = toUrl(urlToCheck);
 
-        const comparePath = (path: string): boolean =>
-            startsWith ? urlToCompare.startsWith(path) : path === urlToCompare;
+        const comparePath = (path: string | undefined): boolean =>
+            startsWith
+                ? path !== undefined && urlToCompare.startsWith(path)
+                : path === urlToCompare;
 
-        if (!urlString.startsWith('http')) {
+        if (typeof urlString !== 'string' || !urlString.startsWith('http')) {
             return comparePath(urlString);
         }
 

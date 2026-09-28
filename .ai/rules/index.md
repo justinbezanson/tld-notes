@@ -11,8 +11,9 @@ Before planning or editing, find the row whose globs match the file's path and r
 | database/factories/**, database/factories/*.php | .ai/rules/factories.md |
 | vite.config.ts | .ai/rules/general.md |
 | app/Http/**/*.php | .ai/rules/http.md |
-| resources/js/**/*.vue | .ai/rules/js.md |
+| resources/js/**/*.vue, resources/js/**/*.spec.ts | .ai/rules/js.md |
 | app/Models/NotesItem.php | .ai/rules/models.md |
 | resources/js/routes/** | .ai/rules/routes.md |
 | resources/js/components/runs/** | .ai/rules/runs.md |
+| resources/js/test/** | .ai/rules/test.md |
 | resources/js/components/ui/** | .ai/rules/ui.md |

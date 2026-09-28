@@ -80,6 +80,7 @@ export default defineConfigWithVueTs(
             'bootstrap/ssr',
             'tailwind.config.js',
             'vite.config.ts',
+            'vitest.config.ts',
             'resources/js/actions/**',
             'resources/js/components/ui/*',
             'resources/js/routes/**',
@@ -87,6 +88,14 @@ export default defineConfigWithVueTs(
         ],
     },
     prettier,
+    {
+        // The stubs stand in for Inertia's <Form>, <Head> and <Link>, so they
+        // deliberately carry the names those components have.
+        files: ['resources/js/test/**'],
+        rules: {
+            'vue/no-reserved-component-names': 'off',
+        },
+    },
     {
         plugins: {
             '@stylistic': stylistic,
