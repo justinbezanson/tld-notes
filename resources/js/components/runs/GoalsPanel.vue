@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import type { Task } from '@/types';
+
+defineProps<{
+    tasks: Array<Task>;
+}>();
+</script>
+
 <template>
     <p class="text-sm text-muted-foreground">
         Goals &amp; Tasks content goes here. You can add your goals and tasks

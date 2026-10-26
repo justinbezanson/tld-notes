@@ -33,6 +33,7 @@ class RunController extends Controller
             'run' => $run,
             'regions' => $run->regions,
             'notes' => $run->notes()->with('items')->latest()->get(),
+            'tasks' => $run->tasks()->orderBy('status')->orderBy('created_at')->get(),
         ]);
     }
 

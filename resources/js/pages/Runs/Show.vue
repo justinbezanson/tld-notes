@@ -4,12 +4,13 @@ import GoalsPanel from '@/components/runs/GoalsPanel.vue';
 import NotesPanel from '@/components/runs/NotesPanel.vue';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { dashboard } from '@/routes';
-import type { Note, Region, Run } from '@/types';
+import type { Note, Region, Run, Task } from '@/types';
 
 const props = defineProps<{
     run: Run;
     regions: Array<Region>;
     notes: Array<Note>;
+    tasks: Array<Task>;
 }>();
 
 defineOptions({
@@ -57,7 +58,7 @@ defineOptions({
                 />
             </TabsContent>
             <TabsContent value="goals">
-                <GoalsPanel />
+                <GoalsPanel :tasks="props.tasks" />
             </TabsContent>
         </Tabs>
     </div>

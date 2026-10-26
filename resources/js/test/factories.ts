@@ -1,4 +1,12 @@
-import type { Note, NoteItem, NoteItemLine, Region, Run, User } from '@/types';
+import type {
+    Note,
+    NoteItem,
+    NoteItemLine,
+    Region,
+    Run,
+    Task,
+    User,
+} from '@/types';
 
 const timestamp = '2026-01-01T00:00:00.000000Z';
 
@@ -48,6 +56,18 @@ export function makeNote(overrides: Partial<Note> = {}): Note {
         location_id: null,
         note_text: null,
         items: [],
+        created_at: timestamp,
+        updated_at: timestamp,
+        ...overrides,
+    };
+}
+
+export function makeTask(overrides: Partial<Task> = {}): Task {
+    return {
+        id: 1,
+        run_id: 1,
+        status: false,
+        description: 'Find the bunker key',
         created_at: timestamp,
         updated_at: timestamp,
         ...overrides,

@@ -3,6 +3,7 @@
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\RunController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('runs/{run}/notes', [NoteController::class, 'store'])->name('runs.notes.store');
     Route::put('runs/{run}/notes/{note}', [NoteController::class, 'update'])->name('runs.notes.update');
     Route::delete('runs/{run}/notes/{note}', [NoteController::class, 'destroy'])->name('runs.notes.destroy');
+    Route::post('runs/{run}/tasks', [TaskController::class, 'store'])->name('runs.tasks.store');
+    Route::patch('runs/{run}/tasks/{task}', [TaskController::class, 'update'])->name('runs.tasks.update');
+    Route::delete('runs/{run}/tasks/{task}', [TaskController::class, 'destroy'])->name('runs.tasks.destroy');
     Route::inertia('goals', 'Goals')->name('goals');
 });
 

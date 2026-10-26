@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { nextTick } from 'vue';
 import RunShow from '@/pages/Runs/Show.vue';
-import { makeNote, makeRegion, makeRun } from '@/test/factories';
+import { makeNote, makeRegion, makeRun, makeTask } from '@/test/factories';
 import { resetForms } from '@/test/inertia';
 
 vi.mock('@inertiajs/vue3', async () => {
@@ -14,10 +14,11 @@ vi.mock('@inertiajs/vue3', async () => {
 const run = makeRun({ id: 3, name: 'Road to 500', run_type: 'PILGRIM' });
 const regions = [makeRegion({ id: 1, run_id: 3, region_id: 'blackrock' })];
 const notes = [makeNote({ id: 5, run_id: 3, region_id: 'blackrock' })];
+const tasks = [makeTask({ id: 7, run_id: 3 })];
 
 function mountShow(props: Record<string, unknown> = {}) {
     return mount(RunShow, {
-        props: { run, regions, notes, ...props },
+        props: { run, regions, notes, tasks, ...props },
         attachTo: document.body,
     });
 }
@@ -45,8 +46,8 @@ describe('header', () => {
         expect(mountShow().find('h1').text()).toBe('Road to 500');
     });
 
-    it('renders without regions or notes', () => {
-        const wrapper = mountShow({ regions: [], notes: [] });
+    it('renders without regions, notes, or tasks', () => {
+        const wrapper = mountShow({ regions: [], notes: [], tasks: [] });
 
         expect(wrapper.find('h1').text()).toBe('Road to 500');
     });
@@ -98,5 +99,20 @@ describe('notes tab', () => {
 
     it('lists the regions of the run', () => {
         expect(mountShow().text()).toContain('Blackrock');
+    });
+});
+
+describe('goals tab', () => {
+    it('hands the goals panel the tasks it was given', async () => {
+        const wrapper = mountShow();
+
+        await tabs(wrapper)
+            .find((tab) => tab.text().includes('Goals'))!
+            .trigger('mousedown');
+        await nextTick();
+
+        expect(
+            wrapper.findComponent({ name: 'GoalsPanel' }).props('tasks'),
+        ).toEqual(tasks);
     });
 });
