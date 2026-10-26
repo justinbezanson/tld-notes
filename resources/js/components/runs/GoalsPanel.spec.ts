@@ -2,6 +2,7 @@ import { mount } from '@vue/test-utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { nextTick } from 'vue';
 import GoalsPanel from '@/components/runs/GoalsPanel.vue';
+import { dialogButton, dialogText, submitDialog } from '@/test/dialog';
 import { makeTask } from '@/test/factories';
 import { createdForms, resetForms, succeedLastRequest } from '@/test/inertia';
 import { resetRouter, routerStub } from '@/test/router';
@@ -46,6 +47,10 @@ function newTaskForm() {
 
 function editTaskForm() {
     return createdForms()[1]!;
+}
+
+function deleteTaskForm() {
+    return createdForms()[2]!;
 }
 
 function taskItems(wrapper: ReturnType<typeof mountPanel>) {
@@ -199,7 +204,9 @@ describe('adding a task', () => {
 
         expect(taskItems(wrapper)).toHaveLength(0);
         expect(newTaskForm().requests).toHaveLength(0);
+        expect(deleteTaskForm().requests).toHaveLength(0);
         expect(routerStub.delete).not.toHaveBeenCalled();
+        expect(dialogText()).not.toContain('Delete Task');
         expect(wrapper.text()).toContain('There are no tasks to display');
     });
 
@@ -285,17 +292,38 @@ describe('editing a task', () => {
         expect(wrapper.find('input').element.value).toBe('Unsaved change');
     });
 
-    it('deletes the task', async () => {
+    it('asks before deleting the task', async () => {
         const wrapper = mountPanel();
 
         await startEditing(wrapper);
         await wrapper.find('button[title="Delete task"]').trigger('click');
+        await nextTick();
 
-        const call = routerStub.delete.mock.calls.at(0);
+        expect(dialogText()).toContain('Delete Task');
+        expect(dialogText()).toContain(
+            'Are you sure you want to delete "Find the bunker key"?',
+        );
+        expect(deleteTaskForm().requests).toHaveLength(0);
+    });
 
-        expect(call?.[0]).toBe(`/runs/${runId}/tasks/${openTask.id}`);
+    it('deletes the task after confirmation', async () => {
+        const wrapper = mountPanel();
 
-        (call?.[1] as { onSuccess?: () => void }).onSuccess?.();
+        await startEditing(wrapper);
+        await wrapper.find('button[title="Delete task"]').trigger('click');
+        await nextTick();
+
+        expect(dialogButton('Delete')).toBeTruthy();
+
+        await submitDialog();
+
+        expect(deleteTaskForm().requests[0]).toMatchObject({
+            method: 'delete',
+            url: `/runs/${runId}/tasks/${openTask.id}`,
+        });
+        expect(deleteTaskForm().requests[0]?.options.preserveScroll).toBe(true);
+
+        succeedLastRequest(deleteTaskForm());
         await nextTick();
 
         expect(taskItems(wrapper)).toHaveLength(0);

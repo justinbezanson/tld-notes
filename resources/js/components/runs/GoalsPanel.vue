@@ -3,6 +3,7 @@ import { router, useForm } from '@inertiajs/vue3';
 import { ListTodo, Plus } from '@lucide/vue';
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import EmptyState from '@/components/EmptyState.vue';
+import FormDialog from '@/components/FormDialog.vue';
 import TaskItem from '@/components/runs/TaskItem.vue';
 import { Button } from '@/components/ui/button';
 import { isBlankDescription, sortTasks } from '@/lib/tasks';
@@ -19,14 +20,22 @@ const props = defineProps<Props>();
 
 const newTaskForm = useForm({ description: '' });
 const editTaskForm = useForm({ description: '' });
+const deleteTaskForm = useForm({});
 
 const taskRows = ref<TaskRow[]>(props.tasks.map((task) => ({ ...task })));
 const adding = ref(false);
 const editingTaskId = ref<number | null>(null);
 const nextDraftId = ref(-1);
+const deleteDialogOpen = ref(false);
+const taskToDelete = ref<TaskRow | null>(null);
 
 const busy = computed(() => adding.value || editingTaskId.value !== null);
 const sortedTasks = computed(() => sortTasks(taskRows.value));
+const deleteDescription = computed(() =>
+    taskToDelete.value
+        ? `Are you sure you want to delete "${taskToDelete.value.description}"? This action cannot be undone.`
+        : 'This action cannot be undone.',
+);
 
 watch(
     () => props.tasks,
@@ -154,14 +163,26 @@ function saveEditedTask(task: TaskRow): void {
     });
 }
 
-function deleteTask(task: TaskRow): void {
+function requestDeleteTask(task: TaskRow): void {
     if (task.isNew === true) {
         cancelAdd();
 
         return;
     }
 
-    router.delete(destroy.url({ run: props.runId, task: task.id }), {
+    deleteTaskForm.clearErrors();
+    taskToDelete.value = task;
+    deleteDialogOpen.value = true;
+}
+
+function deleteTask(): void {
+    const task = taskToDelete.value;
+
+    if (!task) {
+        return;
+    }
+
+    deleteTaskForm.delete(destroy.url({ run: props.runId, task: task.id }), {
         preserveScroll: true,
         preserveState: true,
         onSuccess: () => {
@@ -170,6 +191,9 @@ function deleteTask(task: TaskRow): void {
             if (editingTaskId.value === task.id) {
                 cancelEdit();
             }
+
+            deleteDialogOpen.value = false;
+            taskToDelete.value = null;
         },
     });
 }
@@ -223,7 +247,7 @@ function cancelEditing(): void {
 }
 
 function handleKeydown(event: KeyboardEvent): void {
-    if (event.key !== 'Escape') {
+    if (event.key !== 'Escape' || deleteDialogOpen.value) {
         return;
     }
 
@@ -270,7 +294,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', handleKeydown));
                 @toggle="toggleComplete"
                 @edit="startEdit"
                 @save="saveTask"
-                @delete="deleteTask"
+                @delete="requestDeleteTask"
                 @cancel="cancelEditing"
             />
         </ul>
@@ -284,5 +308,16 @@ onBeforeUnmount(() => window.removeEventListener('keydown', handleKeydown));
                 <ListTodo class="h-5 w-5 text-muted-foreground" />
             </template>
         </EmptyState>
+
+        <FormDialog
+            v-model:open="deleteDialogOpen"
+            title="Delete Task"
+            :description="deleteDescription"
+            submit-label="Delete"
+            submit-variant="destructive"
+            processing-label="Deleting..."
+            :processing="deleteTaskForm.processing"
+            @submit="deleteTask"
+        />
     </div>
 </template>
