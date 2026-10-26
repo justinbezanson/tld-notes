@@ -111,8 +111,9 @@ describe('goals tab', () => {
             .trigger('mousedown');
         await nextTick();
 
-        expect(
-            wrapper.findComponent({ name: 'GoalsPanel' }).props('tasks'),
-        ).toEqual(tasks);
+        const goalsPanel = wrapper.findComponent({ name: 'GoalsPanel' });
+
+        expect(goalsPanel.props('tasks')).toEqual(tasks);
+        expect(goalsPanel.props('runId')).toBe(3);
     });
 });

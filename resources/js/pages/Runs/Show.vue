@@ -58,7 +58,7 @@ defineOptions({
                 />
             </TabsContent>
             <TabsContent value="goals">
-                <GoalsPanel :tasks="props.tasks" />
+                <GoalsPanel :run-id="props.run.id" :tasks="props.tasks" />
             </TabsContent>
         </Tabs>
     </div>

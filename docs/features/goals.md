@@ -45,6 +45,8 @@
 ### TICKET-003: Update GoalsPanel Component (Frontend Structure)
 **Description:** Replace the placeholder in GoalsPanel.vue with full task management UI.
 
+**Status:** Complete.
+
 **Acceptance Criteria:**
 - Component displays "Add Task" button at top
 - Lists tasks for current run
@@ -61,13 +63,14 @@
 4. Load tasks from Inertia props (or fetch via router if needed)
 5. Build UI structure: header with Add Task button, task list, empty state
 6. Implement helper methods for display logic (sorting, strikethrough)
-7. Add event handlers for checkbox toggle, edit, save, delete, cancel using Inertia router
-8. Implement Esc key listener (add/remove on mount/unmount)
+7. Implement Esc key listener (add/remove on mount/unmount)
 
 ---
 
 ### TICKET-004: Implement Add Task Flow
 **Description:** Implement adding a new task with inline edit mode.
+
+**Status:** Complete — implemented as part of TICKET-003.
 
 **Acceptance Criteria:**
 - Clicking Add Task creates unsaved task in list with empty description, unchecked, in edit mode
@@ -89,6 +92,8 @@
 
 ### TICKET-005: Implement Edit Task Flow
 **Description:** Implement editing existing tasks with inline form.
+
+**Status:** Complete — implemented as part of TICKET-003.
 
 **Acceptance Criteria:**
 - Clicking Edit button shows input, hides Edit button, shows Save and Delete
