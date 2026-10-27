@@ -273,7 +273,8 @@ onBeforeUnmount(() => window.removeEventListener('keydown', handleKeydown));
         <div>
             <Button
                 type="button"
-                class="cursor-pointer"
+                variant="outline"
+                class="mb-2 cursor-pointer"
                 :disabled="busy"
                 @click="addTask"
             >
