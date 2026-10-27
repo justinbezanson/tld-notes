@@ -116,6 +116,8 @@
 ### TICKET-006: Implement Toggle Task Completion
 **Description:** Implement immediate save when toggling checkbox.
 
+**Status:** Complete.
+
 **Acceptance Criteria:**
 - Checkbox enabled only when not editing
 - Toggling checkbox immediately saves to database (PATCH)
@@ -138,6 +140,8 @@
 ### TICKET-007: Add Keyboard Support and Polish
 **Description:** Add Esc key handling and final UX polish.
 
+**Status:** Complete.
+
 **Acceptance Criteria:**
 - Esc key cancels add or edit in progress
 - Focus management works correctly
@@ -157,6 +161,8 @@
 
 ### TICKET-008: Write Tests
 **Description:** Add comprehensive tests for tasks feature.
+
+**Status:** Complete.
 
 **Acceptance Criteria:**
 - Backend feature tests cover all API endpoints (CRUD operations)
@@ -179,6 +185,8 @@
 
 ### TICKET-009: Final Integration and QA
 **Description:** Integrate all pieces and do end-to-end verification.
+
+**Status:** Complete.
 
 **Acceptance Criteria:**
 - Goals & Tasks tab shows tasks correctly
