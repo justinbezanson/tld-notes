@@ -93,7 +93,9 @@ const rightNavItems: NavItem[] = [
                             <SheetTitle class="sr-only"
                                 >Navigation menu</SheetTitle
                             >
-                            <SheetHeader class="flex justify-start text-left bg-black p-2 border border-neutral-800 rounded-lg">
+                            <SheetHeader
+                                class="flex justify-start rounded-lg border border-neutral-800 bg-black p-2 text-left"
+                            >
                                 <img src="/images/tld.png" alt="Logo" />
                             </SheetHeader>
                             <div
@@ -142,7 +144,10 @@ const rightNavItems: NavItem[] = [
                     </Sheet>
                 </div>
 
-                <Link :href="dashboard()" class="flex items-center gap-x-2 bg-black p-2 border border-neutral-800 rounded-lg">
+                <Link
+                    :href="dashboard()"
+                    class="flex items-center gap-x-2 rounded-lg border border-neutral-800 bg-black p-2"
+                >
                     <img src="/images/tld.png" alt="Logo" class="w-48" />
                 </Link>
 
